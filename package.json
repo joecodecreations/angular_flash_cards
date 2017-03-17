@@ -2,7 +2,7 @@
   "name": "Angular Flash Cards",
   "version": "1.0.0",
   "description": "Practive your knowledge using interactive flash cards written in AngularJS",
-  "main": "index.js",
+  "main": "server.js",
   "repository": "git@github.com:joecodecreations/angular_flash_cards.git",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -47,8 +47,5 @@
     "request": "^2.75.0",
     "susy": "^2.2.5",
     "url-status": "^0.1.1"
-  },
-  "dependencies": {
-    "express": "^4.14.1"
   }
 }
