@@ -1,5 +1,5 @@
 {
-  "name": "Angular Flash Cards",
+  "name": "angular_flash_cards",
   "version": "1.0.0",
   "description": "Practive your knowledge using interactive flash cards written in AngularJS",
   "main": "server.js",
