@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Practive your knowledge using interactive flash cards written in AngularJS",
   "main": "index.js",
-  "repository": "git@github.com:joecodecreations/angular_draggable_ui.git",
+  "repository": "git@github.com:joecodecreations/angular_flash_cards.git",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
