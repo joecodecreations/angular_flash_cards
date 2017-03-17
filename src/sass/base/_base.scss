@@ -1,9 +1,31 @@
+* { box-sizing: border-box }
+
+
 body{
-  background:orange;
-  font-size:46px;
+  background:#8c1aff;
+  background: #8c1aff; /* For browsers that do not support gradients */
+  background: -webkit-linear-gradient(#8c1aff,#8c1aff,#8c1aff,#8c1aff, #bf80ff); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(#8c1aff,#8c1aff,#8c1aff,#8c1aff, #bf80ff); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(#8c1aff,#8c1aff,#8c1aff,#8c1aff, #bf80ff); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(#8c1aff,#8c1aff,#8c1aff,#8c1aff, #bf80ff); /* Standard syntax */
+
+
+  font-size:18px;
+  margin: 0;
+  color:limegreen;
+  font-family: 'Raleway', sans-serif;
+  overflow: hidden;
 }
 
-.textupdate {
-  font-size:34px;
-  border: 1px solid #000; 
+
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+  display: none !important;
+}
+
+.app {
+
+  overflow:hidden;
+  height:100vh;
+  width:100vw;
+
 }

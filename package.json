@@ -1,9 +1,9 @@
 {
-  "name": "myWebApplication",
+  "name": "Angular Flash Cards",
   "version": "1.0.0",
-  "description": "Sample Application Framework",
+  "description": "Practive your knowledge using interactive flash cards written in AngularJS",
   "main": "index.js",
-  "repository": "git@github.com:joecodecreations/nodejs_html5_ejs_grunt_sass_template.git",
+  "repository": "git@github.com:joecodecreations/angular_draggable_ui.git",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -19,10 +19,11 @@
     "fs": "0.0.1-security",
     "grunt": "~0.4.5",
     "grunt-auto-install": "~0.3.1",
+    "grunt-browserify": "^5.0.0",
     "grunt-cli": "~1.2.0",
     "grunt-connect-proxy": "^0.2.0",
     "grunt-contrib-clean": "~1.0.0",
-    "grunt-contrib-concat": "~1.0.0",
+    "grunt-contrib-concat": "^1.0.1",
     "grunt-contrib-connect": "^1.0.2",
     "grunt-contrib-copy": "~1.0.0",
     "grunt-contrib-csslint": "~0.3.1",
