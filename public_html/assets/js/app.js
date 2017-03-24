@@ -24,7 +24,7 @@ require('./directives/insertCard.directive.js');
 },{"./controllers/flashcards.controller.js":2,"./controllers/navigation.controller.js":3,"./directives/insertCard.directive.js":4,"./modules/app.module.js":5,"./services/card.service.js":6,"./services/resetValidation.service.js":7,"./services/updateCards.service.js":8}],2:[function(require,module,exports){
 angular.module('app').controller('flashcards', flashCardsController);
 
-function flashCardsController($scope, card, resetValidationService, updateCards) {
+function flashCardsController($scope, $http, card, resetValidationService, updateCards) {
     var ctrl = $scope;
 
     /* Default states */
@@ -119,6 +119,36 @@ function flashCardsController($scope, card, resetValidationService, updateCards)
         card.add($scope, resetValidationService, updateCards, questions);
     };
 
+    ctrl.shareDeck = function () {
+
+        deckInfo = [{
+            'title': "this is my deck title",
+            'route': "kslfjasoifjdaifjaosdifjsd",
+            'backgroundColor': "orange",
+            'canSkipQuestions': true,
+            'alexa': 'the roof is red'
+        }];
+        //Create deck into database
+        http({
+            method: 'POST',
+            url: 'http://flashcardquiz.com/api/decks',
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded'
+            },
+            transformRequest: function (deckInfo) {
+                var str = [];
+                for (var p in obj)
+                    str.push(encodeURIComponent(p) + "=" + encodeURIComponent(obj[p]));
+                return str.join("&");
+            },
+            data: {
+                username: $scope.userName,
+                password: $scope.password
+            }
+        }).success(function () {});
+        //For each card in there we need to add it to the deck
+    };
+
     //initiate grabbing the first question in the list
     updateCards.calculateQuestions($scope, questions);
     //Grab Next Question
@@ -135,13 +165,21 @@ function navigationController($scope) {
 
     ctrl.navButtons = [{
 
-        'heading': 'Add Card',
-        'titleTag': 'Add a new card',
-        'action': function () {
-            ctrl.showAddCardInterface();
-        }
+            'heading': 'Add Card',
+            'titleTag': 'Add a new card',
+            'action': function () {
+                ctrl.showAddCardInterface();
+            }
+        },
+        {
+            'heading': 'Share Deck',
+            'titleTag': 'Share this deck with friends',
+            'action': function () {
+                ctrl.shareDeck();
 
-    }];
+            }
+        }
+    ];
 
 
 }
