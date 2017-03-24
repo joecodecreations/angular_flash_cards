@@ -5,9 +5,8 @@ var nodemailer = require('nodemailer');
 var fs = require('fs');
 var http = require('http');
 var https = require('https');
-var helmet = require('helmet');
 var mongoose = require('mongoose');
-// var mongoose = require('mongoose');
+var portnumber = 3000; //server port number
 /* initiate express server */
 var app = express();
 /* Allow ejs templating */
@@ -20,10 +19,7 @@ app.use(bodyParser.urlencoded({
 app.use(bodyParser.json());
 /* Set server base directory location */
 app.use(express.static(__dirname + '/public_html'));
-/* Stricter HTTPS */
-app.use(helmet({
-    hsts: true
-}));
+
 
 /////////////////////////////////////////
 //           Mongo Database            //
@@ -36,6 +32,7 @@ db.on('error', console.error.bind(console, 'connection error:'));
 ////////////////////////////////////////
 var Card = require('./data/models/card');
 var Deck = require('./data/models/deck');
+
 /////////////////////////////////////////
 //           Middleware               //
 ////////////////////////////////////////
@@ -44,12 +41,6 @@ app.use(function (req, res, next) {
     next(); // make sure we go to the next routes and don't stop here
 });
 
-
-
-/////////////////////////////////////////
-//       SPECIALIZED REDIRECTS         //
-////////////////////////////////////////
-require('./routes/www'); // remove WWW and send to HTTPS
 /////////////////////////////////////////
 //            API    ROUTES            //
 ////////////////////////////////////////
@@ -59,11 +50,12 @@ require('./API/routes/decks')(app);
 /////////////////////////////////////////
 //            Standard Routes          //
 ////////////////////////////////////////
-require('./routes/standard')(app, './angular_flash_cards/views');
+require('./routes/standard')(app, '');
 /////////////////////////////////////////
 //            Directive Routes         //
 ////////////////////////////////////////
-require('./routes/directives')(app, './angular_flash_cards/views');
+require('./routes/directives')(app, '');
+
 
 /////////////////////////////////////////
 //           Temporary Routes          //
@@ -81,4 +73,8 @@ app.get('/api/decks/get/all', function (req, res) {
 });
 
 
-module.exports = app; //Export instead of creating server
+
+module.exports = app;
+
+app.listen(portnumber);
+//console.log("Express Server with EJS Running on Port: " + portnumber);
