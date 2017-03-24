@@ -140,11 +140,14 @@ function flashCardsController($scope, $http, card, resetValidationService, updat
                 for (var p in deckInfo)
                     str.push(encodeURIComponent(p) + "=" + encodeURIComponent(obj[p]));
                 return str.join("&");
+            },
+            data: {
+                title: "this is my title",
+                route: "lklsdjfalskfjalkdfj",
+                backgroundColor: "orange",
+                canSkipQuestions: true,
+                alexa: "the roof is red"
             }
-            // ,data: {
-            //     username: $scope.userName,
-            //     password: $scope.password
-            // }
         }).then(function successCallback(response) {
             ctrl.test = "working";
             console.log("working");
