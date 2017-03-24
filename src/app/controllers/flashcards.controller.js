@@ -105,23 +105,29 @@ function flashCardsController($scope, $http, card, resetValidationService, updat
             'alexa': 'the roof is red'
         }];
         //Create deck into database
-        http({
+        $http({
             method: 'POST',
-            url: 'http://flashcardquiz.com/api/decks',
+            url: 'http://flashcardquiz.com/api/decks/',
             headers: {
                 'Content-Type': 'application/x-www-form-urlencoded'
             },
             transformRequest: function (deckInfo) {
                 var str = [];
-                for (var p in obj)
+                for (var p in deckInfo)
                     str.push(encodeURIComponent(p) + "=" + encodeURIComponent(obj[p]));
                 return str.join("&");
-            },
-            data: {
-                username: $scope.userName,
-                password: $scope.password
             }
-        }).success(function () {});
+            // ,data: {
+            //     username: $scope.userName,
+            //     password: $scope.password
+            // }
+        }).then(function successCallback(response) {
+            ctrl.test = "working";
+            console.log("working");
+        }, function errorCallback(response) {
+            console.log(response);
+        });
+
         //For each card in there we need to add it to the deck
     };
 
