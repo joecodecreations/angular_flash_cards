@@ -1,0 +1,16 @@
+.warning {
+  color:red !important;
+}
+.required {
+  color:red !important;
+  &--form{
+    border:1px solid red !important;
+  }
+}
+
+
+.insertCardValidationError {
+    color: red;
+    float: right;
+
+}

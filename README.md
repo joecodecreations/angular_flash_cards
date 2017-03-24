@@ -1,6 +1,10 @@
 # Angular Flash Cards
 
-Interactive flash cards to help you study written in AngularJS. 
+**CURRENTLY WIP: COMPLETION DATE EST. March 25th 2017**
+
+ Interactive flash cards to help you study written in AngularJS.
+
+## [View Demonstration](http://flashcardquiz.com/)
 
 * Angular 1.6 (AngularJS)
 * SASS

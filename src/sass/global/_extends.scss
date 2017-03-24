@@ -12,11 +12,13 @@
   width: 462px;
   height: 449px;
   position: absolute;
-  left: 40vw;
-
-  top:25vh;
-
-
-  text-align: center;
+  // left: 40vw;
+  // top:25vh;
+  //
+  //
+  // text-align: center;
+  display: flex;
+ align-items: center;
+ justify-content: center;
   perspective: 1000px;
 }

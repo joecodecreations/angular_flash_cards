@@ -1,46 +1,20 @@
 <% include ../partials/header %>
     <div ng-app="app" class="app ng-cloak" ng-controller="flashcards as cards">
-        <div class="title">
-            <div class="title-heading">{{ title }}</div>
-        </div>
 
-        <div class="card">
-            <div class="card-title">
-                {{ quizTitle }} Questions
-            </div>
+        <!-- navigation -->
+        <% include ../partials/navigation %>
 
-            <div class="card-count">
-                Question {{ currentQuestion }} of {{ totalQuestions }}
-            </div>
+            <!-- Deck Information -->
+            <% include ../partials/deckInformation %>
 
-            <div class="card-buttons">
-                <button ng-click="showAnswerButton()" ng-hide="flip" class="showAnswer">Show Answer</button>
-                <button ng-click="nextQuestionButton()" ng-show="flip" class="showNextQuestion">Show Next Question <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></button>
-            </div>
+                <!-- Card X of X, Card Title -->
+                <% include ../partials/cardHeader %>
 
+                    <!-- Front and back of Card -->
+                    <% include ../partials/cardBody %>
 
-            <div class="card-front" ng-class="{'flip-forward':flip,'flip-forward-reverse':!flip}">
-                <div class="card-body">
-                    <div class="card-header">
-                        {{ questionCategory | uppercase }}
-                    </div>
-                    <div class="card-question">
-                        {{ question }}
-                    </div>
-                </div>
-            </div>
-            <div class="card-back" ng-class="{'flip-backward':flip,'flip-backward-reverse':!flip}">
-                <div class="card-body">
-                    <div class="card-header" ng-hide="firstcard">
-                        {{ answerquestionCategory | uppercase }}
-                    </div>
-                    <div class="card-answer" ng-hide="firstcard">
-                        {{ answer }}
-                    </div>
-                </div>
-            </div>
-        </div>
-
+                        <!-- Add new card Form, Secondary Menu Post Add -->
+                        <% include ../partials/insertCardForm %>
 
     </div>
     <% include ../partials/footer %>

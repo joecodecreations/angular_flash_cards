@@ -1,0 +1,6 @@
+<div class="title" ng-controller="navigation as nav">
+    <div class="title-heading">{{ title }}</div>
+    <ul class="navButton-group">
+        <li ng-repeat="button in navButtons" class="navButton" ng-click="button.action()" title="{{button.titleTag}}">{{ button.heading }}</li>
+    </ul>
+</div>

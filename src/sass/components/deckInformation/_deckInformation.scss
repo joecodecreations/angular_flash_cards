@@ -1,0 +1,17 @@
+.deckInformation{
+  top: 65px;
+  right: 0px;
+  background: #000;
+  padding-left:10px;
+  width:100%;
+  position:absolute;
+
+  &-subject{
+    font-size:.8em;
+    color:rgba(255,255,255,.5);
+  }
+  &-label{
+    font-size:.8em;
+  color:rgba(255,255,255,.5);
+  }
+}

@@ -1,0 +1,35 @@
+<div class="insertCard" ng-class="{ 'fadeIn':addCardShow} ">
+    <div ng-hide="cardAdded">
+        <div class="insertCard-close "><i class="fa fa-window-close " ng-click="closeWindow()" aria-hidden="true "></i></div>
+
+        <div class="insertCard-title ">Add new Flash Card</div>
+
+        <div class="insertCard-subject ">Category</div>
+        <textarea class="insertCard--textArea " type="text " ng-model="newCategory" ng-class="{'required--form':(CategoryError==true)}">
+        </textarea>
+        <div class="insertCard-remainingCharacters " ng-class="{ 'warning': (newCategory.length > subjectLength)}">{{ 26-(newCategory.length)}} characters remaining<span class="insertCardValidationError">{{CategoryErrorMessage}}</span></div>
+
+        <div class="insertCard-question">Question</div>
+        <textarea class="insertCard--textArea" type="text" ng-model="newQuestion" ng-class="{'required--form':(QuestionError==true)}">
+    </textarea>
+        <div class="insertCard-remainingCharacters" ng-class="{'warning': (newQuestion.length > questionLength)}">{{ 250-(newQuestion.length)}} characters remaining <span class="insertCardValidationError">{{QuestionErrorMessage}}</span></div>
+
+        <div class="insertCard-answer">Answer</div>
+        <textarea class="insertCard--textArea" type="text" ng-model="newAnswer" ng-class="{'required--form':AnswerError}">
+    </textarea>
+        <div class="insertCard-remainingCharacters" ng-class="{'warning': (newAnswer.length > answerLength)}">{{ 250-(newAnswer.length)}} characters remaining<span class="insertCardValidationError">{{AnswerErrorMessage}}</span></div>
+
+        <div class="insertCard-button"><button class="insertCard--button" ng-click="addNewCard() ">Add New Card</button></div>
+        <!-- <div class="insertCard-total">Total Cards {{ totalQuestions }}</div> -->
+        {{ test }}
+    </div>
+    <div ng-show="cardAdded" class="cardAdded">
+        <h2 class="cardAdded-title">Card Added!</h2>
+        <div class="cardFinished-row">
+            <button class="cardAdded-Button-AddMore" ng-click="addAnotherCard()">Add Another Card</button>
+        </div>
+        <div class="cardFinished-row">
+            <button class="cardAdded-Button-ReturnToDeck" ng-click="returnToDeck()">Return to Deck</button>
+        </div>
+    </div>
+</div>
