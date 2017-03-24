@@ -7,13 +7,21 @@ function navigationController($scope) {
 
     ctrl.navButtons = [{
 
-        'heading': 'Add Card',
-        'titleTag': 'Add a new card',
-        'action': function () {
-            ctrl.showAddCardInterface();
-        }
+            'heading': 'Add Card',
+            'titleTag': 'Add a new card',
+            'action': function () {
+                ctrl.showAddCardInterface();
+            }
+        },
+        {
+            'heading': 'Share Deck',
+            'titleTag': 'Share this deck with friends',
+            'action': function () {
+                ctrl.shareDeck();
 
-    }];
+            }
+        }
+    ];
 
 
 }

@@ -1,6 +1,6 @@
 angular.module('app').controller('flashcards', flashCardsController);
 
-function flashCardsController($scope, card, resetValidationService, updateCards) {
+function flashCardsController($scope, $http, card, resetValidationService, updateCards) {
     var ctrl = $scope;
 
     /* Default states */
@@ -93,6 +93,36 @@ function flashCardsController($scope, card, resetValidationService, updateCards)
 
     ctrl.addNewCard = function () {
         card.add($scope, resetValidationService, updateCards, questions);
+    };
+
+    ctrl.shareDeck = function () {
+
+        deckInfo = [{
+            'title': "this is my deck title",
+            'route': "kslfjasoifjdaifjaosdifjsd",
+            'backgroundColor': "orange",
+            'canSkipQuestions': true,
+            'alexa': 'the roof is red'
+        }];
+        //Create deck into database
+        http({
+            method: 'POST',
+            url: 'http://flashcardquiz.com/api/decks',
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded'
+            },
+            transformRequest: function (deckInfo) {
+                var str = [];
+                for (var p in obj)
+                    str.push(encodeURIComponent(p) + "=" + encodeURIComponent(obj[p]));
+                return str.join("&");
+            },
+            data: {
+                username: $scope.userName,
+                password: $scope.password
+            }
+        }).success(function () {});
+        //For each card in there we need to add it to the deck
     };
 
     //initiate grabbing the first question in the list
