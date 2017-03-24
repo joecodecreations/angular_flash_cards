@@ -131,7 +131,7 @@ function flashCardsController($scope, $http, card, resetValidationService, updat
         //Create deck into database
         $http({
             method: 'POST',
-            url: 'http://flashcardquiz.com/api/decks/',
+            url: 'https://flashcardquiz.com/api/decks/',
             headers: {
                 'Content-Type': 'application/x-www-form-urlencoded'
             },
@@ -140,17 +140,18 @@ function flashCardsController($scope, $http, card, resetValidationService, updat
                 for (var p in deckInfo)
                     str.push(encodeURIComponent(p) + "=" + encodeURIComponent(obj[p]));
                 return str.join("&");
-            },
-            data: {
-                title: "this is my title",
-                route: "lklsdjfalskfjalkdfj",
-                backgroundColor: "orange",
-                canSkipQuestions: true,
-                alexa: "the roof is red"
             }
+            // ,
+            // data: {
+            //     title: "this is my title",
+            //     route: "lklsdjfalskfjalkdfj",
+            //     backgroundColor: "orange",
+            //     canSkipQuestions: true,
+            //     alexa: "the roof is red"
+            // }
         }).then(function successCallback(response) {
             ctrl.test = "working";
-            console.log("working");
+            console.log(response);
         }, function errorCallback(response) {
             console.log(response);
         });
