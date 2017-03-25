@@ -132,15 +132,15 @@ function flashCardsController($scope, $http, card, resetValidationService, updat
         $http({
             method: 'POST',
             url: '/api/decks',
-            data: $.param({
+            data: {
                 title: "this is my deck title",
                 route: "kslfjasoifjdaifjaosdifjsd",
                 backgroundColor: "orange",
                 canSkipQuestions: "true",
                 alexa: 'the roof is red'
-            }),
+            },
             headers: {
-                'Content-Type': 'application/x-www-form-urlencoded'
+                'Content-Type': 'application/json'
             }
         }).then(function successCallback(response) {
             ctrl.test = "working";
