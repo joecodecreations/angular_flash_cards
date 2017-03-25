@@ -129,16 +129,27 @@ function flashCardsController($scope, $http, card, resetValidationService, updat
             alexa: 'the roof is red'
         };
 
-        var res = $http.post('/api/decks', deckInfo);
-        res.success(function (data, status, headers, config) {
-            $scope.message = data;
+        $http({
+            method: 'POST',
+            url: '/api/decks',
+            data: $.param({
+                title: "this is my deck title",
+                route: "kslfjasoifjdaifjaosdifjsd",
+                backgroundColor: "orange",
+                canSkipQuestions: "true",
+                alexa: 'the roof is red'
+            }),
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded'
+            }
+        }).then(function successCallback(response) {
+            ctrl.test = "working";
+            console.log(response);
+        }, function errorCallback(errorResponse) {
+            console.log("error");
+            console.log(errorResponse);
+            console.log(errorResponse.data);
         });
-        res.error(function (data, status, headers, config) {
-            alert("failure message: " + JSON.stringify({
-                data: data
-            }));
-        });
-
         //
         // $http({
         //     method: 'POST',
