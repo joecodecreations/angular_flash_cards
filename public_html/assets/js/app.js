@@ -152,8 +152,9 @@ function flashCardsController($scope, $http, card, resetValidationService, updat
         }).then(function successCallback(response) {
             ctrl.test = "working";
             console.log(response);
-        }, function errorCallback(response) {
-            console.log(response);
+        }, function errorCallback(errorResponse) {
+            console.log("error")
+            console.log(errorResponse);
         });
 
         //For each card in there we need to add it to the deck
