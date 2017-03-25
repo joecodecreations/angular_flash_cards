@@ -121,42 +121,53 @@ function flashCardsController($scope, $http, card, resetValidationService, updat
 
     ctrl.shareDeck = function () {
 
-        deckInfo = [{
-            'title': "this is my deck title",
-            'route': "kslfjasoifjdaifjaosdifjsd",
-            'backgroundColor': "orange",
-            'canSkipQuestions': true,
-            'alexa': 'the roof is red'
-        }];
-        //Create deck into database
-        $http({
-            method: 'POST',
-            url: 'https://flashcardquiz.com/api/decks/',
-            headers: {
-                'Content-Type': 'application/x-www-form-urlencoded'
-            },
-            // transformRequest: function (deckInfo) {
-            //     var str = [];
-            //     for (var p in deckInfo)
-            //         str.push(encodeURIComponent(p) + "=" + encodeURIComponent(obj[p]));
-            //     return str.join("&");
-            // }
+        deckInfo = {
+            title: "this is my deck title",
+            route: "kslfjasoifjdaifjaosdifjsd",
+            backgroundColor: "orange",
+            canSkipQuestions: true,
+            alexa: 'the roof is red'
+        };
 
-            data: [{
-                title: "this is my title",
-                route: "lklsdjfalskfjalkdfj",
-                backgroundColor: "orange",
-                canSkipQuestions: true,
-                alexa: "the roof is red"
-            }]
-        }).then(function successCallback(response) {
-            ctrl.test = "working";
-            console.log(response);
-        }, function errorCallback(errorResponse) {
-            console.log("error")
-            console.log(errorResponse);
-            console.log(errorResponse.data);
+        var res = $http.post('/api/decks', deckInfo);
+        res.success(function (data, status, headers, config) {
+            $scope.message = data;
         });
+        res.error(function (data, status, headers, config) {
+            alert("failure message: " + JSON.stringify({
+                data: data
+            }));
+        });
+
+        //
+        // $http({
+        //     method: 'POST',
+        //     url: 'https://flashcardquiz.com/api/decks/',
+        //     headers: {
+        //         'Content-Type': 'application/x-www-form-urlencoded'
+        //     },
+        //     // transformRequest: function (deckInfo) {
+        //     //     var str = [];
+        //     //     for (var p in deckInfo)
+        //     //         str.push(encodeURIComponent(p) + "=" + encodeURIComponent(obj[p]));
+        //     //     return str.join("&");
+        //     // }
+        //
+        //     data: [{
+        //         title: "this is my title",
+        //         route: "lklsdjfalskfjalkdfj",
+        //         backgroundColor: "orange",
+        //         canSkipQuestions: true,
+        //         alexa: "the roof is red"
+        //     }]
+        // }).then(function successCallback(response) {
+        //     ctrl.test = "working";
+        //     console.log(response);
+        // }, function errorCallback(errorResponse) {
+        //     console.log("error")
+        //     console.log(errorResponse);
+        //     console.log(errorResponse.data);
+        // });
 
         //For each card in there we need to add it to the deck
     };
