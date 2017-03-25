@@ -142,13 +142,13 @@ function flashCardsController($scope, $http, card, resetValidationService, updat
             //     return str.join("&");
             // }
 
-            data: {
+            data: [{
                 title: "this is my title",
                 route: "lklsdjfalskfjalkdfj",
                 backgroundColor: "orange",
                 canSkipQuestions: true,
                 alexa: "the roof is red"
-            }
+            }]
         }).then(function successCallback(response) {
             ctrl.test = "working";
             console.log(response);
