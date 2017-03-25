@@ -135,20 +135,20 @@ function flashCardsController($scope, $http, card, resetValidationService, updat
             headers: {
                 'Content-Type': 'application/x-www-form-urlencoded'
             },
-            transformRequest: function (deckInfo) {
-                var str = [];
-                for (var p in deckInfo)
-                    str.push(encodeURIComponent(p) + "=" + encodeURIComponent(obj[p]));
-                return str.join("&");
-            }
-            // ,
-            // data: {
-            //     title: "this is my title",
-            //     route: "lklsdjfalskfjalkdfj",
-            //     backgroundColor: "orange",
-            //     canSkipQuestions: true,
-            //     alexa: "the roof is red"
+            // transformRequest: function (deckInfo) {
+            //     var str = [];
+            //     for (var p in deckInfo)
+            //         str.push(encodeURIComponent(p) + "=" + encodeURIComponent(obj[p]));
+            //     return str.join("&");
             // }
+
+            data: {
+                title: "this is my title",
+                route: "lklsdjfalskfjalkdfj",
+                backgroundColor: "orange",
+                canSkipQuestions: true,
+                alexa: "the roof is red"
+            }
         }).then(function successCallback(response) {
             ctrl.test = "working";
             console.log(response);
