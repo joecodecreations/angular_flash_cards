@@ -56,6 +56,7 @@ require('./routes/www'); // remove WWW and send to HTTPS
 require('./API/routes/root')(app);
 require('./API/routes/cards')(app);
 require('./API/routes/decks')(app);
+require('./API/routes/alexa')(app);
 /////////////////////////////////////////
 //            Standard Routes          //
 ////////////////////////////////////////
