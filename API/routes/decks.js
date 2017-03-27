@@ -2,6 +2,17 @@ var Deck = require('../../data/models/deck');
 
 module.exports = function (app) {
 
+    app.route('/api/decks/delete')
+        .delete(function (req, res) {
+            Deck.remove({
+
+            }, function (err, deck) {
+                if (err) res.send(err);
+                res.json({
+                    message: 'All decks Deleted'
+                });
+            });
+        });
     app.route('/api/decks')
         /* Create a new deck using POST*/
         .post(function (req, res) {
@@ -15,11 +26,12 @@ module.exports = function (app) {
                 deck.alexa = req.body.alexa;
 
                 // save the bear and check for errors
-                deck.save(function (err) {
+                deck.save(function (err, success) {
                     if (err)
                         res.send(err);
                     res.json({
-                        message: 'Deck created!'
+                        message: 'Deck created!',
+                        id: success.id
                     });
                 });
             } else {

@@ -13,6 +13,7 @@
     "autoprefixer": "^6.5.0",
     "body-parser": "^1.15.2",
     "connect-livereload": "^0.6.0",
+    "cookie-parser": "^1.4.3",
     "cssnano": "^3.8.1",
     "ejs": "^2.5.6",
     "eslint": "^3.8.1",
@@ -51,6 +52,7 @@
   },
   "dependencies": {
     "auth0-api-jwt-rsa-validation": "0.0.1",
+    "csurf": "^1.9.0",
     "express": "^4.14.1",
     "express-jwt": "^5.1.0",
     "mongodb": "^2.2.19",

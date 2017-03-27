@@ -1,0 +1,78 @@
+.share {
+  width: 600px;
+  background: white;
+  position: absolute;
+  height: 450px;
+  margin-top: 128px;
+  margin: 0 auto;
+  border-radius: 10px;
+  padding: 10px;
+
+  &-remainingCharacters {
+    color:#666;
+    margin-top:3px;
+    font-size:.8em;
+    padding-left:58px;
+    &-over{
+      color:red;
+    }
+  }
+
+  &-heading {
+    font-size:24px;
+    color:black;
+    text-align:center;
+  }
+  &-row{
+    color:black;
+
+    width:80%;
+    margin: 0 auto;
+    text-align:center;
+      margin-top:20px;
+  }
+  &-alexa{
+    background: #c1c1c1;
+    padding: 5px;
+    margin-top: 10px;
+    height: 245px;
+
+    &-instructions{
+      color: #666;
+      float: left;
+      width: 103%;
+      margin-top: -21px;
+      margin-left: -6px;
+      padding-bottom: 10px;
+    }
+    &--image{
+      width: 233px;
+  height: auto;
+  float: left;
+  margin-top: -47px;
+  margin-left: -67px;
+    }
+  }
+
+  &--button{
+    width:250px;
+    height:32px;
+    text-align:center;
+    font-size:1em;
+    border:rgba(0,45,0,.9);
+    cursor:pointer;
+    margin: 0 auto;
+    border:1px solid #999;
+    &:hover{
+      background:#999;
+      color: #FFF;
+    }
+  }
+  &--input {
+    font-size:18px;
+    border:1px solid #999;
+    color:black;
+    width:100%;
+  }
+
+}

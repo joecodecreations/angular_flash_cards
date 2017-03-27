@@ -1,6 +1,6 @@
 angular.module('app').service('card', cardService);
 
-function cardService() {
+function cardService($http) {
     var vm = this;
 
     /* Add a new card */
@@ -95,5 +95,27 @@ function cardService() {
             ctrl.questionCategory = questions[ctrl.currentQuestion].category;
             ctrl.currentQuestion++;
         }
+    };
+
+
+    /* Grabs the Next Question in the list */
+    vm.saveCard = function (data) {
+
+        $http({
+            method: 'POST',
+            url: '/api/cards',
+            data: data,
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        }).then(function successCallback(response) {
+            console.log("Card Created!");
+            //console.log(response.data);
+        }, function errorCallback(errorResponse) {
+            console.log("Could not save card");
+            console.log(errorResponse);
+            console.log(errorResponse.data);
+        });
+
     };
 }

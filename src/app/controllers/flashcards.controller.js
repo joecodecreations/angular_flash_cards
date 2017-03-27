@@ -9,6 +9,7 @@ function flashCardsController($scope, $http, card, resetValidationService, updat
     ctrl.flip = false; // Holds bool for flipped card
     ctrl.firstcard = true; // Is this the first card ? (blank back etc)
     ctrl.addCardShow = false;
+    ctrl.mainWindow = true; //card deck preview
 
     /*Adding a new Card */
     ctrl.cardAdded = false;
@@ -55,6 +56,7 @@ function flashCardsController($scope, $http, card, resetValidationService, updat
     /* Shows Interface for Adding New Cards */
     ctrl.showAddCardInterface = function () {
         ctrl.addCardShow = true;
+        ctrl.mainWindow = false;
     };
 
     //Reset The Form Validation Errors From Start
@@ -85,6 +87,7 @@ function flashCardsController($scope, $http, card, resetValidationService, updat
     };
 
     ctrl.closeWindow = function () {
+        ctrl.mainWindow = true;
         ctrl.addCardShow = false; //hide add card menu
         ctrl.cardAdded = false; //hide secondary add card menu (success)
         resetValidationService.reset(ctrl);
@@ -94,69 +97,74 @@ function flashCardsController($scope, $http, card, resetValidationService, updat
     ctrl.addNewCard = function () {
         card.add($scope, resetValidationService, updateCards, questions);
     };
-
     ctrl.shareDeck = function () {
+        ctrl.mainWindow = false;
+        ctrl.shareWindow = true;
+        ctrl.TitleErrorMessage = "";
+        ctrl.AlexaErrorMessage = "";
+    };
 
-        deckInfo = {
-            title: "this is my deck title",
-            route: "kslfjasoifjdaifjaosdifjsd",
-            backgroundColor: "orange",
-            canSkipQuestions: true,
-            alexa: 'the roof is red'
-        };
+    function resetShareForm() {
+        ctrl.AlexaError = false;
+        ctrl.TitleError = false;
+    }
+    resetShareForm();
+    ctrl.createDeck = function () {
+        resetShareForm();
+        var validation = true;
+        if (ctrl.deckTitle === null || ctrl.deckTitle === undefined || ctrl.deckTitle.length < 0) {
+            validation = false;
+            ctrl.TitleError = true;
+            ctrl.TitleErrorMessage = "* Your title cannot be blank"
+        }
+        if (ctrl.alexa == true && (ctrl.alexaPhrase < 0 || ctrl.alexaPhrase === undefined)) {
+            ctrl.AlexaError = true;
+            validation = false;
+            ctrl.AlexaErrorMessage = "* You must enter a phrase to use alexa"
+        }
 
-        $http({
-            method: 'POST',
-            url: '/api/decks',
-            data: {
-                title: "this is my deck title",
+        if (validation) {
+            deckInfo = {
+                title: ctrl.deckTitle,
                 route: "kslfjasoifjdaifjaosdifjsd",
                 backgroundColor: "orange",
-                canSkipQuestions: "true",
-                alexa: 'the roof is red'
-            },
-            headers: {
-                'Content-Type': 'application/json'
-            }
-        }).then(function successCallback(response) {
-            ctrl.test = "working";
-            console.log(response);
-        }, function errorCallback(errorResponse) {
-            console.log("error");
-            console.log(errorResponse);
-            console.log(errorResponse.data);
-        });
-        //
-        // $http({
-        //     method: 'POST',
-        //     url: 'https://flashcardquiz.com/api/decks/',
-        //     headers: {
-        //         'Content-Type': 'application/x-www-form-urlencoded'
-        //     },
-        //     // transformRequest: function (deckInfo) {
-        //     //     var str = [];
-        //     //     for (var p in deckInfo)
-        //     //         str.push(encodeURIComponent(p) + "=" + encodeURIComponent(obj[p]));
-        //     //     return str.join("&");
-        //     // }
-        //
-        //     data: [{
-        //         title: "this is my title",
-        //         route: "lklsdjfalskfjalkdfj",
-        //         backgroundColor: "orange",
-        //         canSkipQuestions: true,
-        //         alexa: "the roof is red"
-        //     }]
-        // }).then(function successCallback(response) {
-        //     ctrl.test = "working";
-        //     console.log(response);
-        // }, function errorCallback(errorResponse) {
-        //     console.log("error")
-        //     console.log(errorResponse);
-        //     console.log(errorResponse.data);
-        // });
+                canSkipQuestions: true,
+                alexa: ctrl.alexaPhrase
+            };
 
-        //For each card in there we need to add it to the deck
+            $http({
+                method: 'POST',
+                url: '/api/decks',
+                data: deckInfo,
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            }).then(function successCallback(response) {
+                //console.log("Deck Created!");
+                //console.log("Deck_id: " + response.data.id);
+                //resonse.data.message
+                //console.log("questions: " + questions);
+
+                for (var cards in questions) {
+
+                    console.log(questions[cards]);
+
+                    cardInfo = {
+                        'question': questions[cards].question,
+                        'answer': questions[cards].answer,
+                        'category': questions[cards].category,
+                        'group_id': response.data.id
+                    };
+
+                    card.saveCard(cardInfo);
+
+                }
+            }, function errorCallback(errorResponse) {
+                console.log("error");
+                console.log(errorResponse);
+                console.log(errorResponse.data);
+            });
+        }
     };
 
     //initiate grabbing the first question in the list

@@ -6,7 +6,19 @@ var fs = require('fs');
 var http = require('http');
 var https = require('https');
 var mongoose = require('mongoose');
+var csrf = require('csurf');
+var cookieParser = require('cookie-parser');
 var portnumber = 3000; //server port number
+
+// /* Security Token */
+// var csrfProtection = csrf({
+//     cookie: true
+// });
+// var parseForm = bodyParser.urlencoded({
+//     extended: false
+// });
+
+
 /* initiate express server */
 var app = express();
 /* Allow ejs templating */
@@ -19,7 +31,14 @@ app.use(bodyParser.urlencoded({
 app.use(bodyParser.json());
 /* Set server base directory location */
 app.use(express.static(__dirname + '/public_html'));
-
+/* Use Cookie Parser for security tokens*/
+// FINISH THIS SETUP LATER CSRF!!!
+// app.use(cookieParser());
+// app.use(csrf());
+// app.use(function (req, res, next) {
+//     res.cookie('XSRF-TOKEN', req.csrfToken());
+//     return next();
+// });
 
 /////////////////////////////////////////
 //           Mongo Database            //
@@ -40,6 +59,9 @@ app.use(function (req, res, next) {
 
     next(); // make sure we go to the next routes and don't stop here
 });
+
+
+
 
 /////////////////////////////////////////
 //            API    ROUTES            //

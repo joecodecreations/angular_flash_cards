@@ -2,6 +2,22 @@ var Card = require('../../data/models/card');
 
 module.exports = function (app) {
 
+
+    app.route('/api/cards/delete')
+        /* Create a new card using POST*/
+        .delete(function (req, res) {
+            Card.remove({
+
+            }, function (err, card) {
+                if (err) res.send(err);
+                res.json({
+                    message: 'All Cards Deleted'
+                });
+            });
+        });
+
+
+
     app.route('/api/cards')
         /* Create a new card using POST*/
         .post(function (req, res) {
@@ -13,12 +29,12 @@ module.exports = function (app) {
                 card.question = req.body.question;
                 card.group_id = req.body.group_id;
 
-                // save the bear and check for errors
-                card.save(function (err) {
+                card.save(function (err, success) {
                     if (err)
                         res.send(err);
                     res.json({
-                        message: 'Card created!'
+                        message: 'Card created!',
+                        'id': success.id
                     });
                 });
             } else {
