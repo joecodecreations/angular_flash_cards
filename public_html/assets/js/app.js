@@ -124,13 +124,20 @@ function flashCardsController($scope, $http, card, resetValidationService, updat
     ctrl.shareDeck = function () {
         ctrl.mainWindow = false;
         ctrl.shareWindow = true;
-        ctrl.TitleErrorMessage = "";
-        ctrl.AlexaErrorMessage = "";
+
     };
 
     function resetShareForm() {
         ctrl.AlexaError = false;
         ctrl.TitleError = false;
+        ctrl.TitleErrorMessage = "";
+        ctrl.AlexaErrorMessage = "";
+    }
+
+    function countWords(phrase) {
+        var wordCount = phrase.split(" ").length;
+        //console.log(wordCount);
+        return wordCount;
     }
     resetShareForm();
     ctrl.createDeck = function () {
@@ -145,6 +152,13 @@ function flashCardsController($scope, $http, card, resetValidationService, updat
             ctrl.AlexaError = true;
             validation = false;
             ctrl.AlexaErrorMessage = "* You must enter a phrase to use alexa"
+        } else {
+            if (countWords(ctrl.alexaPhrase) < 5) {
+                validation = false;
+                ctrl.AlexaError = true;
+                ctrl.AlexaErrorMessage = "* Alexa Phrase must be five words or more"
+            }
+
         }
 
         if (validation) {

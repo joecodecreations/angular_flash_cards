@@ -14,5 +14,5 @@
         <div class="share-row" ng-show="alexa"><input class="share--input" type="text" ng-model="alexaPhrase" placeholder="Select a phrase for alexa..." ng-class="{'required--form':(AlexaError==true)}" /></div>
         <div class="share-remainingCharacters" ng-show="alexa" ng-class="{'warning': (alexaPhrase.length > 140)}">{{ 140-(alexaPhrase.length)}} characters remaining<span class="shareValidationError">{{AlexaErrorMessage}}</span></div>
     </div>
-    <div class="share-row"><button ng-click="createDeck()" class="share--button">Create Deck</button></div>
+    <div class="share-row"><button ng-click="createDeck()" class="share--button">Save Deck</button></div>
 </div>
