@@ -52,16 +52,16 @@ function flashCardsController($scope, $http, card, resetValidationService, updat
     /* set the questions and categories */
     var questions = [{
             'question': "How do you change font color using css?",
-            'answer': "Answer: Use the color attribute",
+            'answer': "Use the color attribute",
             'category': "CSS"
         }, {
             'question': "How do you declare a number input?",
-            'answer': 'Answer: Update the type attribute of the input to use "number" i.e <input type="number">',
+            'answer': 'use the number type',
             'category': "HTML5"
         },
         {
             'question': "In css how do you change the font size?",
-            'answer': "Answer: Use the font-size attribute",
+            'answer': "use the font size attribute",
             'category': "CSS"
         }
     ];
