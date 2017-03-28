@@ -43,7 +43,7 @@ app.use(express.static(__dirname + '/public_html'));
 /////////////////////////////////////////
 //           Mongo Database            //
 ////////////////////////////////////////
-mongoose.connect('mongodb://localhost/flashcardquiz');
+mongoose.connect('mongodb://' + mongoUSERNAME + ':' + mongoPASSWORD + 'localhost:' + mongoPORT + '/flashcardquiz');
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
 /////////////////////////////////////////
