@@ -49,8 +49,8 @@ db.on('error', console.error.bind(console, 'connection error:'));
 /////////////////////////////////////////
 //            Database Models          //
 ////////////////////////////////////////
-var Card = require('./data/models/card');
-var Deck = require('./data/models/deck');
+var Card = require('./models/card');
+var Deck = require('./models/deck');
 
 /////////////////////////////////////////
 //           Middleware               //

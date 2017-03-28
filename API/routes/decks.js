@@ -1,4 +1,4 @@
-var Deck = require('../../data/models/deck');
+var Deck = require('../../models/deck');
 
 module.exports = function (app) {
 

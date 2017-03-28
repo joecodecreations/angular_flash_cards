@@ -1,4 +1,4 @@
-var Card = require('../../data/models/card');
+var Card = require('../../models/card');
 
 module.exports = function (app) {
 
