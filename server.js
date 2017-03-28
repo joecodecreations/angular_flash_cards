@@ -29,7 +29,7 @@ app.use(helmet({
 /////////////////////////////////////////
 //           Mongo Database            //
 ////////////////////////////////////////
-mongoose.connect('mongodb://' + resources.USERNAME + ':' + resources.PASSWORD + '@localhost:' + resources.PORT + '/flashcardquiz');
+mongoose.connect('mongodb://' + resources.USERNAME + ':' + resources.PASSWORD + '@localhost:' + resources.PORT + '/admin');
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:' + resources.PORT));
 /////////////////////////////////////////
