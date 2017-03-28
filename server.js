@@ -31,7 +31,7 @@ app.use(helmet({
 ////////////////////////////////////////
 mongoose.connect('mongodb://' + resources.USERNAME + ':' + resources.PASSWORD + 'localhost:' + resources.PORT + '/flashcardquiz');
 var db = mongoose.connection;
-db.on('error', console.error.bind(console, 'connection error:'));
+db.on('error', console.error.bind(console, 'connection error:' + resources.PORT));
 /////////////////////////////////////////
 //            Database Models          //
 ////////////////////////////////////////
