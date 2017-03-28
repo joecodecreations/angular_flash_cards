@@ -7,7 +7,7 @@ var http = require('http');
 var https = require('https');
 var helmet = require('helmet');
 var mongoose = require('mongoose');
-require('./private/resources.js');
+var resources = require('./private/resources.js');
 // var mongoose = require('mongoose');
 /* initiate express server */
 var app = express();
@@ -29,7 +29,7 @@ app.use(helmet({
 /////////////////////////////////////////
 //           Mongo Database            //
 ////////////////////////////////////////
-mongoose.connect('mongodb://' + mongoUSERNAME + ':' + mongoPASSWORD + 'localhost:' + mongoPORT + '/flashcardquiz');
+mongoose.connect('mongodb://' + resources.USERNAME + ':' + resources.PASSWORD + 'localhost:' + resources.PORT + '/flashcardquiz');
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
 /////////////////////////////////////////
