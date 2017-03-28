@@ -40,7 +40,7 @@ var Deck = require('./data/models/deck');
 //           Middleware               //
 ////////////////////////////////////////
 app.use(function (req, res, next) {
-
+    console.log(req.protocol + '://' + req.get('Host') + req.url);
     next(); // make sure we go to the next routes and don't stop here
 });
 
