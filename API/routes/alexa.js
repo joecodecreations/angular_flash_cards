@@ -38,8 +38,8 @@ module.exports = function (app) {
                         console.log(err);
                         res.json({
                             message: "carderror",
-                            title: deckTitle,
-                            cards: cards
+                            title: '',
+                            cards: ''
                         });
                     }
 
@@ -48,8 +48,8 @@ module.exports = function (app) {
                 console.log(err);
                 res.json({
                     message: "deckerror",
-                    title: deckTitle,
-                    cards: cards
+                    title: '',
+                    cards: ''
                 });
             }
         });
