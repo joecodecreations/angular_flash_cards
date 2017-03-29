@@ -12,15 +12,10 @@ module.exports = function (app) {
                 'alexa': req.params.alexa_phrase
             }, function (err, deck) {
                 if (err) {
-                    res.json({
-                        message: "error",
-                        title: 'deckTitle',
-                        cards: 'cards'
-                    });
-                    return next(err);
+                    throw (err);
                 }
 
-                if (deck.id) {
+                try {
                     var deck_ID = deck.id,
                         canSkipQuestions = deck.canSkipQuestions,
                         deckTitle = deck.title;
@@ -45,8 +40,8 @@ module.exports = function (app) {
                         });
 
                     });
-                } else {
-                    console.log("I saw this");
+                } catch (err) {
+                    console.log(err);
                 }
 
             });
