@@ -17,8 +17,7 @@ module.exports = function (app) {
                         title: 'deckTitle',
                         cards: 'cards'
                     });
-                    console.log(err);
-
+                    return next(err);
                 }
 
                 var deck_ID = deck.id,
