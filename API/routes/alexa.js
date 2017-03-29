@@ -17,34 +17,35 @@ module.exports = function (app) {
                         title: deckTitle,
                         cards: cards
                     });
+                    return;
 
-                } else {
+                }
 
-                    var deck_ID = deck.id,
-                        canSkipQuestions = deck.canSkipQuestions,
-                        deckTitle = deck.title;
+                var deck_ID = deck.id,
+                    canSkipQuestions = deck.canSkipQuestions,
+                    deckTitle = deck.title;
 
-                    //get all the cards with this deck
-                    Card.find({
-                        'group_id': deck_ID
-                    }, function (err, cards) {
-                        if (err) {
-                            res.json({
-                                message: "error",
-                                title: deckTitle,
-                                cards: cards
-                            });
-
-                        }
-
+                //get all the cards with this deck
+                Card.find({
+                    'group_id': deck_ID
+                }, function (err, cards) {
+                    if (err) {
                         res.json({
-                            message: "",
+                            message: "error",
                             title: deckTitle,
                             cards: cards
                         });
 
+                    }
+
+                    res.json({
+                        message: "",
+                        title: deckTitle,
+                        cards: cards
                     });
-                }
+
+                });
+
             });
         });
 
