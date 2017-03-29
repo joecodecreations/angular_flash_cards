@@ -17,7 +17,7 @@ module.exports = function (app) {
                         title: deckTitle,
                         cards: cards
                     });
-                    break;
+
                 } else {
 
                     var deck_ID = deck.id,
