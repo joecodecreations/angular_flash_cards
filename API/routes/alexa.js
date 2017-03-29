@@ -42,6 +42,11 @@ module.exports = function (app) {
                     });
                 } catch (err) {
                     console.log(err);
+                    res.json({
+                        message: "error",
+                        title: deckTitle,
+                        cards: cards
+                    });
                 }
 
             });
