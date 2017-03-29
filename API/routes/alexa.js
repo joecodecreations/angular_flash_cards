@@ -14,10 +14,10 @@ module.exports = function (app) {
                 if (err) {
                     res.json({
                         message: "error",
-                        title: deckTitle,
-                        cards: cards
+                        title: 'deckTitle',
+                        cards: 'cards'
                     });
-                    throw (err);
+                    console.log(err);
 
                 }
 
