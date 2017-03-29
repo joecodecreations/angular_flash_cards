@@ -17,7 +17,7 @@ module.exports = function (app) {
                         title: deckTitle,
                         cards: cards
                     });
-                    return;
+                    throw (err);
 
                 }
 
