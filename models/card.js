@@ -3,7 +3,7 @@ var Schema = mongoose.Schema;
 
 /* Define our model for card */
 var cardSchema = mongoose.Schema({
-    'subject': String,
+    'category': String,
     'answer': String,
     'question': String,
     'group_id': String
