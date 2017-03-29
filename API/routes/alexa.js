@@ -20,30 +20,34 @@ module.exports = function (app) {
                     return next(err);
                 }
 
-                var deck_ID = deck.id,
-                    canSkipQuestions = deck.canSkipQuestions,
-                    deckTitle = deck.title;
+                if (deck.id !== null) {
+                    var deck_ID = deck.id,
+                        canSkipQuestions = deck.canSkipQuestions,
+                        deckTitle = deck.title;
 
-                //get all the cards with this deck
-                Card.find({
-                    'group_id': deck_ID
-                }, function (err, cards) {
-                    if (err) {
+                    //get all the cards with this deck
+                    Card.find({
+                        'group_id': deck_ID
+                    }, function (err, cards) {
+                        if (err) {
+                            res.json({
+                                message: "error",
+                                title: deckTitle,
+                                cards: cards
+                            });
+
+                        }
+
                         res.json({
-                            message: "error",
+                            message: "",
                             title: deckTitle,
                             cards: cards
                         });
 
-                    }
-
-                    res.json({
-                        message: "",
-                        title: deckTitle,
-                        cards: cards
                     });
-
-                });
+                } else {
+                    console.log("I saw this");
+                }
 
             });
         });
