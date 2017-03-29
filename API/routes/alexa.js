@@ -24,10 +24,16 @@ module.exports = function (app) {
                     'group_id': deck_ID
                 }, function (err, cards) {
                     if (err) {
-                        console.log(err);
+                        res.json({
+                            message: "error",
+                            title: deckTitle,
+                            cards: cards
+                        });
+
                     }
 
                     res.json({
+                        message: "",
                         title: deckTitle,
                         cards: cards
                     });
