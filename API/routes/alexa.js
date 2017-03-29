@@ -20,7 +20,7 @@ module.exports = function (app) {
                     return next(err);
                 }
 
-                if (deck.id !== null) {
+                if (deck.id) {
                     var deck_ID = deck.id,
                         canSkipQuestions = deck.canSkipQuestions,
                         deckTitle = deck.title;
