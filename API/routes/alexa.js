@@ -12,7 +12,11 @@ module.exports = function (app) {
                 'alexa': req.params.alexa_phrase
             }, function (err, deck) {
                 if (err) {
-                    console.log(err);
+                    res.json({
+                        message: "error",
+                        title: deckTitle,
+                        cards: cards
+                    });
                 }
 
                 var deck_ID = deck.id,
