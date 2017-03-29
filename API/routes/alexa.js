@@ -8,48 +8,50 @@ module.exports = function (app) {
 
         .get(function (req, res) {
             //get the deck information
-            Deck.findOne({
-                'alexa': req.params.alexa_phrase
-            }, function (err, deck) {
-                if (err) {
-                    throw (err);
-                }
 
-                try {
-                    var deck_ID = deck.id,
-                        canSkipQuestions = deck.canSkipQuestions,
-                        deckTitle = deck.title;
+            try {
+                Deck.findOne({
+                    'alexa': req.params.alexa_phrase
+                }, function (err, deck) {
+                    if (err) {
+                        throw (err);
+                    }
 
-                    //get all the cards with this deck
-                    Card.find({
-                        'group_id': deck_ID
-                    }, function (err, cards) {
-                        if (err) {
+                    try {
+                        var deck_ID = deck.id,
+                            canSkipQuestions = deck.canSkipQuestions,
+                            deckTitle = deck.title;
+
+                        //get all the cards with this deck
+                        Card.find({
+                            'group_id': deck_ID
+                        }, function (err, cards) {
+
                             res.json({
-                                message: "error",
+                                message: "success",
                                 title: deckTitle,
                                 cards: cards
                             });
 
-                        }
-
+                        });
+                    } catch (err) {
+                        console.log(err);
                         res.json({
-                            message: "",
+                            message: "carderror",
                             title: deckTitle,
                             cards: cards
                         });
+                    }
 
-                    });
-                } catch (err) {
-                    console.log(err);
-                    res.json({
-                        message: "error",
-                        title: deckTitle,
-                        cards: cards
-                    });
-                }
-
-            });
+                });
+            } catch (error) {
+                console.log(err);
+                res.json({
+                    message: "deckerror",
+                    title: deckTitle,
+                    cards: cards
+                });
+            }
         });
 
 };
