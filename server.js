@@ -59,6 +59,7 @@ require('./API/routes/root')(app);
 require('./API/routes/cards')(app);
 require('./API/routes/decks')(app);
 require('./API/routes/alexa')(app);
+require('./API/routes/gather')(app);
 /////////////////////////////////////////
 //            Standard Routes          //
 ////////////////////////////////////////
