@@ -31,8 +31,11 @@ function retrieveService($rootScope, $location, $http) {
                     ctrl.backgroundColor = response.data.backgroundColor;
                     ctrl.canSkipQuestions = response.data.canSkipQuestions;
                     ctrl.route = token;
+                    //console.log(ctrl.questions);
 
-                    console.log(ctrl.questions);
+
+                    ctrl.mainWindow = true;
+                    ctrl.introCompleted = true;
 
                 }
 
