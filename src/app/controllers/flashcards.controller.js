@@ -25,7 +25,7 @@ function flashCardsController($scope, $http, retrieve, card, resetValidationServ
     ctrl.maxCharactersSubject = 26;
 
     //check for cards previously saved
-    retrieve.card($scope);
+    retrieve.deck($scope);
 
     function createRoute(date) {
         /*take current time, base 64 it three times to get the output */
