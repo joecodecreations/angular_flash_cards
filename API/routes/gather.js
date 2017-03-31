@@ -27,10 +27,10 @@ module.exports = function (app) {
                         }, function (err, cards) {
 
                             res.json({
-                                message: "success",
-                                canSkipQuestions: canSkipQuestons,
-                                title: deckTitle,
-                                cards: cards
+                                'message': "success",
+                                'canSkipQuestions': deck.canSkipQuestions,
+                                'title': deckTitle,
+                                'cards': cards
                             });
 
                         });
