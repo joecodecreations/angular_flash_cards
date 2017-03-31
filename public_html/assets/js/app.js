@@ -69,7 +69,8 @@ function flashCardsController($scope, $http, retrieve, card, resetValidationServ
     }
 
 
-
+    /* set the questions and categories */
+    var questions = [];
 
     /* Closes Card Added! and allows additional input */
     ctrl.addAnotherCard = function () {
@@ -503,7 +504,6 @@ function retrieveService($rootScope, $location, $http, card, updateCards) {
 
         } else {
             console.log("We had no token to process");
-            ctrl.questions = [];
         }
 
 

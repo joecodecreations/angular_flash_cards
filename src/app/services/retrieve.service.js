@@ -26,7 +26,7 @@ function retrieveService($rootScope, $location, $http, card, updateCards) {
             }).then(function successCallback(response) {
                 if (response.data.message == "success") {
 
-                    var ctrl.questions = response.data.cards;
+                    ctrl.questions = response.data.cards;
                     ctrl.deckTitle = response.data.title;
                     ctrl.backgroundColor = response.data.backgroundColor;
                     ctrl.canSkipQuestions = response.data.canSkipQuestions;
@@ -47,7 +47,6 @@ function retrieveService($rootScope, $location, $http, card, updateCards) {
 
         } else {
             console.log("We had no token to process");
-            var ctrl.questions = [];
         }
 
 

@@ -44,7 +44,8 @@ function flashCardsController($scope, $http, retrieve, card, resetValidationServ
     }
 
 
-
+    /* set the questions and categories */
+    var questions = [];
 
     /* Closes Card Added! and allows additional input */
     ctrl.addAnotherCard = function () {
