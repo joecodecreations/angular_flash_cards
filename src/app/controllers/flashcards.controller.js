@@ -9,7 +9,9 @@ function flashCardsController($scope, $http, card, resetValidationService, updat
     ctrl.flip = false; // Holds bool for flipped card
     ctrl.firstcard = true; // Is this the first card ? (blank back etc)
     ctrl.addCardShow = false;
-    ctrl.mainWindow = true; //card deck preview
+    ctrl.mainWindow = false; //card deck preview
+
+    ctrl.introCompleted = false;
 
     /*Adding a new Card */
     ctrl.cardAdded = false;
@@ -71,7 +73,10 @@ function flashCardsController($scope, $http, card, resetValidationService, updat
         ctrl.newCategory = "";
     }
 
-
+    ctrl.getStarted = function () {
+        ctrl.introCompleted = true;
+        ctrl.addCardShow = true;
+    }
     /* Grabs the next question in the list */
     card.nextQuestion($scope, questions);
 

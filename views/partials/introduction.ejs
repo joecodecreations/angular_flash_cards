@@ -1,4 +1,4 @@
-<div class="introduction">
+<div class="introduction" ng-hide="introCompleted">
 
     <div class="introduction-heading">Welcome to FlashCardQuiz.com!</div>
     <div class="introduction-summary">
@@ -9,6 +9,6 @@
     </div>
 
     <input class="introduction--input" type="text" ng-model="deckTitle" placeholder="Enter a title for your flash cards to get started!" />
-    <button class="introduction--button" ng-show="deckTitle.length > 4">Get Started</button>
+    <button class="introduction--button" ng-show="deckTitle.length > 4" ng-click="getStarted()">Get Started</button>
 
 </div>
