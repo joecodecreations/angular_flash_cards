@@ -89,8 +89,10 @@ function flashCardsController($scope, $http, card, resetValidationService, updat
 
     ctrl.showAnswerButton = function () {
         ctrl.flip = true; //flip the card
-        ctrl.answerquestionCategory = questions[ctrl.currentQuestion - 1].category;
-        ctrl.answer = questions[(ctrl.currentQuestion - 1)].answer;
+        if (questions[ctrl.currentQuestion - 1]) {
+            ctrl.answerquestionCategory = questions[ctrl.currentQuestion - 1].category;
+            ctrl.answer = questions[(ctrl.currentQuestion - 1)].answer;
+        }
     };
 
     ctrl.nextQuestionButton = function () {
@@ -196,7 +198,7 @@ function flashCardsController($scope, $http, card, resetValidationService, updat
     //Reset The Form Validation Errors From Start
     resetValidationService.reset(ctrl);
     //Calculate Amount of Cards/Questions
-    //updateCards.calculateQuestions($scope, questions);
+    updateCards.calculateQuestions($scope, questions);
     //initiate grabbing the first question in the list
     //updateCards.calculateQuestions($scope, questions);
     //Grab Next Question
@@ -407,11 +409,8 @@ function updateCards() {
 
     vm.calculateQuestions = function ($scope, questions) {
         var ctrl = $scope;
-        if (ctrl.totalQuestions) {
-            ctrl.totalQuestions = questions.length;
-        }
+        ctrl.totalQuestions = questions.length;
         return true;
-
     };
 
 
