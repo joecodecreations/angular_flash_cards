@@ -407,8 +407,11 @@ function updateCards() {
 
     vm.calculateQuestions = function ($scope, questions) {
         var ctrl = $scope;
-        ctrl.totalQuestions = questions.length;
+        if (ctrl.totalQuestions) {
+            ctrl.totalQuestions = questions.length;
+        }
         return true;
+
     };
 
 
