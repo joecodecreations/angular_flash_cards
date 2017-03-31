@@ -68,6 +68,12 @@ function cardService($http) {
 
     /* Grabs the Next Question in the list */
     vm.nextQuestion = function ($scope, questions) {
+        /* if we reach the last question start over */
+        if (ctrl.currentQuestion >= questions.length) {
+            ctrl.currentQuestion = 0;
+            console.log("lowered to zero");
+        }
+
         console.log("next question hit");
         var ctrl = $scope;
         //as long as we have questions
@@ -97,11 +103,7 @@ function cardService($http) {
                 ctrl.question = questions[ctrl.currentQuestion].question;
                 ctrl.questionCategory = questions[ctrl.currentQuestion].category;
                 ctrl.currentQuestion++;
-                /* if we reach the last question start over */
-                if (ctrl.currentQuestion >= questions.length) {
-                    ctrl.currentQuestion = 0;
-                    console.log("lowered to zero");
-                }
+
             }
         }
     };
