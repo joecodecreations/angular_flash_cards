@@ -29,7 +29,7 @@ function flashCardsController($scope, $http, card, resetValidationService, updat
         var d = new Date();
         var n = d.getTime();
         console.log("time:" + n);
-        var base = base64(base64Encode(base64Encode(n)));
+        var base = base64Encode(base64Encode(base64Encode(n)));
         console.log("base: " + base);
         var output = base.substring(0, base.length - 2);
         return output;
