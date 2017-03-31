@@ -91,8 +91,6 @@ function flashCardsController($scope, $http, card, resetValidationService, updat
         ctrl.mainWindow = false;
     };
 
-    var deckRoute = createRoute();
-    console.log(deckRoute);
 
     function resetAddCardInputs() {
         // Reset Form Input Values
@@ -186,16 +184,15 @@ function flashCardsController($scope, $http, card, resetValidationService, updat
                     'Content-Type': 'application/json'
                 }
             }).then(function successCallback(response) {
-                console.log("here!" + response);
-                console.log(response);
-                console.log(response.data.message);
+
                 if (response.data.message == "Deck Found") {
                     ctrl.AlexaError = true;
                     ctrl.AlexaErrorMessage = "* This Alexa Phrase Is Already In Use";
                 } else {
-                    //deck NOT FOUND
-                    var deckRoute = createRoute();
-                    console.log(deckRoute);
+                    //alexa phrases didn't match so let's go ahead and save the deck
+
+                    var deckRoute = createRoute(); //create our custom route
+
                     deckInfo = {
                         title: ctrl.deckTitle,
                         route: deckRoute,
