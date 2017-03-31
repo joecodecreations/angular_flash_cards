@@ -4,13 +4,13 @@ function flashCardsController($scope, $http, card, resetValidationService, updat
     var ctrl = $scope;
 
     /* Default states */
-    ctrl.quizTitle = "Front End Web Development";
+    //  ctrl.quizTitle = "Front End Web Development";
     ctrl.currentQuestion = 0; // Holds current question we are on
     ctrl.flip = false; // Holds bool for flipped card
     ctrl.firstcard = true; // Is this the first card ? (blank back etc)
     ctrl.addCardShow = false;
     ctrl.mainWindow = false; //card deck preview
-
+    ctrl.shared = false; //have we saved the data / also shows the final form.
     ctrl.introCompleted = false;
 
     /*Adding a new Card */
