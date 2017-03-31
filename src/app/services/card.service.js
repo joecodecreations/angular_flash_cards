@@ -69,31 +69,35 @@ function cardService($http) {
     /* Grabs the Next Question in the list */
     vm.nextQuestion = function ($scope, questions) {
         var ctrl = $scope;
-        if (ctrl.firstcard) {
-            //write the contents of the card
-            ctrl.question = questions[ctrl.currentQuestion].question;
-            ctrl.answer = questions[ctrl.currentQuestion].answer;
-            ctrl.questionCategory = questions[ctrl.currentQuestion].category;
-            ctrl.currentQuestion++;
-            //don't change the state until we show the first card
-            setTimeout(function () {
-                ctrl.firstcard = false;
-            }, 1000);
+        //as long as we have questions
+        if (questions[ctrl.currentQuestion]) {
+            if (ctrl.firstcard) {
+                //write the contents of the card
 
-        } else {
+                ctrl.question = questions[ctrl.currentQuestion].question;
+                ctrl.answer = questions[ctrl.currentQuestion].answer;
+                ctrl.questionCategory = questions[ctrl.currentQuestion].category;
+                ctrl.currentQuestion++;
+                //don't change the state until we show the first card
+                setTimeout(function () {
+                    ctrl.firstcard = false;
+                }, 1000);
 
-            if (ctrl.flip === true) {
-                ctrl.flip = false;
+            } else {
+
+                if (ctrl.flip === true) {
+                    ctrl.flip = false;
+                }
+
+                /* if we reach the last question start over */
+                if (ctrl.currentQuestion >= questions.length) {
+                    ctrl.currentQuestion = 0;
+                }
+                //write the contents of the card
+                ctrl.question = questions[ctrl.currentQuestion].question;
+                ctrl.questionCategory = questions[ctrl.currentQuestion].category;
+                ctrl.currentQuestion++;
             }
-
-            /* if we reach the last question start over */
-            if (ctrl.currentQuestion >= questions.length) {
-                ctrl.currentQuestion = 0;
-            }
-            //write the contents of the card
-            ctrl.question = questions[ctrl.currentQuestion].question;
-            ctrl.questionCategory = questions[ctrl.currentQuestion].category;
-            ctrl.currentQuestion++;
         }
     };
 
