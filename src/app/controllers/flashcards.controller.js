@@ -153,57 +153,59 @@ function flashCardsController($scope, $http, card, resetValidationService, updat
                     validation = false;
                     ctrl.AlexaError = true;
                     ctrl.AlexaErrorMessage = "* This Alexa Phrase Is Already In Use";
+                } else {
+                    //deck NOT FOUND
+
+
+
+
+                    if (validation) {
+                        deckInfo = {
+                            title: ctrl.deckTitle,
+                            route: "kslfjasoifjdaifjaosdifjsd",
+                            backgroundColor: "orange",
+                            canSkipQuestions: true,
+                            alexa: ctrl.alexaPhrase
+                        };
+
+                        $http({
+                            method: 'POST',
+                            url: '/api/decks',
+                            data: deckInfo,
+                            headers: {
+                                'Content-Type': 'application/json'
+                            }
+                        }).then(function successCallback(response) {
+                            //console.log("Deck Created!");
+                            //console.log("Deck_id: " + response.data.id);
+                            //resonse.data.message
+                            //console.log("questions: " + questions);
+
+                            for (var cards in questions) {
+
+                                console.log(questions[cards]);
+
+                                cardInfo = {
+                                    'question': questions[cards].question,
+                                    'answer': questions[cards].answer,
+                                    'category': questions[cards].category,
+                                    'group_id': response.data.id
+                                };
+
+                                card.saveCard(cardInfo);
+
+                            }
+                            ctrl.finished = true; //show the finished screen
+                            ctrl.shareWindow = false; //hide the share this
+                        }, function errorCallback(errorResponse) {
+                            console.log("error");
+                            console.log(errorResponse);
+                            console.log(errorResponse.data);
+                        });
+                    }
                 }
             });
         }
-
-
-
-        if (validation) {
-            deckInfo = {
-                title: ctrl.deckTitle,
-                route: "kslfjasoifjdaifjaosdifjsd",
-                backgroundColor: "orange",
-                canSkipQuestions: true,
-                alexa: ctrl.alexaPhrase
-            };
-
-            $http({
-                method: 'POST',
-                url: '/api/decks',
-                data: deckInfo,
-                headers: {
-                    'Content-Type': 'application/json'
-                }
-            }).then(function successCallback(response) {
-                //console.log("Deck Created!");
-                //console.log("Deck_id: " + response.data.id);
-                //resonse.data.message
-                //console.log("questions: " + questions);
-
-                for (var cards in questions) {
-
-                    console.log(questions[cards]);
-
-                    cardInfo = {
-                        'question': questions[cards].question,
-                        'answer': questions[cards].answer,
-                        'category': questions[cards].category,
-                        'group_id': response.data.id
-                    };
-
-                    card.saveCard(cardInfo);
-
-                }
-                ctrl.finished = true; //show the finished screen
-                ctrl.shareWindow = false; //hide the share this
-            }, function errorCallback(errorResponse) {
-                console.log("error");
-                console.log(errorResponse);
-                console.log(errorResponse.data);
-            });
-        }
-
 
     };
 
