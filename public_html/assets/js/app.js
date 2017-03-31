@@ -462,7 +462,7 @@ function retrieveService($location) {
 
     /* Add a new card */
     vm.deck = function ($scope) {
-        console.log($location.path());
+        console.log("window Location:" + $location.path());
 
     };
 
