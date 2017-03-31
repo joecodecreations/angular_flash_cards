@@ -163,10 +163,10 @@
 }
 
 .flip-forward-reverse{
-  animation: flip_backward_reverse 1.5s ease-out forwards;
-  -webkit-animation: flip_backward_reverse 1.5s ease-out forwards;
+  animation: flip_backward_reverse 1s ease-out forwards;
+  -webkit-animation: flip_backward_reverse 1s ease-out forwards;
 }
 .flip-backward-reverse{
-  animation: flip_forward_reverse 1.5s ease-out forwards;
-  -webkit-animation: flip_forward_reverse 1.5s ease-out forwards;
+  animation: flip_forward_reverse 1s ease-out forwards;
+  -webkit-animation: flip_forward_reverse 1s ease-out forwards;
 }
