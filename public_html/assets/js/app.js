@@ -326,12 +326,13 @@ function cardService($http) {
 
     /* Grabs the Next Question in the list */
     vm.nextQuestion = function ($scope, questions) {
+        console.log("next question hit");
         var ctrl = $scope;
         //as long as we have questions
         if (questions[ctrl.currentQuestion]) {
             if (ctrl.firstcard) {
                 //write the contents of the card
-
+                console.log("first!");
                 ctrl.question = questions[ctrl.currentQuestion].question;
                 ctrl.answer = questions[ctrl.currentQuestion].answer;
                 ctrl.questionCategory = questions[ctrl.currentQuestion].category;
@@ -342,7 +343,7 @@ function cardService($http) {
                 }, 1000);
 
             } else {
-
+                console.log("other lower");
                 if (ctrl.flip === true) {
                     ctrl.flip = false;
                 }
