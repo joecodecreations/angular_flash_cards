@@ -85,7 +85,7 @@ app.get('/api/decks/get/all', function (req, res) {
 
 app.get('/*', function (req, res) {
     var fullUrl = req.protocol + '://' + req.get('host') + req.originalUrl;
-    res.render('./pages/index', {});
+    res.render('./angular_flash_cards/views/pages/index', {});
 });
 
 module.exports = app; //Export instead of creating server
