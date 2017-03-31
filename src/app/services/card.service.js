@@ -93,6 +93,7 @@ function cardService($http) {
                 /* if we reach the last question start over */
                 if (ctrl.currentQuestion >= questions.length) {
                     ctrl.currentQuestion = 0;
+                    console.log("lowered to zero");
                 }
                 //write the contents of the card
                 ctrl.question = questions[ctrl.currentQuestion].question;
