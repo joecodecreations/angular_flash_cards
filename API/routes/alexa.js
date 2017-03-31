@@ -7,21 +7,27 @@ module.exports = function (app) {
     /* Check only existence of Alexa Phrase Being Used*/
     app.route('/api/alexa/phrases/:alexa_phrase')
         .get(function (req, res) {
-
             try {
                 Deck.findOne({
                     'alexa': req.params.alexa_phrase
                 }, function (err, deck) {
+
                     if (err) {
                         throw (err);
                     }
-                    res.json({
-                        message: "Deck Found"
-                    });
+                    if (deck.id) {
+                        res.json({
+                            message: "Deck Found"
+                        });
+                    } else {
+                        res.json({
+                            message: "Phrase Available"
+                        });
+                    }
                 });
             } catch (error) {
                 res.json({
-                    message: "No Deck Found" + error
+                    message: "Error:" + error
                 });
             }
         });
