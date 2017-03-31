@@ -29,6 +29,8 @@ module.exports = function (app) {
                             res.json({
                                 'message': "success",
                                 'canSkipQuestions': deck.canSkipQuestions,
+                                'backgroundColor': deck.backgroundColor,
+                                'alexa': deck.alexa,
                                 'title': deckTitle,
                                 'cards': cards
                             });
