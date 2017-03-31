@@ -28,7 +28,7 @@ function flashCardsController($scope, $http, card, resetValidationService, updat
     function createRoute(date) {
         var d = new Date();
         var n = d.getTime();
-
+        console.log("time:" + n);
         var output = base64Encode(n);
         return output;
     }
