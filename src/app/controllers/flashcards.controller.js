@@ -28,8 +28,16 @@ function flashCardsController($scope, $http, card, resetValidationService, updat
     function createRoute(date) {
         var d = new Date();
         var n = d.getTime();
-        var output = n;
+
+        var output = base64Encode(n);
         return output;
+    }
+
+
+    function base64Encode(input) {
+        return btoa(encodeURIComponent(input).replace(/%([0-9A-F]{2})/g, function (match, p1) {
+            return String.fromCharCode('0x' + p1);
+        }));
     }
 
 
