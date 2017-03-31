@@ -1,0 +1,14 @@
+<div class="introduction">
+
+    <div class="introduction-heading">Welcome to FlashCardQuiz.com!</div>
+    <div class="introduction-summary">
+        Create flash cards to study with and share them with friends, students or classmates. Start by adding your first card, review your deck and continue to add more cards to your deck. Once you are finished click share.
+    </div>
+    <div class="introduction-alexa">
+        Now works with Amazon Echo!
+    </div>
+
+    <input class="introduction--input" type="text" ng-model="deckTitle" />
+    <button class="introduction--button" ng-show="deckTitle.length > 4" ng-click="createCard()">Get Started</button>
+
+</div>
