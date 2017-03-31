@@ -463,8 +463,8 @@ function retrieveService($rootScope, $location) {
 
     /* Add a new card */
     vm.deck = function ($scope) {
-        // var url = $location.absUrl().split('/')[0];
-        var url = $location.absUrl();
+        var url = $location.absUrl().split('https://flashcardquiz.com/')[0];
+        //var url = $location.absUrl();
         console.log("window Location:" + url);
 
     };
