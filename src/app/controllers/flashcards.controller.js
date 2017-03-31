@@ -114,7 +114,8 @@ function flashCardsController($scope, $http, card, resetValidationService, updat
     }
 
     ctrl.createDeck = function () {
-
+        //reset the form after we send the data
+        resetShareForm();
         var validation = true;
         if (ctrl.deckTitle === null || ctrl.deckTitle === undefined || ctrl.deckTitle.length < 0) {
             validation = false;
@@ -203,8 +204,7 @@ function flashCardsController($scope, $http, card, resetValidationService, updat
             });
         }
 
-        //reset the form after we send the data
-        resetShareForm();
+
     };
 
 }
