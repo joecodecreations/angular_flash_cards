@@ -114,7 +114,7 @@ function flashCardsController($scope, $http, card, resetValidationService, updat
     }
 
     ctrl.createDeck = function () {
-        resetShareForm();
+
         var validation = true;
         if (ctrl.deckTitle === null || ctrl.deckTitle === undefined || ctrl.deckTitle.length < 0) {
             validation = false;
@@ -136,6 +136,7 @@ function flashCardsController($scope, $http, card, resetValidationService, updat
         /* Check alexa name */
         //if we have an alexa phrase
         if (ctrl.alexaPhrase) {
+            console.log("phrase:" + ctrl.alexaPhrase);
 
             $http({
                 method: 'GET',
@@ -145,7 +146,7 @@ function flashCardsController($scope, $http, card, resetValidationService, updat
                     'Content-Type': 'application/json'
                 }
             }).then(function successCallback(response) {
-                console.log("here!" + response.body.messsage);
+                console.log("here!" + response);
                 if (response.message == "Deck Found") {
                     validation = false;
                     ctrl.AlexaError = true;
@@ -200,6 +201,9 @@ function flashCardsController($scope, $http, card, resetValidationService, updat
                 console.log(errorResponse.data);
             });
         }
+
+        //reset the form after we send the data
+        resetShareForm();
     };
 
 }
