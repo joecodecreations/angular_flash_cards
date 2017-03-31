@@ -67,6 +67,7 @@ function flashCardsController($scope, $http, card, resetValidationService, updat
         card.nextQuestion($scope, questions);
         ctrl.closeWindow();
 
+
     };
 
     /* Shows Interface for Adding New Cards */
@@ -114,6 +115,7 @@ function flashCardsController($scope, $http, card, resetValidationService, updat
 
     ctrl.addNewCard = function () {
         card.add($scope, resetValidationService, updateCards, questions);
+        updateCards.calculateQuestions($scope, questions);
     };
     ctrl.shareDeck = function () {
         ctrl.mainWindow = false;
@@ -348,6 +350,8 @@ function cardService($http) {
                     ctrl.flip = false;
                 }
 
+                console.log("currentQ: " + currentQuestion);
+                console.log("currentLength: " + currentlength);
                 /* if we reach the last question start over */
                 if (ctrl.currentQuestion >= questions.length) {
                     ctrl.currentQuestion = 0;

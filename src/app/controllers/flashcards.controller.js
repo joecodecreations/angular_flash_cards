@@ -43,6 +43,7 @@ function flashCardsController($scope, $http, card, resetValidationService, updat
         card.nextQuestion($scope, questions);
         ctrl.closeWindow();
 
+
     };
 
     /* Shows Interface for Adding New Cards */
@@ -90,6 +91,7 @@ function flashCardsController($scope, $http, card, resetValidationService, updat
 
     ctrl.addNewCard = function () {
         card.add($scope, resetValidationService, updateCards, questions);
+        updateCards.calculateQuestions($scope, questions);
     };
     ctrl.shareDeck = function () {
         ctrl.mainWindow = false;

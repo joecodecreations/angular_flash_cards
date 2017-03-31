@@ -90,6 +90,8 @@ function cardService($http) {
                     ctrl.flip = false;
                 }
 
+                console.log("currentQ: " + currentQuestion);
+                console.log("currentLength: " + currentlength);
                 /* if we reach the last question start over */
                 if (ctrl.currentQuestion >= questions.length) {
                     ctrl.currentQuestion = 0;
