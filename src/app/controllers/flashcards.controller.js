@@ -148,6 +148,7 @@ function flashCardsController($scope, $http, card, resetValidationService, updat
                 }
             }).then(function successCallback(response) {
                 console.log("here!" + response);
+                console.log(response);
                 console.log(response.data.message);
                 if (response.data.message == "Deck Found") {
                     ctrl.AlexaError = true;

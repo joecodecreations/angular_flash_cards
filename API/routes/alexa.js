@@ -16,6 +16,7 @@ module.exports = function (app) {
                         res.json({
                             message: "No Deck Found"
                         });
+                        return;
                     } else {
                         res.json({
                             message: "Deck Found"
