@@ -8,6 +8,7 @@
   border-radius: 10px;
   padding: 10px;
   z-index: 100;
+  text-align:center;
 
   &-heading{
     font-size:24px;
@@ -18,15 +19,15 @@
     color:black;
     margin-top:10px;
     font-size:1em;
+    text-align:left;
   }
 
   &-alexa {
     color:black;
     margin-top:10px;
     font-size:12px;
+    text-align:left;
   }
-
-
 
   &--input{
     color:black;
