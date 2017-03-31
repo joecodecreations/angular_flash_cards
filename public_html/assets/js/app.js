@@ -153,7 +153,7 @@ function flashCardsController($scope, $http, card, resetValidationService, updat
             validation = false;
             ctrl.AlexaErrorMessage = "* You must enter a phrase to use alexa"
         } else {
-            if (countWords(ctrl.alexaPhrase) < 5) {
+            if (countWords(ctrl.alexaPhrase) < 3) {
                 validation = false;
                 ctrl.AlexaError = true;
                 ctrl.AlexaErrorMessage = "* Alexa Phrase must be five words or more"
