@@ -25,7 +25,12 @@ function flashCardsController($scope, $http, card, resetValidationService, updat
     ctrl.maxCharactersSubject = 26;
 
 
-
+    function createRoute(date) {
+        var d = new Date();
+        var n = d.getTime();
+        var output = n;
+        return output;
+    }
 
 
     /* set the questions and categories */
@@ -53,7 +58,8 @@ function flashCardsController($scope, $http, card, resetValidationService, updat
         ctrl.mainWindow = false;
     };
 
-
+    var deckRoute = createRoute();
+    console.log(deckRoute);
 
     function resetAddCardInputs() {
         // Reset Form Input Values
@@ -127,10 +133,10 @@ function flashCardsController($scope, $http, card, resetValidationService, updat
             validation = false;
             ctrl.AlexaErrorMessage = "* You must enter a phrase to use alexa"
         } else {
-            if (countWords(ctrl.alexaPhrase) < 3) {
+            if (countWords(ctrl.alexaPhrase) <= 3) {
                 validation = false;
                 ctrl.AlexaError = true;
-                ctrl.AlexaErrorMessage = "* Alexa Phrase must be five words or more"
+                ctrl.AlexaErrorMessage = "* Alexa Phrase must use three or more words";
             }
 
         }
@@ -155,10 +161,11 @@ function flashCardsController($scope, $http, card, resetValidationService, updat
                     ctrl.AlexaErrorMessage = "* This Alexa Phrase Is Already In Use";
                 } else {
                     //deck NOT FOUND
-
+                    var deckRoute = createRoute();
+                    console.log(deckRoute);
                     deckInfo = {
                         title: ctrl.deckTitle,
-                        route: "kslfjasoifjdaifjaosdifjsd",
+                        route: deckRoute,
                         backgroundColor: "orange",
                         canSkipQuestions: true,
                         alexa: ctrl.alexaPhrase
@@ -172,10 +179,6 @@ function flashCardsController($scope, $http, card, resetValidationService, updat
                             'Content-Type': 'application/json'
                         }
                     }).then(function successCallback(response) {
-                        //console.log("Deck Created!");
-                        //console.log("Deck_id: " + response.data.id);
-                        //resonse.data.message
-                        //console.log("questions: " + questions);
 
                         for (var cards in questions) {
 
@@ -193,6 +196,7 @@ function flashCardsController($scope, $http, card, resetValidationService, updat
                         }
                         ctrl.finished = true; //show the finished screen
                         ctrl.shareWindow = false; //hide the share this
+                        ctrl.addCardShow = false;
                     }, function errorCallback(errorResponse) {
                         console.log("error");
                         console.log(errorResponse);
