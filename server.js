@@ -85,7 +85,7 @@ app.get('/api/decks/get/all', function (req, res) {
 
 app.get('/*', function (req, res) {
     var fullUrl = req.protocol + '://' + req.get('host') + req.originalUrl;
-    console.log(fullURL);
+    console.log(fullUrl);
     res.send("worked!");
 });
 
