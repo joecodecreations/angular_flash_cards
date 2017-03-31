@@ -11,21 +11,30 @@
 
   &-heading{
     font-size:24px;
+    color:black;
 
   }
-  &-alexa {
-
-  }
-
   &-summary{
-
+    color:black;
+    margin-top:10px;
+    font-size:1em;
   }
+
+  &-alexa {
+    color:black;
+    margin-top:10px;
+    font-size:12px;
+  }
+
+
 
   &--input{
-
+    color:black;
   }
 
   &--button{
+    @extend button;
+    color:black:
 
   }
 
