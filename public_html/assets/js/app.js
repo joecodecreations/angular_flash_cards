@@ -34,11 +34,12 @@ function flashCardsController($scope, $http, card, resetValidationService, updat
     ctrl.firstcard = true; // Is this the first card ? (blank back etc)
     ctrl.addCardShow = false;
     ctrl.mainWindow = false; //card deck preview
-    ctrl.shared = false; //have we saved the data / also shows the final form.
     ctrl.introCompleted = false;
 
     /*Adding a new Card */
     ctrl.cardAdded = false;
+    ctrl.finished = false; //have we saved the data / also shows the final form.
+
 
     /* Form max and mins */
     ctrl.subjectLength = 26;
@@ -193,6 +194,8 @@ function flashCardsController($scope, $http, card, resetValidationService, updat
                     card.saveCard(cardInfo);
 
                 }
+                ctrl.finished = true; //show the finished screen
+                ctrl.shareWindow = false; //hide the share this
             }, function errorCallback(errorResponse) {
                 console.log("error");
                 console.log(errorResponse);
@@ -200,15 +203,7 @@ function flashCardsController($scope, $http, card, resetValidationService, updat
             });
         }
     };
-    //resetShareForm();
-    //Reset The Form Validation Errors From Start
-    //resetValidationService.reset(ctrl);
-    //Calculate Amount of Cards/Questions
-    //updateCards.calculateQuestions($scope, questions);
-    //initiate grabbing the first question in the list
-    //updateCards.calculateQuestions($scope, questions);
-    //Grab Next Question
-    //card.nextQuestion($scope, questions);
+
 }
 
 },{}],3:[function(require,module,exports){
