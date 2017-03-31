@@ -47,8 +47,9 @@ module.exports = function (app) {
 
         .get(function (req, res) {
             Deck.findById(req.params.deck_id, function (err, deck) {
-                if (err)
+                if (err) {
                     res.send(err);
+                }
                 res.json(deck);
             });
 

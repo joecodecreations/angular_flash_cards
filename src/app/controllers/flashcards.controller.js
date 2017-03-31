@@ -133,6 +133,27 @@ function flashCardsController($scope, $http, card, resetValidationService, updat
             }
 
         }
+        /* Check alexa name */
+        //if we have an alexa phrase
+        if (ctrl.alexaPhrase) {
+            $http({
+                method: 'GET',
+                url: '/api/alexa/phrases/' + ctrl.alexaPhrase,
+                //data: deckInfo,
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            }).then(function successCallback(response) {
+                console.log(response.message);
+                if (response.message == "Deck Found") {
+                    validation = false;
+                    ctrl.AlexaError = true;
+                    ctrl.AlexaErrorMessage = "* This Alexa Phrase Is Already In Use";
+                }
+            });
+        }
+
+
 
         if (validation) {
             deckInfo = {

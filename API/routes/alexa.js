@@ -3,6 +3,33 @@ var Deck = require('../../models/deck');
 
 module.exports = function (app) {
 
+
+    /* Check only existence of Alexa Phrase Being Used*/
+    app.route('/api/alexa/phrases/:alexa_phrase')
+        .get(function (req, res) {
+
+            try {
+                Deck.findOne({
+                    'alexa': req.params.alexa_phrase
+                }, function (err, deck) {
+                    if (err) {
+                        res.json({
+                            message: "No Deck Found"
+                        });
+                    } else {
+                        res.json({
+                            message: "Deck Found"
+                        });
+                    }
+                });
+            } catch (error) {
+                res.json({
+                    message: "Error:" + error
+                });
+            }
+        });
+
+
     /* Grab All Cards By Alexa Phrase */
     app.route('/api/alexa/:alexa_phrase')
 
