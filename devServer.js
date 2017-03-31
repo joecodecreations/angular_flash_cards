@@ -9,6 +9,8 @@ var mongoose = require('mongoose');
 var csrf = require('csurf');
 var cookieParser = require('cookie-parser');
 var portnumber = 3000; //server port number
+var mongoose = require('mongoose');
+var resources = require('./private/resources.js');
 
 // /* Security Token */
 // var csrfProtection = csrf({
@@ -43,7 +45,7 @@ app.use(express.static(__dirname + '/public_html'));
 /////////////////////////////////////////
 //           Mongo Database            //
 ////////////////////////////////////////
-mongoose.connect('mongodb://' + mongoUSERNAME + ':' + mongoPASSWORD + 'localhost:' + mongoPORT + '/flashcardquiz');
+mongoose.connect('mongodb://' + resources.USERNAME + ':' + resources.PASSWORD + 'localhost:' + resources.PORT + '/flashcardquiz');
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
 /////////////////////////////////////////
