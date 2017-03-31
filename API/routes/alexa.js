@@ -13,19 +13,15 @@ module.exports = function (app) {
                     'alexa': req.params.alexa_phrase
                 }, function (err, deck) {
                     if (err) {
-                        res.json({
-                            message: "No Deck Found"
-                        });
-                        return;
-                    } else {
-                        res.json({
-                            message: "Deck Found"
-                        });
+                        throw (err);
                     }
+                    res.json({
+                        message: "Deck Found"
+                    });
                 });
             } catch (error) {
                 res.json({
-                    message: "Error:" + error
+                    message: "No Deck Found" + error
                 });
             }
         });
