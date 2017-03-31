@@ -6,7 +6,9 @@ function retrieveService($rootScope, $location) {
 
     /* Add a new card */
     vm.deck = function ($scope) {
-        console.log("window Location:" + $location.path());
+        // var url = $location.absUrl().split('/')[0];
+        var url = $location.absUrl();
+        console.log("window Location:" + url);
 
     };
 
