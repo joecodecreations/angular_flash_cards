@@ -141,7 +141,7 @@
 
 
 
-$transition: ease-in-out;
+$transition: linear;
 
 .flip-forward{
   animation: flip_backward 1.5s $transition forwards;
