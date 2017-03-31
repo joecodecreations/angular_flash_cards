@@ -8,7 +8,7 @@ var https = require('https');
 var mongoose = require('mongoose');
 // var csrf = require('csurf');
 // var cookieParser = require('cookie-parser');
-var portnumber = 5000; //server port number
+var portnumber = 3000; //server port number
 var mongoose = require('mongoose');
 var resources = require('./private/resources.js');
 
