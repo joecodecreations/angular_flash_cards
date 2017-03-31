@@ -328,14 +328,19 @@ function cardService($http) {
 
     /* Grabs the Next Question in the list */
     vm.nextQuestion = function ($scope, questions) {
-        /* if we reach the last question start over */
-        if (ctrl.currentQuestion >= questions.length) {
-            ctrl.currentQuestion = 0;
-            console.log("lowered to zero");
-        }
-
         console.log("next question hit");
         var ctrl = $scope;
+
+        /* if we reach the last question start over */
+        if (ctrl.currentQuestion && questions.length) {
+            if (ctrl.currentQuestion >= questions.length) {
+                ctrl.currentQuestion = 0;
+                console.log("lowered to zero");
+            }
+
+        }
+
+
         //as long as we have questions
         if (questions[ctrl.currentQuestion]) {
             if (ctrl.firstcard) {

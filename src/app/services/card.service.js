@@ -72,9 +72,12 @@ function cardService($http) {
         var ctrl = $scope;
 
         /* if we reach the last question start over */
-        if (ctrl.currentQuestion >= questions.length) {
-            ctrl.currentQuestion = 0;
-            console.log("lowered to zero");
+        if (ctrl.currentQuestion && questions.length) {
+            if (ctrl.currentQuestion >= questions.length) {
+                ctrl.currentQuestion = 0;
+                console.log("lowered to zero");
+            }
+
         }
 
 
@@ -131,5 +134,4 @@ function cardService($http) {
         });
 
     };
-};
 }
