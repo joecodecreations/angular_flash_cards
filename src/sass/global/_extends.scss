@@ -3,9 +3,12 @@
   height:32px;
   text-align:center;
   font-size:1em;
-  border-radius: 12px;
   border:rgba(0,45,0,.9);
   cursor:pointer;
+  &:hover{
+    background:rgba(0,0,0,1);
+    color: rgba(255,255,255,.4);
+  }
 }
 
 %card {
