@@ -457,7 +457,8 @@ function resetValidationService() {
 },{}],8:[function(require,module,exports){
 angular.module('app').service('retrieve', retrieveService);
 
-function retrieveService($location) {
+function retrieveService($rootScope, $location) {
+
     var vm = this;
 
     /* Add a new card */

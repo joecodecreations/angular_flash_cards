@@ -1,6 +1,7 @@
 angular.module('app').service('retrieve', retrieveService);
 
-function retrieveService($location) {
+function retrieveService($rootScope, $location) {
+
     var vm = this;
 
     /* Add a new card */
