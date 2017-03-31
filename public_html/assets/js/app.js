@@ -194,9 +194,9 @@ function flashCardsController($scope, $http, card, resetValidationService, updat
             });
         }
     };
-    resetShareForm();
+    //resetShareForm();
     //Reset The Form Validation Errors From Start
-    resetValidationService.reset(ctrl);
+    //resetValidationService.reset(ctrl);
     //Calculate Amount of Cards/Questions
     //updateCards.calculateQuestions($scope, questions);
     //initiate grabbing the first question in the list
