@@ -493,7 +493,7 @@ function retrieveService($rootScope, $location, $http, card, updateCards) {
 
                     ctrl.mainWindow = true;
                     ctrl.introCompleted = true;
-                    console.log("questions:" + ctrl.questions);
+                    console.log(ctrl.questions);
 
                     updateCards.calculateQuestions($scope, ctrl.questions);
                     card.nextQuestion($scope, ctrl.questions);
