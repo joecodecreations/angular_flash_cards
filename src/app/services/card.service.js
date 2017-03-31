@@ -82,7 +82,6 @@ function cardService($http) {
                 //don't change the state until we show the first card
                 setTimeout(function () {
                     ctrl.firstcard = false;
-                    ctrl.currentQuestion++;
                 }, 1000);
 
             } else {
@@ -93,15 +92,16 @@ function cardService($http) {
 
                 console.log("currentQ: " + ctrl.currentQuestion);
                 console.log("currentLength: " + questions.length);
+
+                //write the contents of the card
+                ctrl.question = questions[ctrl.currentQuestion].question;
+                ctrl.questionCategory = questions[ctrl.currentQuestion].category;
+                ctrl.currentQuestion++;
                 /* if we reach the last question start over */
                 if (ctrl.currentQuestion >= questions.length) {
                     ctrl.currentQuestion = 0;
                     console.log("lowered to zero");
                 }
-                //write the contents of the card
-                ctrl.question = questions[ctrl.currentQuestion].question;
-                ctrl.questionCategory = questions[ctrl.currentQuestion].category;
-                ctrl.currentQuestion++;
             }
         }
     };
