@@ -50,11 +50,10 @@ function flashCardsController($scope, $http, card, resetValidationService, updat
 
 
     function createRoute(date) {
+        /*take current time, base 64 it three times to get the output */
         var d = new Date();
         var n = d.getTime();
-        console.log("time:" + n);
         var base = base64Encode(base64Encode(base64Encode(n)));
-        console.log("base: " + base);
         var output = base.substring(0, base.length - 2);
         return output;
     }
