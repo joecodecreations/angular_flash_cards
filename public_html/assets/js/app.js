@@ -174,7 +174,6 @@ function flashCardsController($scope, $http, card, resetValidationService, updat
                 console.log("here!" + response);
                 console.log(response.data.message);
                 if (response.data.message == "Deck Found") {
-                    validation = false;
                     ctrl.AlexaError = true;
                     ctrl.AlexaErrorMessage = "* This Alexa Phrase Is Already In Use";
                 } else {
