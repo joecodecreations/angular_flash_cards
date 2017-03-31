@@ -15,7 +15,7 @@ module.exports = function (app) {
                     if (err) {
                         throw (err);
                     }
-                    if (deck.id) {
+                    if (deck) {
                         res.json({
                             message: "Deck Found"
                         });
