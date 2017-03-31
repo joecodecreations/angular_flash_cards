@@ -13,6 +13,7 @@ require('./controllers/flashcards.controller.js');
 /* Services */
 require('./services/card.service.js');
 require('./services/updateCards.service.js');
+require('./services/retrieve.service.js');
 //add card form validation reset
 require('./services/resetValidation.service.js');
 

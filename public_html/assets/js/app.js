@@ -14,6 +14,7 @@ require('./controllers/flashcards.controller.js');
 /* Services */
 require('./services/card.service.js');
 require('./services/updateCards.service.js');
+require('./services/retrieve.service.js');
 //add card form validation reset
 require('./services/resetValidation.service.js');
 
@@ -21,7 +22,7 @@ require('./services/resetValidation.service.js');
 /* Custom Directives */
 require('./directives/insertCard.directive.js');
 
-},{"./controllers/flashcards.controller.js":2,"./controllers/navigation.controller.js":3,"./directives/insertCard.directive.js":4,"./modules/app.module.js":5,"./services/card.service.js":6,"./services/resetValidation.service.js":7,"./services/updateCards.service.js":8}],2:[function(require,module,exports){
+},{"./controllers/flashcards.controller.js":2,"./controllers/navigation.controller.js":3,"./directives/insertCard.directive.js":4,"./modules/app.module.js":5,"./services/card.service.js":6,"./services/resetValidation.service.js":7,"./services/retrieve.service.js":8,"./services/updateCards.service.js":9}],2:[function(require,module,exports){
 angular.module('app').controller('flashcards', flashCardsController);
 
 function flashCardsController($scope, $http, retrieve, card, resetValidationService, updateCards) {
@@ -49,7 +50,7 @@ function flashCardsController($scope, $http, retrieve, card, resetValidationServ
     ctrl.maxCharactersSubject = 26;
 
     //check for cards previously saved
-    retrieve.card($scope);
+    retrieve.deck($scope);
 
     function createRoute(date) {
         /*take current time, base 64 it three times to get the output */
@@ -454,6 +455,20 @@ function resetValidationService() {
 }
 
 },{}],8:[function(require,module,exports){
+angular.module('app').service('retrieve', retrieveService);
+
+function retrieveService($location) {
+    var vm = this;
+
+    /* Add a new card */
+    vm.deck = function ($scope) {
+        console.log($location.path());
+
+    };
+
+}
+
+},{}],9:[function(require,module,exports){
 /* This will count the cards in our deck */
 
 angular.module('app').service('updateCards', updateCards);
