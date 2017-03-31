@@ -82,6 +82,7 @@ function cardService($http) {
                 //don't change the state until we show the first card
                 setTimeout(function () {
                     ctrl.firstcard = false;
+                    ctrl.currentQuestion++;
                 }, 1000);
 
             } else {
