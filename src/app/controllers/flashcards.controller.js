@@ -47,10 +47,7 @@ function flashCardsController($scope, $http, card, resetValidationService, updat
         ctrl.mainWindow = false;
     };
 
-    //Reset The Form Validation Errors From Start
-    resetValidationService.reset(ctrl);
-    //Calculate Amount of Cards/Questions
-    updateCards.calculateQuestions($scope, questions);
+
 
     function resetAddCardInputs() {
         // Reset Form Input Values
@@ -106,7 +103,7 @@ function flashCardsController($scope, $http, card, resetValidationService, updat
         //console.log(wordCount);
         return wordCount;
     }
-    resetShareForm();
+
     ctrl.createDeck = function () {
         resetShareForm();
         var validation = true;
@@ -171,7 +168,11 @@ function flashCardsController($scope, $http, card, resetValidationService, updat
             });
         }
     };
-
+    resetShareForm();
+    //Reset The Form Validation Errors From Start
+    resetValidationService.reset(ctrl);
+    //Calculate Amount of Cards/Questions
+    //updateCards.calculateQuestions($scope, questions);
     //initiate grabbing the first question in the list
     //updateCards.calculateQuestions($scope, questions);
     //Grab Next Question
