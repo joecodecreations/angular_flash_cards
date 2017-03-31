@@ -114,7 +114,7 @@
 }
 @-webkit-keyframes flip_forward {
   0%   {transform: rotateX(0deg); opacity: 0;}
- 50%  {transform: rotateX(180deg);  opacity: .2;}
+ 50%  {transform: rotateX(180deg);  opacity: .4;}
  100% {transform: rotateX(360deg); opacity:1;}
 }
 // reversed
@@ -129,7 +129,7 @@
 @-webkit-keyframes flip_backward_reverse {
 
   0%   {transform: rotateX(180deg); opacity: 1;}
- 50%  {opacity: 1; transform: rotateX(180deg);}
+ 50%  {opacity: 1; transform: rotateX(90deg);}
  100% {transform: rotateX(0deg); opacity:1;}
 }
 
