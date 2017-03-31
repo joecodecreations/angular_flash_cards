@@ -24,7 +24,7 @@ require('./directives/insertCard.directive.js');
 },{"./controllers/flashcards.controller.js":2,"./controllers/navigation.controller.js":3,"./directives/insertCard.directive.js":4,"./modules/app.module.js":5,"./services/card.service.js":6,"./services/resetValidation.service.js":7,"./services/updateCards.service.js":8}],2:[function(require,module,exports){
 angular.module('app').controller('flashcards', flashCardsController);
 
-function flashCardsController($scope, $http, card, resetValidationService, updateCards) {
+function flashCardsController($scope, $http, retrieve, card, resetValidationService, updateCards) {
     var ctrl = $scope;
 
     /* Default states */
@@ -48,6 +48,8 @@ function flashCardsController($scope, $http, card, resetValidationService, updat
     ctrl.minCharacters = 10; //min form input chrt count
     ctrl.maxCharactersSubject = 26;
 
+    //check for cards previously saved
+    retrieve.card($scope);
 
     function createRoute(date) {
         /*take current time, base 64 it three times to get the output */

@@ -1,6 +1,6 @@
 angular.module('app').controller('flashcards', flashCardsController);
 
-function flashCardsController($scope, $http, card, resetValidationService, updateCards) {
+function flashCardsController($scope, $http, retrieve, card, resetValidationService, updateCards) {
     var ctrl = $scope;
 
     /* Default states */
@@ -24,6 +24,8 @@ function flashCardsController($scope, $http, card, resetValidationService, updat
     ctrl.minCharacters = 10; //min form input chrt count
     ctrl.maxCharactersSubject = 26;
 
+    //check for cards previously saved
+    retrieve.card($scope);
 
     function createRoute(date) {
         /*take current time, base 64 it three times to get the output */
