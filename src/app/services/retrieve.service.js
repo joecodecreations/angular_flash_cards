@@ -4,7 +4,7 @@ function retrieveService($location) {
     var vm = this;
 
     /* Add a new card */
-    vm.deck = function ($scope, $location) {
+    vm.deck = function ($scope) {
         console.log($location.path());
 
     };
