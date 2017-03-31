@@ -30,11 +30,15 @@
 
   &--input{
     color:black;
+    padding:4px;
+    width:100%;
+    font-size:18px;
+    border: 1px solid rgba(0,0,0,.6);
   }
 
   &--button{
-    @extend button;
-    color:black:
+    @extend %button;
+    color:black;
 
   }
 
