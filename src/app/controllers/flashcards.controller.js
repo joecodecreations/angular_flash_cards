@@ -173,7 +173,7 @@ function flashCardsController($scope, $http, card, resetValidationService, updat
     };
 
     //initiate grabbing the first question in the list
-    updateCards.calculateQuestions($scope, questions);
+    //updateCards.calculateQuestions($scope, questions);
     //Grab Next Question
-    card.nextQuestion($scope, questions);
+    //card.nextQuestion($scope, questions);
 }
