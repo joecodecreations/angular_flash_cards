@@ -463,7 +463,7 @@ function retrieveService($rootScope, $location, $http) {
 
     /* Add a new card */
     vm.deck = function ($scope) {
-
+        var ctrl = $scope;
         //grab url in browser bar
         var url = $location.absUrl();
         //strip out url and get only oken
