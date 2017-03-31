@@ -37,6 +37,10 @@ function flashCardsController($scope, $http, card, resetValidationService, updat
 
     /* Closes Card Added! and allows additional input */
     ctrl.returnToDeck = function () {
+        //initiate grabbing the first question in the list
+        updateCards.calculateQuestions($scope, questions);
+        //Grab Next Question
+        card.nextQuestion($scope, questions);
         ctrl.closeWindow();
 
     };
