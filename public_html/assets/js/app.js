@@ -50,23 +50,9 @@ function flashCardsController($scope, $http, card, resetValidationService, updat
 
 
 
-    //ctrl.test = globalFunctions.test();
+
     /* set the questions and categories */
-    var questions = [{
-            'question': "How do you change font color using css?",
-            'answer': "Use the color attribute",
-            'category': "CSS"
-        }, {
-            'question': "How do you declare a number input?",
-            'answer': 'use the number type',
-            'category': "HTML5"
-        },
-        {
-            'question': "In css how do you change the font size?",
-            'answer': "use the font size attribute",
-            'category': "CSS"
-        }
-    ];
+    var questions = [];
 
     /* Closes Card Added! and allows additional input */
     ctrl.addAnotherCard = function () {
