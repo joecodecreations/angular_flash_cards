@@ -93,7 +93,7 @@ function cardService($http) {
                 console.log("currentQ: " + ctrl.currentQuestion);
                 console.log("currentLength: " + questions.length);
                 /* if we reach the last question start over */
-                if (ctrl.currentQuestion >= questions.length) {
+                if (ctrl.currentQuestion >= questions.length - 1) {
                     ctrl.currentQuestion = 0;
                     console.log("lowered to zero");
                 }
