@@ -1,6 +1,6 @@
 angular.module('app').service('retrieve', retrieveService);
 
-function retrieveService($rootScope, $location, $http) {
+function retrieveService($rootScope, $location, $http, card, updateCards) {
 
     var vm = this;
 
@@ -36,6 +36,9 @@ function retrieveService($rootScope, $location, $http) {
 
                     ctrl.mainWindow = true;
                     ctrl.introCompleted = true;
+
+                    card.nextQuestion($scope, ctrl.questions);
+                    updateCards.calculateQuestions($scope, ctrl.questions);
 
                 }
 
