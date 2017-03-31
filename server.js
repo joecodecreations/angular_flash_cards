@@ -42,6 +42,7 @@ var Deck = require('./models/deck');
 ////////////////////////////////////////
 app.use(function (req, res, next) {
     console.log(req.protocol + '://' + req.get('Host') + req.url);
+
     next(); // make sure we go to the next routes and don't stop here
 });
 
@@ -82,5 +83,10 @@ app.get('/api/decks/get/all', function (req, res) {
     });
 });
 
+app.get('/*', function (req, res) {
+    var fullUrl = req.protocol + '://' + req.get('host') + req.originalUrl;
+    console.log(fullURL);
+    res.send("worked!");
+});
 
 module.exports = app; //Export instead of creating server
