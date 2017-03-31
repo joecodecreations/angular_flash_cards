@@ -160,6 +160,7 @@ function flashCardsController($scope, $http, card, resetValidationService, updat
         /* Check alexa name */
         //if we have an alexa phrase
         if (ctrl.alexaPhrase) {
+
             $http({
                 method: 'GET',
                 url: '/api/alexa/phrases/' + ctrl.alexaPhrase,
@@ -168,7 +169,7 @@ function flashCardsController($scope, $http, card, resetValidationService, updat
                     'Content-Type': 'application/json'
                 }
             }).then(function successCallback(response) {
-                console.log(response.message);
+                console.log(response);
                 if (response.message == "Deck Found") {
                     validation = false;
                     ctrl.AlexaError = true;
