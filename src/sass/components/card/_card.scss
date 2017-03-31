@@ -141,24 +141,24 @@
 
 
 
-
+$transition: ease-in-out;
 
 .flip-forward{
-  animation: flip_backward 1.5s ease-out forwards;
-  -webkit-animation: flip_backward 1.5s ease-out forwards;
+  animation: flip_backward 1.5s $transition forwards;
+  -webkit-animation: flip_backward 1.5s $transition forwards;
 }
 
 
 .flip-backward{
-  animation: flip_forward 1s ease-out forwards;
-  -webkit-animation: flip_forward 1s ease-out forwards;
+  animation: flip_forward 1s $transition forwards;
+  -webkit-animation: flip_forward 1s $transition forwards;
 }
 
 .flip-forward-reverse{
-  animation: flip_backward_reverse 1s ease-out forwards;
-  -webkit-animation: flip_backward_reverse 1s ease-out forwards;
+  animation: flip_backward_reverse 1s $transition forwards;
+  -webkit-animation: flip_backward_reverse 1s $transition forwards;
 }
 .flip-backward-reverse{
-  animation: flip_forward_reverse 1s ease-out forwards;
-  -webkit-animation: flip_forward_reverse 1s ease-out forwards;
+  animation: flip_forward_reverse 1s $transition forwards;
+  -webkit-animation: flip_forward_reverse 1s $transition forwards;
 }
