@@ -160,7 +160,7 @@ function flashCardsController($scope, $http, card, resetValidationService, updat
         }
         /* Check alexa name */
         //if we have an alexa phrase
-        if (ctrl.alexaPhrase) {
+        if (validation) {
             console.log("phrase:" + ctrl.alexaPhrase);
 
             $http({
@@ -180,53 +180,49 @@ function flashCardsController($scope, $http, card, resetValidationService, updat
                 } else {
                     //deck NOT FOUND
 
+                    deckInfo = {
+                        title: ctrl.deckTitle,
+                        route: "kslfjasoifjdaifjaosdifjsd",
+                        backgroundColor: "orange",
+                        canSkipQuestions: true,
+                        alexa: ctrl.alexaPhrase
+                    };
 
+                    $http({
+                        method: 'POST',
+                        url: '/api/decks',
+                        data: deckInfo,
+                        headers: {
+                            'Content-Type': 'application/json'
+                        }
+                    }).then(function successCallback(response) {
+                        //console.log("Deck Created!");
+                        //console.log("Deck_id: " + response.data.id);
+                        //resonse.data.message
+                        //console.log("questions: " + questions);
 
+                        for (var cards in questions) {
 
-                    if (validation) {
-                        deckInfo = {
-                            title: ctrl.deckTitle,
-                            route: "kslfjasoifjdaifjaosdifjsd",
-                            backgroundColor: "orange",
-                            canSkipQuestions: true,
-                            alexa: ctrl.alexaPhrase
-                        };
+                            console.log(questions[cards]);
 
-                        $http({
-                            method: 'POST',
-                            url: '/api/decks',
-                            data: deckInfo,
-                            headers: {
-                                'Content-Type': 'application/json'
-                            }
-                        }).then(function successCallback(response) {
-                            //console.log("Deck Created!");
-                            //console.log("Deck_id: " + response.data.id);
-                            //resonse.data.message
-                            //console.log("questions: " + questions);
+                            cardInfo = {
+                                'question': questions[cards].question,
+                                'answer': questions[cards].answer,
+                                'category': questions[cards].category,
+                                'group_id': response.data.id
+                            };
 
-                            for (var cards in questions) {
+                            card.saveCard(cardInfo);
 
-                                console.log(questions[cards]);
+                        }
+                        ctrl.finished = true; //show the finished screen
+                        ctrl.shareWindow = false; //hide the share this
+                    }, function errorCallback(errorResponse) {
+                        console.log("error");
+                        console.log(errorResponse);
+                        console.log(errorResponse.data);
+                    });
 
-                                cardInfo = {
-                                    'question': questions[cards].question,
-                                    'answer': questions[cards].answer,
-                                    'category': questions[cards].category,
-                                    'group_id': response.data.id
-                                };
-
-                                card.saveCard(cardInfo);
-
-                            }
-                            ctrl.finished = true; //show the finished screen
-                            ctrl.shareWindow = false; //hide the share this
-                        }, function errorCallback(errorResponse) {
-                            console.log("error");
-                            console.log(errorResponse);
-                            console.log(errorResponse.data);
-                        });
-                    }
                 }
             });
         }
