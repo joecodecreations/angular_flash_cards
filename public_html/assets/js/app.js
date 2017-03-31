@@ -198,7 +198,7 @@ function flashCardsController($scope, $http, card, resetValidationService, updat
     //Reset The Form Validation Errors From Start
     resetValidationService.reset(ctrl);
     //Calculate Amount of Cards/Questions
-    updateCards.calculateQuestions($scope, questions);
+    //updateCards.calculateQuestions($scope, questions);
     //initiate grabbing the first question in the list
     //updateCards.calculateQuestions($scope, questions);
     //Grab Next Question
