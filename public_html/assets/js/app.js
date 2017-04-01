@@ -50,7 +50,7 @@ function flashCardsController($scope, $http, retrieve, card, resetValidationServ
     ctrl.maxCharactersSubject = 26;
 
     //check for cards previously saved
-    retrieve.deck($scope);
+
 
     function createRoute(date) {
         /*take current time, base 64 it three times to get the output */
@@ -71,7 +71,7 @@ function flashCardsController($scope, $http, retrieve, card, resetValidationServ
 
     /* set the questions and categories */
     var questions = [];
-
+    retrieve.deck($scope, questions);
     /* Closes Card Added! and allows additional input */
     ctrl.addAnotherCard = function () {
         ctrl.cardAdded = false;
@@ -463,7 +463,7 @@ function retrieveService($rootScope, $location, $http, card, updateCards) {
     var vm = this;
 
     /* Add a new card */
-    vm.deck = function ($scope) {
+    vm.deck = function ($scope, questions) {
         var ctrl = $scope;
         //grab url in browser bar
         var url = $location.absUrl();
@@ -507,8 +507,8 @@ function retrieveService($rootScope, $location, $http, card, updateCards) {
                         };
                         questions.push(newCard);
                     }
-                    updateCards.calculateQuestions($scope, ctrl.questions);
-                    card.nextQuestion($scope, ctrl.questions);
+                    updateCards.calculateQuestions($scope, questions);
+                    card.nextQuestion($scope, questions);
 
                 }
 

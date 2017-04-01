@@ -5,7 +5,7 @@ function retrieveService($rootScope, $location, $http, card, updateCards) {
     var vm = this;
 
     /* Add a new card */
-    vm.deck = function ($scope) {
+    vm.deck = function ($scope, questions) {
         var ctrl = $scope;
         //grab url in browser bar
         var url = $location.absUrl();
@@ -49,8 +49,8 @@ function retrieveService($rootScope, $location, $http, card, updateCards) {
                         };
                         questions.push(newCard);
                     }
-                    updateCards.calculateQuestions($scope, ctrl.questions);
-                    card.nextQuestion($scope, ctrl.questions);
+                    updateCards.calculateQuestions($scope, questions);
+                    card.nextQuestion($scope, questions);
 
                 }
 
