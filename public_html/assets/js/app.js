@@ -496,6 +496,17 @@ function retrieveService($rootScope, $location, $http, card, updateCards) {
                     ctrl.introCompleted = true;
                     console.log(ctrl.questions);
 
+                    var data = response.data.cards;
+
+                    for (var i in data) {
+
+                        var newCard = {
+                            'question': data[i].question,
+                            'answer': data[i].answer,
+                            'category': data[i].category
+                        };
+                        questions.push(newCard);
+                    }
                     updateCards.calculateQuestions($scope, ctrl.questions);
                     card.nextQuestion($scope, ctrl.questions);
 
