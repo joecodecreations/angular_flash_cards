@@ -1,5 +1,16 @@
 <div class="completed" ng-show="finished">
     <div class="completed-header">Your deck has been saved!</div>
-
-    Your cards can be viewed at http://flashcardquiz.com/ What next? Now you can share it with your friends.
+    <div class="completed-url">
+        Your cards can be viewed at <a href="http://flashcardquiz.com/{{deckRoute}}">http://flashcardquiz.com/{{deckRoute}}</a>
+    </div>
+    <div class="completed-social">
+        Copy and paste the link to share these cards or use the share buttons below</br>
+        SHARE BUTTONS HERE
+    </div>
+    <div class="completed-alexa">
+        Use these cards with Amazon Alexa by enabling the Flash Card Quiz Skill and then use the following phrase to access this deck:
+        <div class="completed-alexa-phrase">
+            {{ alexaPhrase }}
+        </div>
+    </div>
 </div>

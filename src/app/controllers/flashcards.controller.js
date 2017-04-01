@@ -170,7 +170,7 @@ function flashCardsController($scope, $http, retrieve, card, resetValidationServ
                     //alexa phrases didn't match so let's go ahead and save the deck
 
                     var deckRoute = createRoute(); //create our custom route
-
+                    ctrl.deckRoute = deckRoute;
                     deckInfo = {
                         title: ctrl.deckTitle,
                         route: deckRoute,
