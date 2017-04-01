@@ -363,7 +363,7 @@ function cardService($http) {
     vm.nextQuestion = function ($scope, questions) {
         console.log("next question hit");
         var ctrl = $scope;
-
+        console.log("Length: " + questions.length);
         /* if we reach the last question start over */
         if (ctrl.currentQuestion && questions.length) {
             if (ctrl.currentQuestion >= questions.length) {
