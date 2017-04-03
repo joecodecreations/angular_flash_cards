@@ -16,29 +16,26 @@
 
 
   &-summary{
-    width: 60%;
-margin: 0 auto;
-font-size: 24px;
-letter-spacing: 0;
-line-height: 31px;
-font-family: Lato,sans-serif;
-color: #a6a6a6;
-font-weight: lighter;
-max-width: 327px;
+    width: 71%;
+    margin: 0 auto;
+    font-size: 24px;
+    letter-spacing: 0;
+    line-height: 33px;
+    font-family: Lato,sans-serif;
+    color: #a6a6a6;
+    font-weight: lighter;
+    max-width: 350px;
     }
 
 
   &-heading{
     width: 90%;
-  margin: 0 auto;
-  max-width: 375px;
-  border-top: 2px solid #D8D8D8;
-  border-bottom: 2px solid #D8D8D8;
-  padding-left: 8%;
-  padding-right: 8%;
-  padding-top: 1%;
-  padding-bottom: 4%;
-  margin-bottom: 19px;
+margin: 0 auto;
+    max-width: 375px;
+    border-top: 2px solid #d8d8d8;
+    border-bottom: 2px solid #d8d8d8;
+    padding: 1% 8% 4%;
+    margin-bottom: 4px;
 
     &-welcome{
       font-family: Lato,sans-serif;
@@ -95,7 +92,7 @@ max-width: 327px;
     }
 
     &-text {
-      font-family: Arial-BoldMT;
+      font-family: Arial;
       font-size: 18px;
       color: #71B4D8;
     }
