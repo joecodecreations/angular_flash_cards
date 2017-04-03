@@ -16,23 +16,37 @@
 
 
   &-summary{
-    width: 80%;
-        margin: 0 auto;
-        font-size: 24px;
-        letter-spacing: 0;
-        line-height: 31px;
-        font-family: 'Lato', sans-serif;
-        color: #A6A6A6;
+    width: 60%;
+margin: 0 auto;
+font-size: 24px;
+letter-spacing: 0;
+line-height: 31px;
+font-family: Lato,sans-serif;
+color: #a6a6a6;
+font-weight: lighter;
+max-width: 327px;
     }
 
 
   &-heading{
+    width: 90%;
+  margin: 0 auto;
+  max-width: 375px;
+  border-top: 2px solid #D8D8D8;
+  border-bottom: 2px solid #D8D8D8;
+  padding-left: 8%;
+  padding-right: 8%;
+  padding-top: 1%;
+  padding-bottom: 4%;
+  margin-bottom: 19px;
 
     &-welcome{
-    font-family: 'Lato', sans-serif;
-    font-weight:bold;
-    font-size: 20px;
-    color: #8B8B8B;
+      font-family: Lato,sans-serif;
+      font-weight: 700;
+      font-size: 20px;
+      color: #8b8b8b;
+      width: 116px;
+
     }
     &-title{
     font-family: 'Lato', sans-serif;
