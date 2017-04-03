@@ -51,10 +51,14 @@ margin: 0 auto;
       color: #6F6F6F;
     }
     &-dotcom{
-      font-family: 'Lato', sans-serif;
-      font-size: 12px;
-      font-weight:bold;
-      color: #8B8B8B;
+      font-family: Lato,sans-serif;
+      font-size: 14px;
+      color: #8b8b8b;
+      width: 50px;
+      float: right;
+      margin-right: 13px;
+      margin-top: -4px;
+      font-weight: bold;
     }
   }
 
@@ -133,6 +137,7 @@ margin: 0 auto;
     font-size: 24px;
     color: #FFFFFF;
     margin-top:20px;
+    cursor:pointer;
     &:hover{
       /* button: */
       background: #8EBC5B;
