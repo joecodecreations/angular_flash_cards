@@ -154,6 +154,7 @@ function flashCardsController($scope, $http, retrieve, card, resetValidationServ
     }
 
     ctrl.createDeck = function () {
+        ctrl.alexaPhrase = ctrl.alexaPhrase.toLowerCase();
         //reset the form after we send the data
         resetShareForm();
         var validation = true;
@@ -178,7 +179,7 @@ function flashCardsController($scope, $http, retrieve, card, resetValidationServ
                 if (matches !== null) {
                     validation = false;
                     ctrl.AlexaError = true;
-                    ctrl.AlexaErrorMessage = "* Please write out your numbers using words (ex:10 becomes ten)";
+                    ctrl.AlexaErrorMessage = "* Write numbers ex:10 becomes ten)";
                 }
 
                 //check for unwanted characters
@@ -188,7 +189,7 @@ function flashCardsController($scope, $http, retrieve, card, resetValidationServ
                     console.log("this shit was found");
                     validation = false;
                     ctrl.AlexaError = true;
-                    ctrl.AlexaErrorMessage = "* Please remove any special characters([!@#$%^&*()_;:<>,.\/}{|=+~`])";
+                    ctrl.AlexaErrorMessage = "* Remove special characters - use only words";
                 }
 
             }
@@ -199,6 +200,7 @@ function flashCardsController($scope, $http, retrieve, card, resetValidationServ
         /* Check alexa name */
         //if we have an alexa phrase
         if (validation) {
+
             console.log("phrase:" + ctrl.alexaPhrase);
 
             $http({
