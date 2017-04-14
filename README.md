@@ -1,6 +1,6 @@
 # Angular Flash Cards
 
-**CURRENTLY WIP: COMPLETION DATE EST. March 25th 2017**
+**CURRENTLY WIP**
 
  Interactive flash cards to help you study written in AngularJS.
 
