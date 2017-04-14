@@ -135,18 +135,40 @@ function flashCardsController($scope, $http, retrieve, card, resetValidationServ
         if (ctrl.deckTitle === null || ctrl.deckTitle === undefined || ctrl.deckTitle.length < 0) {
             validation = false;
             ctrl.TitleError = true;
-            ctrl.TitleErrorMessage = "* Your title cannot be blank"
+            ctrl.TitleErrorMessage = "* Your title cannot be blank";
         }
-        if (ctrl.alexa == true && (ctrl.alexaPhrase < 0 || ctrl.alexaPhrase === undefined)) {
+        if (ctrl.alexa === true && (ctrl.alexaPhrase < 0 || ctrl.alexaPhrase === undefined)) {
             ctrl.AlexaError = true;
             validation = false;
-            ctrl.AlexaErrorMessage = "* You must enter a phrase to use alexa"
+            ctrl.AlexaErrorMessage = "* You must enter a phrase to use alexa";
         } else {
-            if (countWords(ctrl.alexaPhrase) <= 3) {
+            if (countWords(ctrl.alexaPhrase) <= 2) {
                 validation = false;
                 ctrl.AlexaError = true;
                 ctrl.AlexaErrorMessage = "* Alexa Phrase must use three or more words";
+            } else {
+
+                //check to see if we have numbers in our alexa phrase
+                var matches = ctrl.alexaPhrase.match(/\d+/g);
+                if (matches !== null) {
+                    validation = false;
+                    ctrl.AlexaError = true;
+                    ctrl.AlexaErrorMessage = "* Please write out your numbers using words (ex:10 becomes ten)";
+                }
+
+                //check for unwanted characters
+
+                var matchedCharacters = ctrl.alexaPhrase.match(/[^a-zA-Z ]+/);
+                if (matchedCharacters !== null) {
+                    console.log("this shit was found");
+                    validation = false;
+                    ctrl.AlexaError = true;
+                    ctrl.AlexaErrorMessage = "* Please remove any special characters([!@#$%^&*()_;:<>,.\/}{|=+~`])";
+                }
+
             }
+
+
 
         }
         /* Check alexa name */
