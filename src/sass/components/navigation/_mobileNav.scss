@@ -16,34 +16,37 @@
   }
   &-button{
     text-align: center;
-    width:90%;
-    height:32px;
+    width: 91%;
+    height: 62px;
     margin-top: 10px;
-    padding: 10px;
+    padding: 21px;
     background: #000;
     color: #fff;
     text-transform: uppercase;
     border: 1px solid hsla(0,0%,100%,.3);
     text-decoration: none;
     list-style-type: none;
-    cursor:pointer;
+    cursor: pointer;
+    font-size: 1.1em;
     &:hover{
       color:rgba(255,255,255,.4);
     }
 
     &--close{
-      width:90%;
-      height:32px;
+      text-align: center;
+      width: 91%;
+      height: 62px;
       margin-top: 10px;
-      padding: 10px;
-      background: #71b4d8;
-      color: black;
+      padding: 21px;
       text-transform: uppercase;
       border: 1px solid hsla(0,0%,100%,.3);
       text-decoration: none;
       list-style-type: none;
-      cursor:pointer;
-      text-align: center;
+      cursor: pointer;
+      font-size: 1.1em;
+      background: limegreen;
+      color: white;
+
       &:hover {
           color:rgba(255,255,255,.4);
       }
