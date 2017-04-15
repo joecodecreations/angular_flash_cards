@@ -5,13 +5,14 @@
   height:100%;
   background-color: rgba(14.9%,14.9%,14.9%,.95);
   z-index: 10000;
+  padding-top:16px;
 
 
   &-title{
     text-align: center;
     font-size: 1.2em;
     color: #fff;
-    margin-top:16px;
+
   }
   &-button{
     text-align: center;
