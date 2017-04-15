@@ -1,36 +1,65 @@
-<div class="introduction" ng-hide="introCompleted">
+<div class="introduction" ng-hide="introductionCompletedTwo">
+    <div class="introductionOne" ng-hide="introCompleted">
+        <div class="introduction-heading">
+            <div class="introduction-heading-welcome">Welcome to</div>
+            <div class="introduction-heading-title">Flashcard Quiz</div>
+            <div class="introduction-heading-dotcom">.com</div>
+        </div>
 
-    <div class="introduction-heading">
-        <div class="introduction-heading-welcome">Welcome to</div>
-        <div class="introduction-heading-title">Flash Card Quiz</div>
-        <div class="introduction-heading-dotcom">.com</div>
-    </div>
+        <div class="introduction-summary">
+            Create awesome flash cards with questions and answers that you can share with others
+        </div>
 
-    <div class="introduction-summary">
-        Create awesome flash cards with questions and answers that you can share with others
-    </div>
-
-    <div class="introduction-alexa">
-        <div class="introduction-alexa-left">
-            <div class="introduction-alexa-circle">
-                <img src="assets/images/alexa-icon.jpg" class="introduction-alexa-icon" />
+        <div class="introduction-alexa">
+            <div class="introduction-alexa-left">
+                <div class="introduction-alexa-circle">
+                    <img src="assets/images/alexa-icon.jpg" class="introduction-alexa-icon" />
+                </div>
+            </div>
+            <div class="introduction-alexa-right">
+                <div class="introduction-alexa-text">
+                    Works with Amazon Alexa
+                </div>
+                <div class="introduction-alexa-web">
+                    and through the web
+                </div>
             </div>
         </div>
-        <div class="introduction-alexa-right">
-            <div class="introduction-alexa-text">
-                Works with Amazon Alexa
-            </div>
-            <div class="introduction-alexa-web">
-                and through the web
-            </div>
+
+
+        <div class="introduction-registration">
+            No registration required, free to use
         </div>
+
+        <button class="introduction--button" ng-click="getStarted()">GET STARTED</button>
     </div>
 
+    <div class="introductionTwo" ng-show="introCompleted">
+        <div class="introductionTwo-heading">
+            <div class="introductionTwo-heading-title">Awesome! Let's Get Stared</div>
+            <div class="introductionTwo-heading-paragraph">We will start by setting up your deck. Then, you can start adding cards</div>
+        </div>
 
-    <div class="introduction-registration">
-        No registration required, free to use
+        <div class="introductionTwo-row">
+            Deck Title
+        </div>
+        <div class="introductionTwo-row">
+            <input type="text" class="introductionTwo--input" placeholder="Math, Science and History" ng-model="ctrl.deckTitle" />
+        </div>
+
+        <div class="introductionTwo-row">
+            Description
+        </div>
+        <div class="introductionTwo-row">
+            <input type="text" class="introductionTwo--input" placeholder="Learn more about algebra, chemistry..." ng-model="ctrl.deckDescription" />
+        </div>
+
+        <button class="introduction--button" ng-click="ready()">Ready?</button>
+
+        <div class="introductionTwo-row-smaller">
+            Don't worry, you can change this later if you need to
+        </div>
+
     </div>
-
-    <button class="introduction--button" ng-click="getStarted()">GET STARTED</button>
 
 </div>

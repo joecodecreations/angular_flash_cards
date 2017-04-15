@@ -102,6 +102,9 @@ function flashCardsController($scope, $http, retrieve, card, resetValidationServ
         ctrl.mainWindow = false;
     };
 
+    ctrl.ready = function () {
+        ctrl.introductionCompletedTwo = true;
+    };
 
     function resetAddCardInputs() {
         // Reset Form Input Values
