@@ -14,10 +14,6 @@
      @media (#{$range}-width: 786px)  { @content ; }
 
   }
-  @else if $point == smallDevices {
-     @media (#{$range}-width: 786px)  { @content ; }
-
-  }
   @else if $point == mobileonly {
      @media (#{$range}-width: 320px)  { @content ; }
 
