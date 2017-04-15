@@ -40,7 +40,7 @@ function flashCardsController($scope, $http, retrieve, card, resetValidationServ
     /*Adding a new Card */
     ctrl.cardAdded = false;
     ctrl.finished = false; //have we saved the data / also shows the final form.
-
+    ctrl.hideButtons = true; // do buttons show
 
     /* Form max and mins */
     ctrl.subjectLength = 26;
@@ -88,6 +88,14 @@ function flashCardsController($scope, $http, retrieve, card, resetValidationServ
 
     };
 
+    ctrl.mobileMenuOpen = function () {
+        ctrl.ShowMobileMenu = true;
+    }
+
+    ctrl.mobileMenuClose = function () {
+        ctrl.ShowMobileMenu = false;
+    }
+
     /* Shows Interface for Adding New Cards */
     ctrl.showAddCardInterface = function () {
         ctrl.addCardShow = true;
@@ -105,6 +113,7 @@ function flashCardsController($scope, $http, retrieve, card, resetValidationServ
     ctrl.getStarted = function () {
         ctrl.introCompleted = true;
         ctrl.addCardShow = true;
+        ctrl.hideButtons = false;
     }
     /* Grabs the next question in the list */
     card.nextQuestion($scope, questions);

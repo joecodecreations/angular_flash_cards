@@ -1,21 +1,32 @@
 
- @mixin breakpoint($point) {
+ @mixin breakpoint($point, $range) {
    @if $point == largeScreen {
-     @media (min-width: 1824px) { @content ; }
+     @media (#{$range}-width: 1824px) { @content ; }
   }
    @else if $point == desktop {
-     @media (min-width: 1224px) { @content ; }
+     @media (#{$range}-width: 1224px) { @content ; }
   }
     @else if $point == tablet {
-     @media (min-width: 1024px) { @content ; }
+     @media (#{$range}-width: 1024px) { @content ; }
   }
 
+  @else if $point == smallDevices {
+     @media (#{$range}-width: 786px)  { @content ; }
+
+  }
+  @else if $point == smallDevices {
+     @media (#{$range}-width: 786px)  { @content ; }
+
+  }
   @else if $point == mobileonly {
-     @media (max-width: 320px)  { @content ; }
+     @media (#{$range}-width: 320px)  { @content ; }
 
   }
 }
 
+// @include breakpoint(desktop){
+//
+// }
 
 // /* Smartphones (portrait and landscape) ----------- */
 // @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {

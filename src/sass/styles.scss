@@ -3,10 +3,9 @@
 // @import "compass-breakpoint/stylesheets/breakpoint";
 
 /* Globbed files */
-@import "globbed/__components";
+@import "global/_mixins";
 @import "globbed/__global";
 @import "globbed/__base";
-
 @import "global/_extends";
-@import "global/_mixins";
 @import "global/_variables";
+@import "globbed/__components";
