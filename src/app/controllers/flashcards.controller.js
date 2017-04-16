@@ -136,6 +136,7 @@ function flashCardsController($scope, $http, retrieve, card, resetValidationServ
     ctrl.shareDeck = function () {
         ctrl.mainWindow = false;
         ctrl.shareWindow = true;
+        ctrl.addCardShow = false;
 
     };
 
