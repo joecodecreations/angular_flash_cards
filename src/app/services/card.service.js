@@ -63,6 +63,7 @@ function cardService($http) {
             //Reset card Count
             updateCards.calculateQuestions($scope, questions);
             ctrl.cardAdded = true;
+            ctrl.firstcard = false;
         }
     };
 

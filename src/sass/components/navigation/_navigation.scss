@@ -9,9 +9,19 @@
     padding:20px;
     background:#262626;
     color:white;
+
+    &-dotcom{
+      font-size: 13px;
+font-family: Lato,sans-serif;
+width: 175px;
+text-align: right;
+margin-top: -6px;
+color: white;
+    }
     &-heading {
       color:white;
       font-size:1.2em;
+      font-family: Lato,sans-serif;
     }
 
   &-title{

@@ -30,7 +30,7 @@ function flashCardsController($scope, $http, retrieve, card, resetValidationServ
 
     /* Default states */
     //  ctrl.quizTitle = "Front End Web Development";
-    ctrl.currentQuestion = 0; // Holds current question we are on
+    ctrl.currentQuestion = 1; // Holds current question we are on
     ctrl.flip = false; // Holds bool for flipped card
     ctrl.firstcard = true; // Is this the first card ? (blank back etc)
     ctrl.addCardShow = false;
@@ -60,6 +60,14 @@ function flashCardsController($scope, $http, retrieve, card, resetValidationServ
 
     ctrl.buttonHoverOff = function () {
         ctrl.buttonChange = "Ready?";
+    }
+
+    function closeAllWindows() {
+        ctrl.introductionCompletedTwo = true; //intro page
+        ctrl.finished = false; //final page
+        ctrl.shareWindow = false; // share this deck
+        ctrl.addCardShow = false; //add card form
+
     }
 
 
@@ -110,11 +118,13 @@ function flashCardsController($scope, $http, retrieve, card, resetValidationServ
 
     /* Shows Interface for Adding New Cards */
     ctrl.showAddCardInterface = function () {
+        closeAllWindows();
         ctrl.addCardShow = true;
         ctrl.mainWindow = false;
     };
 
     ctrl.ready = function () {
+        closeAllWindows();
         ctrl.introductionCompletedTwo = true;
         ctrl.addCardShow = true;
     };
@@ -157,8 +167,10 @@ function flashCardsController($scope, $http, retrieve, card, resetValidationServ
     ctrl.addNewCard = function () {
         card.add($scope, resetValidationService, updateCards, questions);
         updateCards.calculateQuestions($scope, questions);
+
     };
     ctrl.shareDeck = function () {
+        closeAllWindows();
         ctrl.mainWindow = false;
         ctrl.shareWindow = true;
         ctrl.addCardShow = false;
@@ -276,6 +288,7 @@ function flashCardsController($scope, $http, retrieve, card, resetValidationServ
                             card.saveCard(cardInfo);
 
                         }
+                        closeAllWindows();
                         ctrl.finished = true; //show the finished screen
                         ctrl.shareWindow = false; //hide the share this
                         ctrl.addCardShow = false;
@@ -405,6 +418,7 @@ function cardService($http) {
             //Reset card Count
             updateCards.calculateQuestions($scope, questions);
             ctrl.cardAdded = true;
+            ctrl.firstcard = false;
         }
     };
 

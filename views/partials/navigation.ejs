@@ -1,5 +1,6 @@
 <div class="nav" ng-controller="navigation as nav">
     <div class="nav-title">{{ title }}</div>
+    <div class="nav-dotcom">.com</div>
     <ul class="nav-group">
         <li ng-repeat="button in navButtons" class="nav-button" ng-hide="hideButtons" ng-click="button.action()" title="{{button.titleTag}}">{{ button.heading }}</li>
         <i class="fa fa-bars nav-hamburger" ng-hide="hideButtons" title="Menu" alt="Menu" ng-click="mobileMenuOpen() " aria-hidden="true"></i>

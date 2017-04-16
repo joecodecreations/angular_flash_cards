@@ -1,7 +1,7 @@
 .insertCard{
     width: 95%;
     position: absolute;
-    min-height: 450px;
+    min-height: 294px;
     margin-top: 128px;
     margin: 0 auto;
     padding: 10px;
@@ -136,6 +136,32 @@
       border: 2px solid #FFFFFF;
       box-shadow: 0 0 3px 0 rgba(0,0,0,0.50);
       border-radius: 22px;
+    }
+    &--fixedwidth{
+      margin:0 auto;
+      width:267px;
+      /*button */
+      background: #505050;
+      border: 2px solid #FFFFFF;
+      box-shadow: 0 0 3px 0 rgba(0,0,0,0.50);
+      border-radius: 22px;
+      /* text: */
+      font-family: 'Lato', sans-serif;
+      font-size: 24px;
+      color: #FFFFFF;
+      margin-top:20px;
+      cursor:pointer;
+      padding:7px;
+      &:hover{
+        /* button: */
+        background: #8EBC5B;
+        border: 2px solid #FFFFFF;
+        box-shadow: 0 0 3px 0 rgba(0,0,0,0.50);
+        border-radius: 22px;
+      }
+
+
+
     }
 
   }
