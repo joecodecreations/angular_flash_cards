@@ -299,7 +299,7 @@ angular.module('app').controller('navigation', navigationController);
 function navigationController($scope) {
     var ctrl = $scope;
 
-    ctrl.title = 'Flash Card Quiz';
+    ctrl.title = 'Flashcard Quiz';
 
     ctrl.navButtons = [{
 
