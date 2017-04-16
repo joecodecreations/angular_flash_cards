@@ -14,12 +14,45 @@
     height: auto;
     min-width: 320px;
     opacity: 0;
-
+    font-family: Lato,sans-serif;
+&-section {
+  padding-top:17px;
+}
+&-row{
+  width:95%;
+  margin: 0 auto;
   &-title{
-    font-size:1.2em;
-    color:black;
-    text-align:center;
-    text-transform: uppercase;
+    border-bottom: 1px solid #ECECEC;
+    padding-bottom:10px;
+  }
+}
+&-requirement{
+  font-family: Lato,sans-serif;
+  font-size: 13px;
+  color: #9c9c9c;
+  letter-spacing: 0;
+  width: 100px;
+  height: 13px;
+  float: left;
+  text-align: left;
+  margin-left: 3%;
+  margin-top: 4px;
+}
+  &-title{
+    /* Awesome! Let’s Get S: */
+    font-family: Lato,sans-serif;
+    font-size: 36px;
+    color: #717171;
+    letter-spacing: 0;
+    line-height: 31px;
+  }
+
+  &-heading{
+  font-family: Lato,sans-serif;
+  font-size: 24px;
+  color: #A6A6A6;
+  letter-spacing: 0;
+  line-height: 36px;
   }
   &-total{
     width:100%;
@@ -27,22 +60,7 @@
     color:#999;
     margin-top:5px;
   }
-  &-subject{
-    @extend %insertCardRow;
-  }
 
-  &-question{
-    @extend %insertCardRow;
-
-  }
-
-  &-answer{
-    @extend %insertCardRow;
-  }
-
-  &--textArea{
-    @extend %insertCardTextArea;
-  }
 
   &-close{
     color: #999;
@@ -59,57 +77,69 @@
 
   /* Validation */
   &-remainingCharacters{
-    color:#999;
-    margin-top:3px;
-    font-size:.8em;
+    color: #999;
+  margin-top: 3px;
+  font-size: .8em;
+  margin-right: 3%;
+  text-align: right;
+  position: absolute;
+  right: 2%;
     &-over{
-      color:red;
+      color:#F05A5A;
     }
   }
-  &--button {
+  &--input{
+    padding:8px;
+    color:#333;
+    font-size:20px;
+    border: 1px solid #CBCBCB;
+    background:#FAFAFA;
+    font-family: Lato,sans-serif;
+    width:100%;
+
+    &::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+      color: #BABABA;
+    }
+    &::-moz-placeholder { /* Firefox 19+ */
+      color: #BABABA;
+    }
+    &:-ms-input-placeholder { /* IE 10+ */
+      color: #BABABA;
+    }
+    &:-moz-placeholder { /* Firefox 18- */
+      color: #BABABA;
+    }
+  }
+
+  &--button{
     margin:0 auto;
-    width: 169px;
-    height: 41px;
-    padding: 10px;
-    position: relative;
-    margin-top: 9px;
-    font-size: .7em;
-    text-transform: uppercase;
-    color: #666;
-    cursor: pointer;
-    border: 1px solid rgba(0,0,0,.4);
-
-    border:1px solid rgba(0,0,0,.4);
-    &:hover {
-      background:rgba(0,0,0,.6);
-      color:white;
-      border:1px solid rgba(0,0,0,.2);
+    /*button */
+    background: #505050;
+    border: 2px solid #FFFFFF;
+    box-shadow: 0 0 3px 0 rgba(0,0,0,0.50);
+    border-radius: 22px;
+    /* text: */
+    font-family: 'Lato', sans-serif;
+    font-size: 24px;
+    color: #FFFFFF;
+    margin-top:20px;
+    cursor:pointer;
+    padding:7px;
+    &-holder{
+      margin:0 auto;
+      width:95%;
+      margin-top:17px;
+    }
+    &:hover{
+      /* button: */
+      background: #8EBC5B;
+      border: 2px solid #FFFFFF;
+      box-shadow: 0 0 3px 0 rgba(0,0,0,0.50);
+      border-radius: 22px;
     }
 
   }
+
 
 
 }
-
-
-  %insertCardRow {
-    color:black;
-    font-size:1em;
-    margin-top:10px;
-    width:100%;
-    text-transform: uppercase;
-  }
-
-
-  /* Elements */
-  %insertCardTextArea {
-    font-size: 1em;
-    padding: 5px;
-    color: #333;
-    border: 1px solid #000;
-    resize: none;
-    width: 100%;
-    margin-top: 2px;
-
-
-  }

@@ -355,7 +355,7 @@ function cardService($http) {
         if (typeof ctrl.newQuestion === "undefined" || ctrl.newQuestion.length < ctrl.minCharacters) {
             passValidation = false;
             ctrl.QuestionError = true;
-            ctrl.QuestionErrorMessage = "* This field requires at least 10 characters";
+            ctrl.QuestionErrorMessage = "* This field requires 10 characters";
         } else {
             if (ctrl.newQuestion.length > ctrl.questionLength) {
                 ctrl.QuestionError = true;
@@ -368,7 +368,7 @@ function cardService($http) {
 
             ctrl.AnswerError = true;
             passValidation = false;
-            ctrl.AnswerErrorMessage = "* This field requires at least 10 characters";
+            ctrl.AnswerErrorMessage = "* This field requires 10 characters";
         } else {
             if (ctrl.newAnswer.length > ctrl.answerLength) {
                 ctrl.AnswerError = true;
