@@ -26,6 +26,17 @@ function flashCardsController($scope, $http, retrieve, card, resetValidationServ
 
     //check for cards previously saved
 
+    ctrl.buttonChange = "Ready?";
+
+    ctrl.buttonHover = function () {
+        ctrl.buttonChange = "GO!";
+    }
+
+    ctrl.buttonHoverOff = function () {
+        ctrl.buttonChange = "Ready?";
+    }
+
+
 
     function createRoute(date) {
         /*take current time, base 64 it three times to get the output */
@@ -171,7 +182,7 @@ function flashCardsController($scope, $http, retrieve, card, resetValidationServ
 
                 //check for unwanted characters
 
-                var matchedCharacters = ctrl.alexaPhrase.match(/[^a-zA-Z ]+/);
+                var matchedCharacters = ctrl.alexaPhrase.match(/[^a-zA-Z0-9 ]+/);
                 if (matchedCharacters !== null) {
                     console.log("this shit was found");
                     validation = false;

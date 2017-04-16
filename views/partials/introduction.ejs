@@ -54,7 +54,7 @@
             <input type="text" class="introductionTwo--input" placeholder="Learn more about algebra, chemistry..." ng-model="deckDescription" />
         </div>
 
-        <button class="introduction--button" ng-click="ready()">Ready?</button>
+        <button class="introduction--button" ng-mouseover="buttonHover()" ng-mouseout="buttonHoverOff()" ng-click="ready()">{{ buttonChange }}</button>
 
         <div class="introductionTwo-row-smaller">
             Don't worry, you can change this later if you need to
