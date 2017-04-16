@@ -1,0 +1,21 @@
+.beta{
+  position: absolute;
+  background: #32cd32;
+  width: 200px;
+  height: 37px;
+  padding: 8px;
+  right: -52px;
+  top: 21px;
+  -ms-transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+  text-align: center;
+  color: #fff;
+  z-index: 9001;
+
+
+  &-label {
+    color:white;
+    font-size:22px;
+  }
+}

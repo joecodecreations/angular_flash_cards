@@ -36,6 +36,7 @@ function flashCardsController($scope, $http, retrieve, card, resetValidationServ
     ctrl.addCardShow = false;
     ctrl.mainWindow = false; //card deck preview
     ctrl.introCompleted = false;
+    ctrl.addCardShow = false;
 
     /*Adding a new Card */
     ctrl.cardAdded = false;
@@ -115,6 +116,7 @@ function flashCardsController($scope, $http, retrieve, card, resetValidationServ
 
     ctrl.ready = function () {
         ctrl.introductionCompletedTwo = true;
+        ctrl.addCardShow = true;
     };
 
     function resetAddCardInputs() {
@@ -126,7 +128,6 @@ function flashCardsController($scope, $http, retrieve, card, resetValidationServ
 
     ctrl.getStarted = function () {
         ctrl.introCompleted = true;
-        ctrl.addCardShow = true;
         ctrl.hideButtons = false;
     }
     /* Grabs the next question in the list */
