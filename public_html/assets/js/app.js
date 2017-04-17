@@ -584,9 +584,12 @@ function retrieveService($rootScope, $location, $http, card, updateCards) {
                     ctrl.route = token;
                     //console.log(ctrl.questions);
 
-
+                    ctrl.introductionCompletedTwo = true; //intro page
+                    ctrl.finished = false; //final page
+                    ctrl.shareWindow = false; // share this deck
+                    ctrl.addCardShow = false; //add card form
                     ctrl.mainWindow = true;
-                    ctrl.introductionCompletedTwo = true;
+
                     console.log(ctrl.questions);
 
                     var data = response.data.cards;
