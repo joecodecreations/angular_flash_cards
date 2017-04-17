@@ -14,8 +14,8 @@ function retrieveService($rootScope, $location, $http, card, updateCards) {
         var token = url.replace("http://localhost:3000/", "");
 
         //if we have a token let's grab the data if any
-        if (token && token !== "") {
-
+        if (token) {
+            console.log('grabbing units');
             //hit the API
             $http({
                 method: 'GET',
