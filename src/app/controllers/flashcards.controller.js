@@ -5,7 +5,7 @@ function flashCardsController($scope, $http, retrieve, card, resetValidationServ
 
     /* Default states */
     //  ctrl.quizTitle = "Front End Web Development";
-    ctrl.currentQuestion = 1; // Holds current question we are on
+    ctrl.currentQuestion = 0; // Holds current question we are on
     ctrl.flip = false; // Holds bool for flipped card
     ctrl.firstcard = true; // Is this the first card ? (blank back etc)
     ctrl.addCardShow = false;
@@ -24,7 +24,20 @@ function flashCardsController($scope, $http, retrieve, card, resetValidationServ
     ctrl.questionLength = 250;
     ctrl.minCharacters = 10; //min form input chrt count
     ctrl.maxCharactersSubject = 26;
+    ctrl.alexaButtonState = "off";
+    ctrl.alexaBoolean = false;
 
+    ctrl.alexaButtonToggle = function () {
+        if (ctrl.alexaButtonState == "off") {
+            ctrl.alexaButtonState = "on";
+            ctrl.alexaBoolean = true;
+            ctrl.alexa = true;
+        } else {
+            ctrl.alexaButtonState = "off";
+            ctrl.alexaBoolean = false;
+            ctrl.alexa = false;
+        }
+    }
     //check for cards previously saved
 
     ctrl.buttonChange = "Ready?";
@@ -160,14 +173,21 @@ function flashCardsController($scope, $http, retrieve, card, resetValidationServ
     }
 
     function countWords(phrase) {
-        var wordCount = phrase.split(" ").length;
+        if (phrase) {
+            var wordCount = phrase.split(" ").length;
+        } else {
+            var wordCount = 0;
+        }
         //console.log(wordCount);
         return wordCount;
+
     }
 
     ctrl.createDeck = function () {
-        ctrl.alexaPhrase = ctrl.alexaPhrase.toLowerCase();
-        //reset the form after we send the data
+        console.log("creating deck");
+        if (ctrl.alexaPhrase) {
+            ctrl.alexaPhrase = ctrl.alexaPhrase.toLowerCase();
+        }
         resetShareForm();
         var validation = true;
         if (ctrl.deckTitle === null || ctrl.deckTitle === undefined || ctrl.deckTitle.length < 0) {

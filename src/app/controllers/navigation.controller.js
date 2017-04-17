@@ -6,7 +6,6 @@ function navigationController($scope) {
     ctrl.title = 'Flashcard Quiz';
 
     ctrl.navButtons = [{
-
             'heading': 'Add Card',
             'titleTag': 'Add a new card',
             'action': function () {
@@ -18,7 +17,6 @@ function navigationController($scope) {
             'titleTag': 'Share this deck with friends',
             'action': function () {
                 ctrl.shareDeck();
-
             }
         }
     ];
