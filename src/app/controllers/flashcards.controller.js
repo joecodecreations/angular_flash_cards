@@ -200,33 +200,35 @@ function flashCardsController($scope, $http, retrieve, card, resetValidationServ
             validation = false;
             ctrl.AlexaErrorMessage = "* You must enter a phrase to use alexa";
         } else {
-            if (countWords(ctrl.alexaPhrase) <= 2) {
-                validation = false;
-                ctrl.AlexaError = true;
-                ctrl.AlexaErrorMessage = "* Alexa Phrase must use three or more words";
-            } else {
+            if (ctrl.alexa === true) {
 
-                //check to see if we have numbers in our alexa phrase
-                var matches = ctrl.alexaPhrase.match(/\d+/g);
-                if (matches !== null) {
+                if (countWords(ctrl.alexaPhrase) <= 2) {
                     validation = false;
                     ctrl.AlexaError = true;
-                    ctrl.AlexaErrorMessage = "* Write numbers ex:10 becomes ten)";
-                }
+                    ctrl.AlexaErrorMessage = "* Alexa Phrase must use three or more words";
+                } else {
 
-                //check for unwanted characters
+                    //check to see if we have numbers in our alexa phrase
+                    var matches = ctrl.alexaPhrase.match(/\d+/g);
+                    if (matches !== null) {
+                        validation = false;
+                        ctrl.AlexaError = true;
+                        ctrl.AlexaErrorMessage = "* Write numbers ex:10 becomes ten)";
+                    }
 
-                var matchedCharacters = ctrl.alexaPhrase.match(/[^a-zA-Z0-9 ]+/);
-                if (matchedCharacters !== null) {
-                    console.log("this shit was found");
-                    validation = false;
-                    ctrl.AlexaError = true;
-                    ctrl.AlexaErrorMessage = "* Remove special characters - use only words";
+                    //check for unwanted characters
+
+                    var matchedCharacters = ctrl.alexaPhrase.match(/[^a-zA-Z0-9 ]+/);
+                    if (matchedCharacters !== null) {
+                        console.log("this shit was found");
+                        validation = false;
+                        ctrl.AlexaError = true;
+                        ctrl.AlexaErrorMessage = "* Remove special characters - use only words";
+                    }
+
                 }
 
             }
-
-
 
         }
         /* Check alexa name */
