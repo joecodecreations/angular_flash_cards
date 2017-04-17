@@ -586,7 +586,7 @@ function retrieveService($rootScope, $location, $http, card, updateCards) {
 
 
                     ctrl.mainWindow = true;
-                    ctrl.introCompleted = true;
+                    ctrl.introductionCompletedTwo = true;
                     console.log(ctrl.questions);
 
                     var data = response.data.cards;
