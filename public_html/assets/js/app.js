@@ -561,7 +561,7 @@ function retrieveService($rootScope, $location, $http, card, updateCards) {
         var url = $location.absUrl();
         //strip out url and get only oken
         var token = url.replace("https://flashcardquiz.com/", "");
-        var token = url.replace("http://localhost:3000/", "");
+        token = url.replace("http://localhost:3000/", "");
 
         //if we have a token let's grab the data if any
         if (token) {
