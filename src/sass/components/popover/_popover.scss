@@ -1,0 +1,17 @@
+.popover{
+  position:absolute;
+  left:0;
+  top:78px;
+  width:100vw;
+  height:100vh;
+  background:white;
+  z-index: 100000000;
+
+  &-close {
+    position:absolute;
+    top:10;
+    right:10;
+    cursor:pointer;
+
+  }
+}

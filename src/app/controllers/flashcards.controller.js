@@ -37,18 +37,18 @@ function flashCardsController($scope, $http, retrieve, card, resetValidationServ
             ctrl.alexaBoolean = false;
             ctrl.alexa = false;
         }
-    }
+    };
     //check for cards previously saved
 
     ctrl.buttonChange = "Ready?";
 
     ctrl.buttonHover = function () {
         ctrl.buttonChange = "GO!";
-    }
+    };
 
     ctrl.buttonHoverOff = function () {
         ctrl.buttonChange = "Ready?";
-    }
+    };
 
     function closeAllWindows() {
         ctrl.introductionCompletedTwo = true; //intro page
@@ -58,6 +58,15 @@ function flashCardsController($scope, $http, retrieve, card, resetValidationServ
 
     }
 
+    function hidePopContent(showThisSection) {
+        ctrl.popoverWindow = true;
+        //hide all
+        ctrl.popoverAlexa = false;
+        ctrl.popoverGiveFeedback = false;
+        ctrl.popoverShareCards = false;
+        //show only this
+        ctrl.showThisSection = true;
+    }
 
 
     function createRoute(date) {
@@ -98,11 +107,11 @@ function flashCardsController($scope, $http, retrieve, card, resetValidationServ
 
     ctrl.mobileMenuOpen = function () {
         ctrl.ShowMobileMenu = true;
-    }
+    };
 
     ctrl.mobileMenuClose = function () {
         ctrl.ShowMobileMenu = false;
-    }
+    };
 
     /* Shows Interface for Adding New Cards */
     ctrl.showAddCardInterface = function () {
@@ -127,7 +136,7 @@ function flashCardsController($scope, $http, retrieve, card, resetValidationServ
     ctrl.getStarted = function () {
         ctrl.introCompleted = true;
         ctrl.hideButtons = false;
-    }
+    };
     /* Grabs the next question in the list */
     card.nextQuestion($scope, questions);
 
@@ -173,10 +182,9 @@ function flashCardsController($scope, $http, retrieve, card, resetValidationServ
     }
 
     function countWords(phrase) {
+        var wordCount = 0;
         if (phrase) {
-            var wordCount = phrase.split(" ").length;
-        } else {
-            var wordCount = 0;
+            wordCount = phrase.split(" ").length;
         }
         //console.log(wordCount);
         return wordCount;
@@ -286,9 +294,10 @@ function flashCardsController($scope, $http, retrieve, card, resetValidationServ
 
                         }
                         closeAllWindows();
+                        console.log("Deck Saved");
                         ctrl.finished = true; //show the finished screen
                         ctrl.shareWindow = false; //hide the share this
-                        ctrl.addCardShow = false;
+                        ctrl.hideButtons = true;
                     }, function errorCallback(errorResponse) {
                         console.log("error");
                         console.log(errorResponse);

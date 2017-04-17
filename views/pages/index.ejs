@@ -1,29 +1,34 @@
 <% include ../partials/header %>
     <div ng-app="app" class="app ng-cloak" ng-controller="flashcards as cards">
         <!-- beta -->
-        <% include ../partials/beta %>
+        <!-- Share Window -->
+        <% include ../partials/share %>
+            <% include ../partials/beta %>
+                <!-- Share Completed ! -->
+                <% include ../partials/completed %>
+                    <!-- navigation -->
+                    <% include ../partials/navigation %>
+                        <!-- Deck Information -->
+                        <% include ../partials/introduction %>
+                            <!-- Deck Information -->
+                            <% include ../partials/deckInformation %>
 
-            <!-- navigation -->
-            <% include ../partials/navigation %>
-                <!-- Deck Information -->
-                <% include ../partials/introduction %>
-                    <!-- Deck Information -->
-                    <% include ../partials/deckInformation %>
+                                <!-- Card X of X, Card Title -->
+                                <% include ../partials/cardHeader %>
 
-                        <!-- Card X of X, Card Title -->
-                        <% include ../partials/cardHeader %>
+                                    <!-- Front and back of Card -->
+                                    <% include ../partials/cardBody %>
 
-                            <!-- Front and back of Card -->
-                            <% include ../partials/cardBody %>
+                                        <!-- Add new card Form, Secondary Menu Post Add -->
+                                        <% include ../partials/insertCardForm %>
 
-                                <!-- Add new card Form, Secondary Menu Post Add -->
-                                <% include ../partials/insertCardForm %>
+                                            <!-- Share Window -->
+                                            <% include ../partials/share %>
 
-                                    <!-- Share Window -->
-                                    <% include ../partials/share %>
+                                                <!-- Share Window -->
+                                                <% include ../partials/popover %>
 
-                                        <!-- Share Completed ! -->
-                                        <% include ../partials/completed %>
+
 
     </div>
     <% include ../partials/footer %>

@@ -1,16 +1,28 @@
-<div class="completed" ng-show="finished">
-    <div class="completed-header">Your deck has been saved!</div>
-    <div class="completed-url">
-        Your cards can be viewed at <a href="http://flashcardquiz.com/{{deckRoute}}">http://flashcardquiz.com/{{deckRoute}}</a>
+<div class="completed">
+    <div class="completed-row">
+        <div class="completed-title">Deck Saved!</div>
     </div>
-    <div class="completed-social">
-        Copy and paste the link to share these cards or use the share buttons below</br>
-        SHARE BUTTONS HERE
+    <div class="completed-row">
+        <div class="completed-header--underlined">Now, here's what you can do</div>
     </div>
-    <div class="completed-alexa">
-        Use these cards with Amazon Alexa by enabling the Flash Card Quiz Skill and then use the following phrase to access this deck:
-        <div class="completed-alexa-phrase">
-            {{ alexaPhrase }}
+
+    <div class="completed-alexa" ng-show="alexa">
+        <div class="completed-row">
+            <div class="completed-header">Your Alexa Phrase is</div>
+        </div>
+        <div class="completed-row">
+            <div class="completed-alexa-phrase">{{ alexaPhrase }}</div>
         </div>
     </div>
+
+
+    <div class="completed-row"><button class="completed--button" ng-click="hidePopContent(popoverAlexa);">View Alexa Instructions</button></div>
+    <div class="completed-row"><a href="http://flashcardquiz.com/{{deckRoute}}" target="_blank"><button class="completed--button" title="View Cards in new window">View Cards Now</button></a></div>
+    <div class="completed-row"><button class="completed--button" ng-click="hidePopContent(popoverShareCards)">Share Cards With Others</button></div>
+
+
+
+    <div class="completed-feedback">We're always looking to make our free product better</div>
+    <div class="completed-row"><button class="completed--button-feedback" ng-click="hidePopContent(popoverGiveFeedback);">Give Feedback</button></div>
+
 </div>
