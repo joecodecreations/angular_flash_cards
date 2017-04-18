@@ -3,8 +3,6 @@
         <button ng-click="showAnswerButton()" ng-hide="flip" class="showAnswer">Show Answer</button>
         <button ng-click="nextQuestionButton()" ng-show="flip" class="showNextQuestion">Next Question <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></button>
     </div>
-
-
     <div class="card-front" ng-class="{ 'flip-forward':flip, 'flip-forward-reverse':!flip}">
         <div class="card-body">
             <div class="card-header">
