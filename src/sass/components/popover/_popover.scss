@@ -17,6 +17,15 @@
   opacity: 1;
   margin-top:5vh;
   margin-left:5vw;
+
+  &-messageSent{
+    width:40%;
+    margin:0 auto;
+    color: #666;
+    margin-top:10px;
+    font-size:38px;
+    text-align: center;
+  }
 &-quote{
   width: 100%;
   padding: 20px;
@@ -98,10 +107,12 @@
   padding:8px;
   color:#333;
   font-size:20px;
+  max-width:300px;
   border: 1px solid #CBCBCB;
   background:#FAFAFA;
   font-family: Lato,sans-serif;
   width:60%;
+  margin-top:15px;
   margin:0 auto;
 
   &::-webkit-input-placeholder { /* Chrome/Opera/Safari */

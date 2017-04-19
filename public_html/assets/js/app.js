@@ -102,7 +102,29 @@ function flashCardsController($scope, $http, retrieve, card, resetValidationServ
 
 
 
+  ctrl.sendEmail = function () {
+    ctrl.messageSent = true;
+    var emailInfo = {
+      email: ctrl.email,
+      name: ctrl.name,
+      message: ctrl.message
+    }
+    $http({
+      method: 'POST',
+      url: '/sendData',
+      data: emailInfo,
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    }).then(function successCallback(response) {
 
+
+    }, function errorCallback(errorResponse) {
+      console.log("mail not sent");
+      //console.log(errorResponse);
+      //console.log(errorResponse.data);
+    });
+  }
 
 
 

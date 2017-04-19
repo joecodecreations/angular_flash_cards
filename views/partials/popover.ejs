@@ -16,6 +16,7 @@
     <!-- contact us -->
     <div class="popover-content" ng-show="popoverGiveFeedback">
       <div class="popover-title">Contact Us</div>
+
       <div class="popover-header">We would love to hear what you have to say give us some feedback using the form below</div>
       <div class="popover-header">Name</div>
       <input type="text" class="popover--input" ng-model="name" placeholder="John Doe" />
@@ -24,7 +25,8 @@
       <div class="popover-header">Enter your Message:</div>
       <textarea class="popover--textArea" ng-model="message">
       </textarea>
-      <div class="popiver-row"><button ng-click="sendEmail()" class="share--button">Send</button></div>
+      <div ng-show="messageSent" class="popover-messageSent"><i class="fa fa-envelope" aria-hidden="true"></i>Message Sent!</div>
+      <div class="popover-row"><button ng-click="sendEmail()" ng-hide="messageSent" class="share--button">Send</button></div>
 
 
     </div>
