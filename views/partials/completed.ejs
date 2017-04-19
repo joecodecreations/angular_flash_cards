@@ -1,25 +1,25 @@
 <div class="completed" ng-show="finished">
+  <div class="completed-row">
+    <div class="completed-title">Deck Saved!</div>
+  </div>
+  <div class="completed-row">
+    <div class="completed-header--underlined">Now, here's what you can do</div>
+  </div>
+
+  <div class="completed-alexa" ng-show="alexaBoolean">
     <div class="completed-row">
-        <div class="completed-title">Deck Saved!</div>
+      <div class="completed-header">Your Alexa Phrase is</div>
     </div>
     <div class="completed-row">
-        <div class="completed-header--underlined">Now, here's what you can do</div>
+      <div class="completed-alexa-phrase">{{ alexaPhrase }}</div>
     </div>
+  </div>
 
-    <div class="completed-alexa" ng-show="alexaBoolean">
-        <div class="completed-row">
-            <div class="completed-header">Your Alexa Phrase is</div>
-        </div>
-        <div class="completed-row">
-            <div class="completed-alexa-phrase">{{ alexaPhrase }}</div>
-        </div>
-    </div>
+  <div class="completed-row"><button class="completed--button" ng-click="openAlexa()">View Alexa Instructions</button></div>
+  <div class="completed-row"><a href="http://flashcardquiz.com/{{deckRoute}}" target="_blank"><button class="completed--button" title="View Cards in new window">View Cards Now</button></a></div>
+  <div class="completed-row"><button class="completed--button" ng-click="openShare()">Share Cards With Others</button></div>
 
-    <!-- <div class="completed-row"><button class="completed--button" ng-click="hidePopContent(popoverAlexa);">View Alexa Instructions</button></div> -->
-    <div class="completed-row"><a href="http://flashcardquiz.com/{{deckRoute}}" target="_blank"><button class="completed--button" title="View Cards in new window">View Cards Now</button></a></div>
-    <!-- <div class="completed-row"><button class="completed--button" ng-click="hidePopContent(popoverShareCards)">Share Cards With Others</button></div> -->
-
-    <!-- <div class="completed-feedback">We're always looking to make our free product better</div> -->
-    <!-- <div class="completed-row"><button class="completed--button-feedback" ng-click="hidePopContent(popoverGiveFeedback);">Give Feedback</button></div> -->
+  <div class="completed-feedback">We're always looking to make our free product better</div>
+  <div class="completed-row"><button class="completed--button-feedback" ng-click="openContact()">Give Feedback</button></div>
 
 </div>

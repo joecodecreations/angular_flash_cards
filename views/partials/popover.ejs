@@ -1,25 +1,63 @@
 <div class="popover" ng-show="popoverWindow">
-    <i class="fa fa-window-close popoverClose" ng-click="popoverWindow = false" aria-hidden="true" alt="close window" title="close window"></i>
-
+  <div class="popover-inside">
+    <i class="fa fa-window-close popover-close" ng-click="popoverWindow = false" aria-hidden="true" alt="close window" title="close window"></i>
+    <!-- alexa -->
     <div class="popover-content" ng-show="popoverAlexa">
-        <img src="assets/images/small_alexa_device.png" />
+      <div class="popover-title">Use with your Amazon Alexa</div>
+      <div class="popover-header">How to use cards with Amazon Alexa</div>
+      <img src="assets/images/small_alexa_device.png" class="image--floatleft" />
+      <div class="popover-paragraph">In order to use these flashcards with Amazon Alexa you will have to enable the skill we have developed for you. It's free to use an you can find it by visiting <a href="https://www.amazon.com/dp/B06XY3LNT7" target="_blank">The Amazon Directory</a></div>
+      <div class="popover-paragraph">You can also install it by saying</div>
+      <div class="popover-quote">Alexa, enable the flashcard quiz skill</div>
 
-        <div class="popover-row">Use these flashcards with Amazon Alexa. Simply install our custom skill on amaon by visiting <a href="https://www.amazon.com/dp/B06XY3LNT7" target="_blank">flashcard quiz</a> or simply tell Alexa "enable Flashcard quiz skill".</div>
-
-        <div class="popover-row">After you have enabled this skill, simply open the skill by saying "Alexa, Flashcard quiz"</div>
-
-        <div class="popover-row">When the application loads, it will ask you for your unique custom alexa phrase that you have previously registered and it will load the phrase</div>
+      <div class="popover-paragraph">Let us know what you think so far! We're still developing this. </div>
     </div>
 
+    <!-- contact us -->
     <div class="popover-content" ng-show="popoverGiveFeedback">
-        We would love to hear what you have to say give us some feedback using the form below
+      <div class="popover-title">Contact Us</div>
+      <div class="popover-header">We would love to hear what you have to say give us some feedback using the form below</div>
+      <input type="text" class="popover--input" ng-model="name" placeholder="Enter your name" />
+      <input type="text" class="popover--input" ng-model="email" placeholder="Enter your email address" />
+      <textarea class="popover--textArea" ng-model="message">
+      </textarea>
+      <div class="popiver-row"><button ng-click="sendEmail()" class="share--button">Send</button></div>
 
 
     </div>
 
+    <!-- share this ! -->
     <div class="popover-content" ng-show="popoverShareCards">
-        Share Cards with others
+      <div class="popover-title">Share your cards</div>
+      <div class="popover-header">Sharing with others is easy</div>
+      <div class="popover-paragraph">If you want to share with other Alexa users, you can simply give them the custom phrase. Otherwise share your unique link with them. To make things easier, you can use the buttons below to share as well.</div>
+      <div class="popiver-row"><button class="share--button">Share on Facebook</button></div>
+      <div class="popiver-row"><button class="share--button">Share on Twitter</button></div>
+      <div class="popiver-row"><button class="share--button">Share through Email</button></div>
+    </div>
+
+
+    <!-- alexa -->
+    <div class="popover-content" ng-show="popoverAbout">
+      <div class="popover-title">About</div>
+      <div class="popover-header">About this site</div>
+      <div class="popover-paragraph">
+        We are currently in our Beta testing stage for Flashcard Quiz. This means that it's open to anyone in the public to test and try out but we are still making changes and working on perfecting it.</div>
+      <div class="popover-paragraph">Use this site to create interactive flashcards to help you strengthen whatever topic you're working on. After you are finished you can save it and share it with others.</div>
+      <div class="popover-paragraph">In addition to using the online version, you can also use these flash cards with your Amazon Alexa and there is a specific skill to help you do that.</div>
+      <!-- insert button to amazon -->
+
+      <div class="popover-header">Have ideas for our application?</div>
+      <div class="popover-paragraph">We would love to get feedback from you on what we could improve on or any issues you potentially come across.</div>
+      <!-- insert contact button -->
+
+      <div class="popover-header">About the creator</div>
+      <div class="popover-paragraph">This website was created and maintained by Joseph Sanchez, a senior software engineer living in Raleigh, North Carolina</div>
+      <!-- Buy me a coffee -->
 
     </div>
 
+
+
+  </div>
 </div>

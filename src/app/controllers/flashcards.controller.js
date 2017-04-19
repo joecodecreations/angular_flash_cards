@@ -40,6 +40,47 @@ function flashCardsController($scope, $http, retrieve, card, resetValidationServ
   };
   //check for cards previously saved
 
+
+  /* Navigation Button Functions */
+
+  function closePopoverWindows() {
+    console.log("closing popover");
+    ctrl.popoverAlexa = false;
+    ctrl.popoverShareCards = false;
+    ctrl.popoverWindow = false;
+    ctrl.popoverGiveFeedback = false;
+    ctrl.popoverAbout = false;
+  }
+
+  ctrl.openContact = function () {
+    console.log("contact");
+    closePopoverWindows();
+    ctrl.popoverWindow = true;
+    ctrl.popoverGiveFeedback = true;
+  };
+
+  ctrl.openAlexa = function () {
+    closePopoverWindows();
+    ctrl.popoverAlexa = true;
+    ctrl.popoverWindow = true;
+  };
+  ctrl.openShare = function () {
+    closePopoverWindows();
+    ctrl.popoverShareCards = true;
+    ctrl.popoverWindow = true;
+  };
+  ctrl.openAbout = function () {
+    closePopoverWindows();
+    ctrl.popoverWindow = true;
+    ctrl.popoverAbout = true;
+  };
+
+
+
+
+
+
+
   ctrl.buttonChange = "Ready?";
 
   ctrl.buttonHover = function () {
@@ -65,7 +106,8 @@ function flashCardsController($scope, $http, retrieve, card, resetValidationServ
     ctrl.popoverGiveFeedback = false;
     ctrl.popoverShareCards = false;
     //show only this
-    ctrl.showThisSection = true;
+    ctrl[showThisSection] = true;
+
   }
 
 

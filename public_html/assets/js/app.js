@@ -65,6 +65,47 @@ function flashCardsController($scope, $http, retrieve, card, resetValidationServ
   };
   //check for cards previously saved
 
+
+  /* Navigation Button Functions */
+
+  function closePopoverWindows() {
+    console.log("closing popover");
+    ctrl.popoverAlexa = false;
+    ctrl.popoverShareCards = false;
+    ctrl.popoverWindow = false;
+    ctrl.popoverGiveFeedback = false;
+    ctrl.popoverAbout = false;
+  }
+
+  ctrl.openContact = function () {
+    console.log("contact");
+    closePopoverWindows();
+    ctrl.popoverWindow = true;
+    ctrl.popoverGiveFeedback = true;
+  };
+
+  ctrl.openAlexa = function () {
+    closePopoverWindows();
+    ctrl.popoverAlexa = true;
+    ctrl.popoverWindow = true;
+  };
+  ctrl.openShare = function () {
+    closePopoverWindows();
+    ctrl.popoverShareCards = true;
+    ctrl.popoverWindow = true;
+  };
+  ctrl.openAbout = function () {
+    closePopoverWindows();
+    ctrl.popoverWindow = true;
+    ctrl.popoverAbout = true;
+  };
+
+
+
+
+
+
+
   ctrl.buttonChange = "Ready?";
 
   ctrl.buttonHover = function () {
@@ -90,7 +131,8 @@ function flashCardsController($scope, $http, retrieve, card, resetValidationServ
     ctrl.popoverGiveFeedback = false;
     ctrl.popoverShareCards = false;
     //show only this
-    ctrl.showThisSection = true;
+    ctrl[showThisSection] = true;
+
   }
 
 
@@ -341,26 +383,44 @@ function flashCardsController($scope, $http, retrieve, card, resetValidationServ
 },{}],3:[function(require,module,exports){
 angular.module('app').controller('navigation', navigationController);
 
+
 function navigationController($scope) {
-    var ctrl = $scope;
+  var ctrl = $scope;
 
-    ctrl.title = 'Flashcard Quiz';
+  ctrl.title = 'Flashcard Quiz';
 
-    ctrl.navButtons = [{
-            'heading': 'Add Card',
-            'titleTag': 'Add a new card',
-            'action': function () {
-                ctrl.showAddCardInterface();
-            }
-        },
-        {
-            'heading': 'Share Deck',
-            'titleTag': 'Share this deck with friends',
-            'action': function () {
-                ctrl.shareDeck();
-            }
-        }
-    ];
+  ctrl.navButtons = [{
+      'heading': 'Add Card',
+      'titleTag': 'Add a new card',
+      'action': function () {
+        ctrl.showAddCardInterface();
+      }
+    },
+    {
+      'heading': 'Share Deck',
+      'titleTag': 'Share this deck with friends',
+      'action': function () {
+        ctrl.shareDeck();
+      }
+    },
+    {
+      'heading': 'Contact Us',
+      'titleTag': 'Contact us with questions or comments',
+      'action': function () {
+        ctrl.openContact();
+      }
+    },
+    {
+      'heading': 'About',
+      'titleTag': 'Share this deck with friends',
+      'action': function () {
+        ctrl.openAbout();
+      }
+    }
+
+
+
+  ];
 
 
 }
