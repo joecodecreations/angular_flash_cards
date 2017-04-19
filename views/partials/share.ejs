@@ -1,54 +1,65 @@
 <div class="share" ng-show="shareWindow">
-    <div class="share-row">
-        <h1 class="share-title">Share Deck</h1>
-    </div>
+  <div class="share-row">
+    <h1 class="share-title">Share Deck</h1>
+  </div>
 
+  <div ng-hide="totalQuestions>=3">
+    <span class="share-heading">You must add 3 or more cards to save your deck</span>
+    <div style="margin-top:5px;">
+      <center>You only need {{3-totalQuestions}} more cards!</center>
+    </div>
+    <div class="share-row"><button ng-click="showAddCardInterface()" class="share--button">Add a Card</button></div>
+  </div>
+
+
+  <div ng-show="totalQuestions>=3">
     <div class="share-row">
-        <span class="share-heading">Deck Title</span>
+      <span class="share-heading">Deck Title</span>
     </div>
     <div class="share-row">
-        <input class="share--input" type="text" ng-model="deckTitle" placeholder="Enter your a title for your card deck" ng-class="{'required--form':(TitleError==true)}" />
+      <input class="share--input" type="text" ng-model="deckTitle" placeholder="Enter your a title for your card deck" ng-class="{'required--form':(TitleError==true)}" />
     </div>
     <div class="share-remainingCharacters" ng-class="{'warning': (deckTitle.length > 140)}">{{ 140-(deckTitle.length)}} characters remaining<span class="shareValidationError">{{TitleErrorMessage}}</span></div>
 
 
     <div class="share-row">
-        <span class="share-heading">Deck Desription</span>
+      <span class="share-heading">Deck Desription</span>
     </div>
     <div class="share-row">
-        <input type="text" class="share--input" placeholder="Learn more about algebra, chemistry..." ng-model="deckDescription" />
+      <input type="text" class="share--input" placeholder="Learn more about algebra, chemistry..." ng-model="deckDescription" />
     </div>
     <div class="share-remainingCharacters" ng-class="{'warning': (deckDescription.length > 140)}">{{ 140-(deckDescription.length)}} characters remaining<span class="shareValidationError">{{DescriptionErrorMessage}}</span></div>
 
 
     <div class="share-alexa">
-        <div class="share-alexa-left">
-            <img src="assets/images/small_alexa_device.png" width="113" height="25" class="share-alexa--image" />
+      <div class="share-alexa-left">
+        <img src="assets/images/small_alexa_device.png" width="113" height="25" class="share-alexa--image" />
+      </div>
+
+
+
+      <div class="share-alexa-middle">
+        <div class="share-alexa-middle-title">Use with Amazon Echo</div>
+
+        <div ng-hide="alexaBoolean">
+          <div class="share-alexa-middle-paragraph">Alexa can help you study these cards using the Alexa skill Flashcard Quiz.</div>
         </div>
 
-
-
-        <div class="share-alexa-middle">
-            <div class="share-alexa-middle-title">Use with Amazon Echo</div>
-
-            <div ng-hide="alexaBoolean">
-                <div class="share-alexa-middle-paragraph">Alexa can help you study these cards using the Alexa skill Flashcard Quiz.</div>
-            </div>
-
-            <div ng-show="alexaBoolean">
-                <div class="share-alexa-middle-paragraph">Enter a custom phrase that will be used to load your cards when interacting with Alexa</div>
-                <div class="share-row"><input class="share-alexa--input" type="text" ng-model="alexaPhrase" placeholder="Select a phrase for alexa..." ng-class="{'required--form':(AlexaError==true)}" /></div>
-                <div class="share-remainingCharacters" ng-class="{'warning': (alexaPhrase.length > 140)}">{{ 140-(alexaPhrase.length)}} characters remaining<span class="shareValidationError">{{AlexaErrorMessage}}</span></div>
-
-            </div>
-
+        <div ng-show="alexaBoolean">
+          <div class="share-row"><input class="share-alexa--input" type="text" ng-model="alexaPhrase" placeholder="Select a phrase for alexa..." ng-class="{'required--form':(AlexaError==true)}" /></div>
+          <div class="share-remainingCharacters" ng-class="{'warning': (alexaPhrase.length > 140)}">{{ 140-(alexaPhrase.length)}} characters remaining<span class="shareValidationError">{{AlexaErrorMessage}}</span></div>
+          <div class="share-alexa-middle-paragraph">Enter a custom phrase that will be used to load your cards when interacting with Alexa</div>
         </div>
-
-
-
-        <div class="share-alexa-right">
-            <img src="assets/images/button_{{alexaButtonState}}.png" class="share-alexa-switch--button" ng-click="alexaButtonToggle()" />
-        </div>
+      </div>
+      <div class="share-alexa-right">
+        <img src="assets/images/button_{{alexaButtonState}}.png" class="share-alexa-switch--button" ng-click="alexaButtonToggle()" />
+      </div>
     </div>
     <div class="share-row"><button ng-click="createDeck()" class="share--button">Save Deck</button></div>
+
+  </div>
+
+
+
+
 </div>

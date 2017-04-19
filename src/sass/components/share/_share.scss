@@ -1,8 +1,8 @@
 .share {
   width: 95%;
 //  position: absolute;
-  min-height: 450px;
-  margin-top: 128px;
+  min-height: 250px;
+  //margin-top: 128px;
   margin: 0 auto;
   padding: 10px;
   z-index: 2;
@@ -91,11 +91,12 @@
   margin-top:57px;
   }
 }
+/* image of echo */
     &-left{
     order:3;  flex-basis:100%;
       @include breakpoint(smallDevices, min){
         flex-basis:14.9%;
-         order:1;
+         order:3;
       }
     }
 
@@ -135,7 +136,7 @@
       order:1; flex-basis:100%;
       @include breakpoint(smallDevices, min){
         flex-basis:5%;
-         order:3;
+         order:1;
          min-width:110px;
       }
     }

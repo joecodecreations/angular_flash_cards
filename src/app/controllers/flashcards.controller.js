@@ -91,15 +91,13 @@ function flashCardsController($scope, $http, retrieve, card, resetValidationServ
   retrieve.deck($scope, questions);
   /* Closes Card Added! and allows additional input */
   ctrl.addAnotherCard = function () {
+
     ctrl.cardAdded = false;
   };
 
   /* Closes Card Added! and allows additional input */
   ctrl.returnToDeck = function () {
-
     ctrl.closeWindow();
-
-
   };
 
   ctrl.mobileMenuOpen = function () {
