@@ -1,4 +1,3 @@
-"use strict";
 var express = require('express');
 var bodyParser = require('body-parser');
 var urlStatus = require('url-status');
@@ -93,7 +92,7 @@ app.post(resources.EMAILROUTE, function (req, res) {
     message = req.body.message;
 
   // create reusable transporter object using the default SMTP transport
-  let transporter = nodemailer.createTransport({
+  var transporter = nodemailer.createTransport({
     //service: 'SMTP',
     host: resources.EMAILHOST,
     port: 25,
@@ -126,7 +125,7 @@ app.post(resources.EMAILROUTE, function (req, res) {
   }
 
   // setup email data with unicode symbols
-  let mailOptions = {
+  var mailOptions = {
     from: '"👻 Flash Card Quiz 👻" <server@flashcardquiz.com>',
     to: 'help@flashcardquiz.com',
     subject: 'Contact Us Form (Flash Card Quiz)',
