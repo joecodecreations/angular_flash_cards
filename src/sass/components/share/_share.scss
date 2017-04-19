@@ -86,10 +86,13 @@
 
 &-switch--button{
   cursor:pointer;
+  margin-top:10px;
+  @include breakpoint(smallDevices, min){
   margin-top:57px;
+  }
 }
     &-left{
-    order:2;  flex-basis:100%;
+    order:3;  flex-basis:100%;
       @include breakpoint(smallDevices, min){
         flex-basis:14.9%;
          order:1;
@@ -97,7 +100,7 @@
     }
 
     &-middle{
-      order:1; flex-basis:100%;
+      order:2; flex-basis:100%;
 
       &-title{
         font-family: Lato,sans-serif;
@@ -129,7 +132,7 @@
     }
 
     &-right{
-      order:3; flex-basis:100%;
+      order:1; flex-basis:100%;
       @include breakpoint(smallDevices, min){
         flex-basis:5%;
          order:3;
@@ -209,6 +212,7 @@
     font-family: 'Lato', sans-serif;
     font-size: 24px;
     color: #FFFFFF;
+
     margin-top:35px;
     cursor:pointer;
     padding:7px;
