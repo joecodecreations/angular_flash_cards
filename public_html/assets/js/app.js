@@ -121,10 +121,7 @@ function flashCardsController($scope, $http, retrieve, card, resetValidationServ
 
   /* Closes Card Added! and allows additional input */
   ctrl.returnToDeck = function () {
-    //initiate grabbing the first question in the list
-    updateCards.calculateQuestions($scope, questions);
-    //Grab Next Question
-    card.nextQuestion($scope, questions);
+
     ctrl.closeWindow();
 
 
@@ -179,6 +176,11 @@ function flashCardsController($scope, $http, retrieve, card, resetValidationServ
   };
 
   ctrl.closeWindow = function () {
+    updateCards.calculateQuestions($scope, questions);
+    //Grab Next Question
+    if (ctrl.currentQuestion === 0) {
+      card.nextQuestion($scope, questions);
+    }
     ctrl.mainWindow = true;
     ctrl.addCardShow = false; //hide add card menu
     ctrl.cardAdded = false; //hide secondary add card menu (success)
@@ -193,9 +195,10 @@ function flashCardsController($scope, $http, retrieve, card, resetValidationServ
   };
   ctrl.shareDeck = function () {
     closeAllWindows();
+    ctrl.hideCardCount = true; //hide X out of X cards
     ctrl.mainWindow = false;
-    ctrl.shareWindow = true;
     ctrl.addCardShow = false;
+    ctrl.shareWindow = true; //show share window
 
   };
 
