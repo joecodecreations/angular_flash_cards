@@ -1,11 +1,13 @@
 .mobileNav {
 
   position: absolute;
-  width:100vw;
-  height:100vh;
-  background-color: rgba(14.9%,14.9%,14.9%,.95);
-  z-index: 10000;
-  padding-top:16px;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(38,38,38,.95);
+  z-index: 5;
+  padding-top: 16px;
+  top: 0;
+  left: 0;
 &-group {
   width: 100%;
   margin: 0 auto;
@@ -39,6 +41,7 @@
     cursor: pointer;
     font-size: 1.1em;
     margin: 0 auto;
+    max-width: 500px;
     margin-top: 18px;
     &:hover{
       color:rgba(255,255,255,.4);
@@ -53,6 +56,7 @@
       border: 1px solid hsla(0,0%,100%,.3);
       text-decoration: none;
       list-style-type: none;
+      max-width: 500px;
       cursor: pointer;
       font-size: 1.1em;
       background: #32cd32;

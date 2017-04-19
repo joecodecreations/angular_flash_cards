@@ -1,11 +1,14 @@
+/*sub bar under nav with deck card count */
 .deckInformation{
-  top: 76px;
-  right: 0px;
-  background: #000;
-  padding-left:10px;
-  width:100%;
-  position:absolute;
 
+  background: #000;
+  padding-left: 10px;
+  width: 100%;
+  margin-top: -18px;
+  position: relative;
+  z-index: 3;
+  height: 29px;
+  padding-top: 5px;
   &-subject{
     font-size:.8em;
     color:rgba(255,255,255,.5);

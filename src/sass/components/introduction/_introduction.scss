@@ -1,18 +1,18 @@
 .introduction{
   width: 95%;
-position: absolute;
-min-height: 450px;
-margin-top: 128px;
-margin: 0 auto;
-padding: 10px;
-z-index: 2;
-text-align: center;
-background: #fff;
-box-shadow: 0 1px 7px 0 rgba(0,0,0,.5);
-border-radius: 28px;
-max-width: 600px;
-height: auto;
-min-width: 320px;
+  min-height: 450px;
+  margin-top: 128px;
+  margin: 0 auto;
+  padding: 10px;
+  z-index: 1;
+  text-align: center;
+  background: #fff;
+  box-shadow: 0 1px 7px 0 rgba(0,0,0,.5);
+  border-radius: 28px;
+  max-width: 600px;
+  height: auto;
+  min-width: 320px;
+
 
 
   &-summary{

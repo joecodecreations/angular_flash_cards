@@ -1,6 +1,6 @@
 .insertCard{
     width: 95%;
-    position: absolute;
+    //position: absolute;
     min-height: 294px;
     margin-top: 128px;
     margin: 0 auto;
@@ -82,7 +82,7 @@
   font-size: .8em;
   margin-right: 3%;
   text-align: right;
-  position: absolute;
+  position: relative;
   right: 2%;
     &-over{
       color:#F05A5A;
@@ -128,7 +128,7 @@
     &-holder{
       margin:0 auto;
       width:95%;
-      margin-top:17px;
+      margin-top: 31px;
     }
     &:hover{
       /* button: */

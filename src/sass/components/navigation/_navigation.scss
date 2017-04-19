@@ -1,22 +1,24 @@
 .nav {
     min-width:320px;
-    position:absolute;
+    position:relative;
     top:0;
     left:0;
     width:100%;
     font-size:1.2em;
-    z-index:100;
+    z-index:2;
     padding:20px;
     background:#262626;
     color:white;
+    height:100px;
+
 
     &-dotcom{
       font-size: 13px;
-font-family: Lato,sans-serif;
-width: 175px;
-text-align: right;
-margin-top: -6px;
-color: white;
+      font-family: Lato,sans-serif;
+      width: 175px;
+      text-align: right;
+      margin-top: -6px;
+      color: white;
     }
     &-heading {
       color:white;
@@ -30,7 +32,7 @@ color: white;
   }
 
   &-button{
-    margin-top: 7px;
+    margin-top: 14px;
     margin-left: 10px;
     position: relative;
     padding: 10px;
@@ -55,17 +57,22 @@ color: white;
   }
 
   &-group{
-    margin-left: 75px;
-    position: fixed;
+    margin-left: 116px;
+    position: absolute;
     top: 0;
     left: 100px;
-    margin-top: 8px;
+    margin-top: 0;
+    height: 80px;
+    float: left;
+    width: 388px;
+    padding-left: 0px;
   }
 
   &-hamburger{
-    margin-top: 11px;
-    margin-left: 11px;
-    cursor:pointer;
+    margin-top: 20px;
+    margin-left: 0px;
+    cursor: pointer;
+    position: absolute;
 
     @include breakpoint(smallDevices, min){
      display:none;

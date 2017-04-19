@@ -3,17 +3,20 @@
   max-height: 449px;
   height:auto;
   width:100%;
-  position: absolute;
-  display: flex;
+  position: relative;
+
   align-items: center;
   justify-content: center;
   perspective: 1000px;
+  margin: 0 auto;
 
 &-top{
   min-width: 320px;
-  height: 49px;
-  position:absolute;
-  margin-top: -457px;
+  height: 63px;
+  position:relative;
+  width:100%;
+  margin: 0 auto;
+
   &-title{
     color: #fff;
     font-size: 1.4em;
@@ -23,19 +26,23 @@
   }
 
     &-count{
-    width: 100%;
-    color: #000;
-    font-size: 1.2em;
-    text-align: center;
-    margin-bottom: 60px;
-    position: absolute;
-    margin-top: 25px;
+      width: 100%;
+      color: #000;
+      font-size: 1.2em;
+      text-align: center;
+      margin-bottom: 0px;
+      position: relative;
+      margin-top: 8px;
     }
 
 }
 
   &-buttons{
-    margin-top:300px;
+    position: relative;
+    width: 100%;
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 285px;
   }
 
 &-question {

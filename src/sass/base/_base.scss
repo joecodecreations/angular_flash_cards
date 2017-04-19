@@ -8,8 +8,6 @@ body{
   background: -o-linear-gradient(#8c1aff,#8c1aff,#8c1aff,#8c1aff, #bf80ff); /* For Opera 11.1 to 12.0 */
   background: -moz-linear-gradient(#8c1aff,#8c1aff,#8c1aff,#8c1aff, #bf80ff); /* For Firefox 3.6 to 15 */
   background: linear-gradient(#8c1aff,#8c1aff,#8c1aff,#8c1aff, #bf80ff); /* Standard syntax */
-
-
   font-size:18px;
   margin: 0;
   color:limegreen;
@@ -17,17 +15,24 @@ body{
   overflow: hidden;
 }
 
-[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
-  display: none !important;
+.upper{
+  order:1;
+  flex-basis:100%;
+  height:100px;
 }
 
-.app {
+.lower{
+  padding-top: 37px;
+  -webkit-order: 2;
+  -ms-flex-order: 2;
+  order: 2;
+  -ms-flex-preferred-size: 100%;
+  flex-basis: 100%;
+  padding-bottom: 20px;
+  vertical-align: top;
+  min-height: 85vh;
+}
 
-  overflow:hidden;
-  height:100vh;
-  width:100vw;
-  display: flex;
- align-items: center;
- justify-content: center;
-
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+  display: none !important;
 }

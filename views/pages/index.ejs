@@ -1,34 +1,39 @@
 <% include ../partials/header %>
-    <div ng-app="app" class="app ng-cloak" ng-controller="flashcards as cards">
-        <!-- beta -->
-        <!-- Share Window -->
-        <% include ../partials/share %>
-            <% include ../partials/beta %>
-                <!-- Share Completed ! -->
-                <% include ../partials/completed %>
-                    <!-- navigation -->
-                    <% include ../partials/navigation %>
-                        <!-- Deck Information -->
-                        <% include ../partials/introduction %>
-                            <!-- Deck Information -->
-                            <% include ../partials/deckInformation %>
+  <div ng-app="app" class="app ng-cloak" ng-controller="flashcards as cards">
 
-                                <!-- Card X of X, Card Title -->
-                                <% include ../partials/cardHeader %>
+    <div class="upper">
+      <!-- navigation -->
+      <% include ../partials/navigation %>
+        <!-- Deck Information -->
+        <% include ../partials/deckInformation %>
+    </div>
 
-                                    <!-- Front and back of Card -->
-                                    <% include ../partials/cardBody %>
+    <div class="lower">
+      <!-- beta -->
 
-                                        <!-- Add new card Form, Secondary Menu Post Add -->
-                                        <% include ../partials/insertCardForm %>
+      <!-- Card X of X, Card Title -->
+      <% include ../partials/cardHeader %>
 
-                                            <!-- Share Window -->
-                                            <% include ../partials/share %>
+        <% include ../partials/beta %>
+          <!-- Share Completed ! -->
+          <% include ../partials/completed %>
 
-                                                <!-- Share Window -->
-                                                <% include ../partials/popover %>
+            <!-- Deck Information -->
+            <% include ../partials/introduction %>
 
+              <!-- Front and back of Card -->
+              <% include ../partials/cardBody %>
 
+                <!-- Add new card Form, Secondary Menu Post Add -->
+                <% include ../partials/insertCardForm %>
+
+                  <!-- Share Window -->
+                  <% include ../partials/share %>
+
+                    <!-- Share Window -->
+                    <% include ../partials/popover %>
 
     </div>
-    <% include ../partials/footer %>
+
+  </div>
+  <% include ../partials/footer %>
