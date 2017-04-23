@@ -75,6 +75,7 @@ function flashCardsController($scope, $http, retrieve, card, resetValidationServ
     ctrl.popoverWindow = false;
     ctrl.popoverGiveFeedback = false;
     ctrl.popoverAbout = false;
+
   }
 
   ctrl.openContact = function () {

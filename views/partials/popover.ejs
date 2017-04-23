@@ -1,4 +1,4 @@
-<div class="popover" ng-show="popoverWindow">
+<div class="popover" ng-show="popoverWindow" style="max-width:{{maxWidth}}">
   <div class="popover-inside">
     <i class="fa fa-window-close popover-close" ng-click="popoverWindow = false" aria-hidden="true" alt="close window" title="close window"></i>
     <!-- alexa -->
@@ -44,22 +44,23 @@
 
     <!-- alexa -->
     <div class="popover-content" ng-show="popoverAbout">
+
       <div class="popover-title">About</div>
-      <div class="popover-header">About this site</div>
-      <div class="popover-paragraph">
-        We are currently in our Beta testing stage for Flashcard Quiz. This means that it's open to anyone in the public to test and try out but we are still making changes and working on perfecting it.</div>
-      <div class="popover-paragraph">Use this site to create interactive flashcards to help you strengthen whatever topic you're working on. After you are finished you can save it and share it with others.</div>
-      <div class="popover-paragraph">In addition to using the online version, you can also use these flash cards with your Amazon Alexa and there is a specific skill to help you do that.</div>
-      <!-- insert button to amazon -->
+      <div class="popover-leftAligned">
+        <div class="popover-paragraph">
+          We are currently in our Beta testing stage for Flashcard Quiz. This means that it's open to anyone in the public to test and try out but we are still making changes and working on perfecting it.</div>
+        <div class="popover-paragraph">Use this site to create interactive flashcards to help you strengthen whatever topic you're working on. After you are finished you can save it and share it with others.</div>
+        <div class="popover-paragraph">In addition to using the online version, you can also use these flash cards with your Amazon Alexa and there is a specific skill to help you do that.</div>
+        <!-- insert button to amazon -->
 
-      <div class="popover-header">Have ideas for our application?</div>
-      <div class="popover-paragraph">We would love to get feedback from you on what we could improve on or any issues you potentially come across.</div>
-      <!-- insert contact button -->
+        <div class="popover-header">Have ideas for our application?</div>
+        <div class="popover-paragraph">We would love to get feedback from you on what we could improve on or any issues you potentially come across.</div>
+        <!-- insert contact button -->
 
-      <div class="popover-header">About the creator</div>
-      <div class="popover-paragraph">This website was created and maintained by Joseph Sanchez, a senior software engineer living in Raleigh, North Carolina</div>
-      <!-- Buy me a coffee -->
-
+        <div class="popover-header">About the creator</div>
+        <div class="popover-paragraph">This website was created and maintained by Joseph Sanchez, a senior software engineer living in Raleigh, North Carolina</div>
+        <!-- Buy me a coffee -->
+      </div>
     </div>
 
 
