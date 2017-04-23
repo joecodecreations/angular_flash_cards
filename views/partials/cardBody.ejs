@@ -32,7 +32,7 @@
 </div>
 
 <div class="card-buttons" ng-show="mainWindow">
-  <button ng-click="editCard()" ng-hide="liveEdit" class="showAnswer">Edit card</button>
+  <button ng-click="editCard()" ng-hide="liveEdit || cardsLoaded" class="showAnswer">Edit card</button>
   <button ng-click="doneEditing()" ng-show="liveEdit" class="showNextQuestion">Update {{ questionOranswer}}</button>
   <!-- <button ng-click="showAnswerButton()" ng-hide="flip" class="showAnswer">Show Answer</button>
   <button ng-click="nextQuestionButton()" ng-show="flip" class="showNextQuestion">Next Question <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></button> -->
