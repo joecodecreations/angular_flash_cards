@@ -10,6 +10,16 @@
   perspective: 1000px;
   margin: 0 auto;
 
+  &-clickToFlip{
+    width: auto;
+height: 54px;
+position: absolute;
+z-index: 100;
+right: 14px;
+top: -11px;
+transform: rotate(9deg);
+  }
+
 &-top{
   min-width: 320px;
   height: 63px;

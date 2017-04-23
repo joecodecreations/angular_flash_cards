@@ -232,6 +232,7 @@ function flashCardsController($scope, $http, retrieve, card, resetValidationServ
   card.nextQuestion($scope, questions);
 
   ctrl.showAnswerButton = function () {
+
     if (!ctrl.liveEdit) {
       ctrl.flip = true; //flip the card
       if (questions[ctrl.currentQuestion - 1]) {
@@ -242,6 +243,7 @@ function flashCardsController($scope, $http, retrieve, card, resetValidationServ
   };
 
   ctrl.nextQuestionButton = function () {
+    ctrl.clickToFlip = true; //before showing second card erase flip card here word
     if (!ctrl.liveEdit) {
       //Grab Next Card
       card.nextQuestion($scope, questions);
