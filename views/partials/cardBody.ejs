@@ -1,28 +1,37 @@
 <div class="card" ng-show="mainWindow">
 
-  <div class="card-front" ng-class="{ 'flip-forward':flip, 'flip-forward-reverse':!flip}">
+  <div class="card-front" ng-click="showAnswerButton()" title="click to show answer" ng-class="{ 'pointer':!liveEdit,'flip-forward':flip, 'flip-forward-reverse':!flip}">
     <div class="card-body">
       <div class="card-header">
         {{ questionCategory | uppercase }}
       </div>
       <div class="card-question">
-        {{ question }}
+        <div class="liveEdit-title" ng-show="liveEdit">Edit Mode</div>
+        <textArea class="liveEdit-Question" title="click to edit question" id="liveEditQuestion" ng-model="updatedQuestion" ng-show="liveEdit">{{ question }}</textArea>
+
+        <span ng-hide="liveEdit">{{ question }}</span>
       </div>
+
     </div>
   </div>
-  <div class="card-back" ng-class="{ 'flip-backward':flip, 'flip-backward-reverse':!flip}">
+  <div class="card-back" ng-click="nextQuestionButton()" title="click to next question" ng-class="{ 'pointer':!liveEdit,'flip-backward':flip, 'flip-backward-reverse':!flip}">
     <div class="card-body">
       <div class="card-header" ng-hide="firstcard">
         {{ answerquestionCategory | uppercase }}
       </div>
       <div class="card-answer" ng-hide="firstcard">
-        {{ answer }}
+        <div class="liveEdit-title" ng-show="liveEdit">Edit Mode</div>
+        <textArea class="liveEdit-Answer" title="click to edit answer" id="liveEditAnswer" ng-model="updatedAnswer" ng-show="liveEdit">{{ answer }}</textArea>
+
+        <span ng-hide="liveEdit">{{ answer }}</span>
       </div>
     </div>
   </div>
 </div>
 
 <div class="card-buttons" ng-show="mainWindow">
-  <button ng-click="showAnswerButton()" ng-hide="flip" class="showAnswer">Show Answer</button>
-  <button ng-click="nextQuestionButton()" ng-show="flip" class="showNextQuestion">Next Question <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></button>
+  <button ng-click="editCard()" ng-hide="liveEdit" class="showAnswer">Edit card</button>
+  <button ng-click="doneEditing()" ng-show="liveEdit" class="showNextQuestion">Update {{ questionOranswer}}</button>
+  <!-- <button ng-click="showAnswerButton()" ng-hide="flip" class="showAnswer">Show Answer</button>
+  <button ng-click="nextQuestionButton()" ng-show="flip" class="showNextQuestion">Next Question <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></button> -->
 </div>

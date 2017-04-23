@@ -52,6 +52,37 @@ function flashCardsController($scope, $http, retrieve, card, resetValidationServ
   ctrl.alexaButtonState = "off";
   ctrl.alexaBoolean = false;
 
+  ctrl.editCard = function () {
+    ctrl.liveEdit = true;
+    //flip == false //question
+    //flip == true //answer
+
+    //add in latest answer and question
+    ctrl.updatedAnswer = ctrl.answer;
+    ctrl.updatedQuestion = ctrl.question;
+    if (ctrl.flip) {
+      //focus('liveEditAnswer');
+    } else {
+      //focus('liveEditQuestion');
+    }
+
+
+  };
+
+  ctrl.doneEditing = function () {
+    ctrl.liveEdit = false;
+    // console.log('curr q' + ctrl.currentQuestion);
+    // console.log("Question:" + questions[ctrl.currentQuestion - 1].answer);
+    if (ctrl.flip) {
+      questions[ctrl.currentQuestion - 1].answer = ctrl.updatedAnswer;
+      ctrl.answer = ctrl.updatedAnswer;
+      ctrl.questionOranswer = 'Answer';
+    } else {
+      questions[ctrl.currentQuestion - 1].question = ctrl.updatedQuestion;
+      ctrl.question = ctrl.updatedQuestion;
+      ctrl.questionOranswer = 'Question';
+    }
+  };
   ctrl.alexaButtonToggle = function () {
     if (ctrl.alexaButtonState == "off") {
       ctrl.alexaButtonState = "on";
@@ -226,16 +257,20 @@ function flashCardsController($scope, $http, retrieve, card, resetValidationServ
   card.nextQuestion($scope, questions);
 
   ctrl.showAnswerButton = function () {
-    ctrl.flip = true; //flip the card
-    if (questions[ctrl.currentQuestion - 1]) {
-      ctrl.answerquestionCategory = questions[ctrl.currentQuestion - 1].category;
-      ctrl.answer = questions[(ctrl.currentQuestion - 1)].answer;
+    if (!ctrl.liveEdit) {
+      ctrl.flip = true; //flip the card
+      if (questions[ctrl.currentQuestion - 1]) {
+        ctrl.answerquestionCategory = questions[ctrl.currentQuestion - 1].category;
+        ctrl.answer = questions[(ctrl.currentQuestion - 1)].answer;
+      }
     }
   };
 
   ctrl.nextQuestionButton = function () {
-    //Grab Next Card
-    card.nextQuestion($scope, questions);
+    if (!ctrl.liveEdit) {
+      //Grab Next Card
+      card.nextQuestion($scope, questions);
+    }
   };
 
   ctrl.closeWindow = function () {

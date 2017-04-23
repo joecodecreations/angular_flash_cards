@@ -45,8 +45,8 @@
     margin-top: 285px;
   }
 
-&-question {
-  color: #666;
+&-question, &-answer {
+  color: #000;
   word-break:normal;
 }
 
@@ -70,6 +70,7 @@
   position:absolute;
 	top: 0;
 	left: 0;
+
 }
 //front card
 &-front{
