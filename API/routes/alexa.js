@@ -8,8 +8,8 @@ module.exports = function (app) {
   app.route('/api/alexa/phrases/:alexa_phrase')
 
     .get(function (req, res) {
-      var phraseFromAlexa = req.params.alexa_phrase.stringToLower();
-      console.log(phraseFromAlexa);
+      var phraseFromAlexa = req.params.alexa_phrase.toLowerCase();
+
       try {
         Deck.findOne({
           'alexa': phraseFromAlexa
