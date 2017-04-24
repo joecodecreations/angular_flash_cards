@@ -41,10 +41,10 @@ module.exports = function (app) {
 
     .get(function (req, res) {
       //get the deck information
-
+      var phraseFromAlexa = req.params.alexa_phrase.toLowerCase();
       try {
         Deck.findOne({
-          'alexa': req.params.alexa_phrase
+          'alexa': phraseFromAlexa
         }, function (err, deck) {
           if (err) {
             throw (err);
