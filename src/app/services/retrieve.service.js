@@ -15,6 +15,7 @@ function retrieveService($rootScope, $location, $http, card, updateCards) {
     token = token.toLowerCase();
     //if we have a token let's grab the data if any
     if (token) {
+      console.log("token: " + token);
       console.log('grabbing units');
       //hit the API
       $http({
