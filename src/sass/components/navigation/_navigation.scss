@@ -57,6 +57,15 @@
     &:hover{
       color:rgba(255,255,255,.4);
     }
+
+       & a,&:visited,&:active {
+           color: #fff;
+           text-decoration: none;
+           list-style-type: none;
+           &:hover{
+             color:rgba(255,255,255,.4);
+           }
+       }
   }
 
   &-group{
