@@ -484,7 +484,7 @@ function navigationController($scope) {
     'titleTag': 'Create your own flash card deck',
     'link': 'https://flashcardquiz.com',
     'action': function () {
-      ctrl.showAddCardInterface();
+
     }
   }];
 
