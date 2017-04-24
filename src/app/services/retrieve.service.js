@@ -12,7 +12,7 @@ function retrieveService($rootScope, $location, $http, card, updateCards) {
     //strip out url and get only oken
     var token = url.replace("https://flashcardquiz.com/", "");
     //token = url.replace("http://localhost:3000/", "");
-    console.log(token);
+    token = token.toLowerCase();
     //if we have a token let's grab the data if any
     if (token) {
       console.log('grabbing units');
