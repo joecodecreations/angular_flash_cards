@@ -450,21 +450,6 @@ function navigationController($scope) {
   ctrl.title = 'Flashcard Quiz';
 
   ctrl.navButtons = [{
-      'heading': 'Create a Deck',
-      'titleTag': 'Share this deck with friends',
-      'hide': function () {
-        ctrl.hideButtons === true;
-      },
-      'show': function () {
-        ctrl.cardsLoaded === true;
-      },
-      'hide': 'hideButtons',
-      'show': 'cardsLoaded==true',
-      'action': function () {
-        ctrl.openAbout();
-      }
-    },
-    {
       'heading': 'Add Card',
       'titleTag': 'Add a new card',
       'hide': function () {
