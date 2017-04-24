@@ -1,3 +1,4 @@
 <div class="deckInformation">
-    <span class="deckInformation-subject" ng-hide="totalQuestions == null">Cards in Deck: </span><span class="deckInformation-label">{{ totalQuestions }}</span>
+  <span class="deckInformation-subject" ng-hide="totalQuestions == null">Cards in Deck: </span><span class="deckInformation-label">{{ totalQuestions }}</span>
+  <span class="deckInformation-alexaPhrase" ng-show="alexaPhrase && cardsLoaded"><b>Registered Alexa Phrase:</b> {{ alexaPhrase }}</span>
 </div>
