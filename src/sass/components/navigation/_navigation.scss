@@ -49,9 +49,10 @@
     cursor:pointer;
 
     /* hide buttons on small devices */
-    @include breakpoint(smallDevices, max){
-     display:none;
-    }
+    @media (max-width: 892px) { display:none; }
+    // @include breakpoint(smallDevices, max){
+    //  display:none;
+    // }
 
     &:hover{
       color:rgba(255,255,255,.4);
@@ -76,9 +77,10 @@
     cursor: pointer;
     position: absolute;
 
-    @include breakpoint(smallDevices, min){
-     display:none;
-    }
+      @media (min-width: 892px) { display:none; }
+    // @include breakpoint(smallDevices, min){
+    //  display:none;
+    // }
   }
 
 }
