@@ -13,6 +13,9 @@ module.exports = function (grunt, pkg, paths, connect) {
       }
 
     },
+    exec: {
+      ngAnnotate: 'ng-annotate -a public_html/assets/js/app.js -o  public_html/assets/js/app.js'
+    },
     browserify: {
       files: {
         src: 'src/app/app.js',

@@ -23,6 +23,7 @@ require('./services/resetValidation.service.js');
 require('./directives/insertCard.directive.js');
 
 },{"./controllers/flashcards.controller.js":2,"./controllers/navigation.controller.js":3,"./directives/insertCard.directive.js":4,"./modules/app.module.js":5,"./services/card.service.js":6,"./services/resetValidation.service.js":7,"./services/retrieve.service.js":8,"./services/updateCards.service.js":9}],2:[function(require,module,exports){
+flashCardsController.$inject = ["$scope", "$http", "retrieve", "card", "resetValidationService", "updateCards"];
 angular.module('app').controller('flashcards', flashCardsController);
 
 function flashCardsController($scope, $http, retrieve, card, resetValidationService, updateCards) {
@@ -441,6 +442,7 @@ function flashCardsController($scope, $http, retrieve, card, resetValidationServ
 }
 
 },{}],3:[function(require,module,exports){
+navigationController.$inject = ["$scope"];
 angular.module('app').controller('navigation', navigationController);
 
 
@@ -527,6 +529,7 @@ function insertCardDirective() {
 angular.module('app', ['ngAnimate']);
 
 },{}],6:[function(require,module,exports){
+cardService.$inject = ["$http"];
 angular.module('app').service('card', cardService);
 
 function cardService($http) {
@@ -693,6 +696,7 @@ function resetValidationService() {
 }
 
 },{}],8:[function(require,module,exports){
+retrieveService.$inject = ["$rootScope", "$location", "$http", "card", "updateCards"];
 angular.module('app').service('retrieve', retrieveService);
 
 function retrieveService($rootScope, $location, $http, card, updateCards) {
