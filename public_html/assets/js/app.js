@@ -450,8 +450,29 @@ function navigationController($scope) {
   ctrl.title = 'Flashcard Quiz';
 
   ctrl.navButtons = [{
+      'heading': 'Create a Deck',
+      'titleTag': 'Share this deck with friends',
+      'hide': function () {
+        ctrl.hideButtons === true;
+      },
+      'show': function () {
+        ctrl.cardsLoaded === true;
+      },
+      'hide': 'hideButtons',
+      'show': 'cardsLoaded==true',
+      'action': function () {
+        ctrl.openAbout();
+      }
+    },
+    {
       'heading': 'Add Card',
       'titleTag': 'Add a new card',
+      'hide': function () {
+        ctrl.cardsLoaded === true;
+      },
+      'show': function () {
+        ctrl.hideButtons === false;
+      },
       'action': function () {
         ctrl.showAddCardInterface();
       }
@@ -459,6 +480,12 @@ function navigationController($scope) {
     {
       'heading': 'Share Deck',
       'titleTag': 'Share this deck with friends',
+      'hide': function () {
+        ctrl.cardsLoaded === true;
+      },
+      'show': function () {
+        ctrl.hideButtons === false;
+      },
       'action': function () {
         ctrl.shareDeck();
       }
@@ -466,6 +493,12 @@ function navigationController($scope) {
     {
       'heading': 'Contact Us',
       'titleTag': 'Contact us with questions or comments',
+      'hide': function () {
+
+      },
+      'show': function () {
+
+      },
       'action': function () {
         ctrl.openContact();
       }
@@ -473,6 +506,12 @@ function navigationController($scope) {
     {
       'heading': 'About',
       'titleTag': 'Share this deck with friends',
+      'hide': function () {
+
+      },
+      'show': function () {
+
+      },
       'action': function () {
         ctrl.openAbout();
       }

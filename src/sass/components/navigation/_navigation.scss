@@ -10,7 +10,9 @@
     background:#262626;
     color:white;
     height:100px;
-
+& a  {
+  text-decoration:none;
+}
 
     &-dotcom{
       font-size: 13px;
