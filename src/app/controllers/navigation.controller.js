@@ -35,7 +35,7 @@ function navigationController($scope) {
   ];
 
   ctrl.navButtonsLoaded = [{
-    'heading': 'Create Deck',
+    'heading': 'Create a Deck',
     'titleTag': 'Create your own flash card deck',
     'link': 'https://flashcardquiz.com',
     'action': function () {
