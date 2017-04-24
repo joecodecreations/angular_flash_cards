@@ -19,7 +19,7 @@
   }
 
   &-alexaPhrase{
-    @include breakpoint(max, smallDevices){
+    @include breakpoint(smallDevices, max){
       display:none;
       overflow: hidden;
     }
@@ -30,5 +30,6 @@
   }
   &-alexaPhrase-sentence{
     color:limegreen;
+  
   }
 }
