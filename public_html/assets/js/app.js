@@ -681,12 +681,11 @@ function retrieveService($rootScope, $location, $http, card, updateCards) {
     //grab url in browser bar
     var url = $location.absUrl();
     //strip out url and get only oken
-    var token = url.replace("https://flashcardquiz.com/", "").toLowerCase();
+    var token = url.replace("https://flashcardquiz.com/", "");
     //token = url.replace("http://localhost:3000/", "");
-    //  token = token.toLowerCase();
+
     //if we have a token let's grab the data if any
     if (token) {
-      console.log("token: " + token);
       console.log('grabbing units');
       //hit the API
       $http({
