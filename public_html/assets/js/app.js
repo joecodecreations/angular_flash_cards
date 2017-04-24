@@ -51,6 +51,7 @@ function flashCardsController($scope, $http, retrieve, card, resetValidationServ
   ctrl.minCharacters = 10; //min form input chrt count
   ctrl.maxCharactersSubject = 26;
   ctrl.alexaButtonState = "off";
+  ctrl.questionoranswer = "Question"; //we always start off on a question
   ctrl.alexaBoolean = false;
 
   ctrl.editCard = function () {
@@ -260,6 +261,7 @@ function flashCardsController($scope, $http, retrieve, card, resetValidationServ
   ctrl.showAnswerButton = function () {
 
     if (!ctrl.liveEdit) {
+      ctrl.questionoranswer = "Answer"; //update to show we are on a question now
       ctrl.flip = true; //flip the card
       if (questions[ctrl.currentQuestion - 1]) {
         ctrl.answerquestionCategory = questions[ctrl.currentQuestion - 1].category;
@@ -271,6 +273,7 @@ function flashCardsController($scope, $http, retrieve, card, resetValidationServ
   ctrl.nextQuestionButton = function () {
     ctrl.clickToFlip = true; //before showing second card erase flip card here word
     if (!ctrl.liveEdit) {
+      ctrl.questionoranswer = "Question"; //update to show we are on a question now
       //Grab Next Card
       card.nextQuestion($scope, questions);
     }

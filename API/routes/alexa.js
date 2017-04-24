@@ -68,7 +68,7 @@ module.exports = function (app) {
 
             });
           } catch (err) {
-            console.log(err);
+            //console.log(err);
             res.json({
               message: "carderror",
               title: '',
@@ -78,7 +78,7 @@ module.exports = function (app) {
 
         });
       } catch (error) {
-        console.log(err);
+        //console.log(err);
         res.json({
           message: "deckerror",
           title: '',

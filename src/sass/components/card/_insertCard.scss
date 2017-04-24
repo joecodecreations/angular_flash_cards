@@ -21,6 +21,7 @@
 &-row{
   width:95%;
   margin: 0 auto;
+  margin-top:2px;
   &-title{
     border-bottom: 1px solid #ECECEC;
     padding-bottom:10px;
@@ -45,6 +46,10 @@
     color: #717171;
     letter-spacing: 0;
     line-height: 31px;
+    text-align: center;
+    width: 95%;
+
+    font-weight: 300;
   }
 
   &-heading{
