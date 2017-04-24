@@ -19,6 +19,10 @@
   }
 
   &-alexaPhrase{
+    @include breakpoint(max, smallDevices){
+      display:none;
+      overflow: hidden;
+    }
     float:right;
     font-size:.8em;
     color:rgba(255,255,255,.5);
