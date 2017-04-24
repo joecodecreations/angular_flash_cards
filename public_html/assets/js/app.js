@@ -741,6 +741,9 @@ function retrieveService($rootScope, $location, $http, card, updateCards) {
           ctrl.deckTitle = response.data.title;
           ctrl.backgroundColor = response.data.backgroundColor;
           ctrl.canSkipQuestions = response.data.canSkipQuestions;
+          if (response.data.alexa != "") {
+            ctrl.alexaPhrase = response.data.alexa;
+          }
           ctrl.route = token;
           //console.log(ctrl.questions);
 
@@ -750,6 +753,7 @@ function retrieveService($rootScope, $location, $http, card, updateCards) {
           ctrl.addCardShow = false; //add card form
           ctrl.mainWindow = true;
           ctrl.cardsLoaded = true; //
+
           console.log(ctrl.questions);
 
           var data = response.data.cards;
