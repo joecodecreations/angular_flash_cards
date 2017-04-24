@@ -31,6 +31,30 @@ function navigationController($scope) {
       'action': function () {
         ctrl.shareDeck();
       }
+    }
+  ];
+
+  ctrl.navButtonsLoaded = [{
+    'heading': 'Create Deck',
+    'titleTag': 'Create your own flash card deck',
+    'link': 'https://flashcardquiz.com',
+    'action': function () {
+      ctrl.showAddCardInterface();
+    }
+  }];
+
+  ctrl.navButtonsAlwaysPresent = [{
+      'heading': 'About',
+      'titleTag': 'Share this deck with friends',
+      'hide': function () {
+
+      },
+      'show': function () {
+
+      },
+      'action': function () {
+        ctrl.openAbout();
+      }
     },
     {
       'heading': 'Contact Us',
@@ -44,23 +68,7 @@ function navigationController($scope) {
       'action': function () {
         ctrl.openContact();
       }
-    },
-    {
-      'heading': 'About',
-      'titleTag': 'Share this deck with friends',
-      'hide': function () {
-
-      },
-      'show': function () {
-
-      },
-      'action': function () {
-        ctrl.openAbout();
-      }
     }
-
-
-
   ];
 
 

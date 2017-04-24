@@ -15,7 +15,7 @@ function retrieveService($rootScope, $location, $http, card, updateCards) {
 
     //if we have a token let's grab the data if any
     if (token) {
-      console.log('grabbing units');
+      //  console.log('grabbing units');
       //hit the API
       $http({
         method: 'GET',
@@ -25,13 +25,13 @@ function retrieveService($rootScope, $location, $http, card, updateCards) {
           'Content-Type': 'application/json'
         }
       }).then(function successCallback(response) {
-        if (response.data.message == "success") {
+        if (response.data.message === "success") {
 
           ctrl.questions = response.data.cards;
           ctrl.deckTitle = response.data.title;
           ctrl.backgroundColor = response.data.backgroundColor;
           ctrl.canSkipQuestions = response.data.canSkipQuestions;
-          if (response.data.alexa != "") {
+          if (response.data.alexa !== "") {
             ctrl.alexaPhrase = response.data.alexa;
           }
           ctrl.route = token;
@@ -44,7 +44,7 @@ function retrieveService($rootScope, $location, $http, card, updateCards) {
           ctrl.mainWindow = true;
           ctrl.cardsLoaded = true; //
 
-          console.log(ctrl.questions);
+          //console.log(ctrl.questions);
 
           var data = response.data.cards;
 

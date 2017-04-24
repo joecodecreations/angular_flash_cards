@@ -476,6 +476,30 @@ function navigationController($scope) {
       'action': function () {
         ctrl.shareDeck();
       }
+    }
+  ];
+
+  ctrl.navButtonsLoaded = [{
+    'heading': 'Create Deck',
+    'titleTag': 'Create your own flash card deck',
+    'link': 'https://flashcardquiz.com',
+    'action': function () {
+      ctrl.showAddCardInterface();
+    }
+  }];
+
+  ctrl.navButtonsAlwaysPresent = [{
+      'heading': 'About',
+      'titleTag': 'Share this deck with friends',
+      'hide': function () {
+
+      },
+      'show': function () {
+
+      },
+      'action': function () {
+        ctrl.openAbout();
+      }
     },
     {
       'heading': 'Contact Us',
@@ -489,23 +513,7 @@ function navigationController($scope) {
       'action': function () {
         ctrl.openContact();
       }
-    },
-    {
-      'heading': 'About',
-      'titleTag': 'Share this deck with friends',
-      'hide': function () {
-
-      },
-      'show': function () {
-
-      },
-      'action': function () {
-        ctrl.openAbout();
-      }
     }
-
-
-
   ];
 
 
@@ -601,15 +609,15 @@ function cardService($http) {
 
   /* Grabs the Next Question in the list */
   vm.nextQuestion = function ($scope, questions) {
-    console.log("next question hit");
+    //console.log("next question hit");
     var ctrl = $scope;
-    console.log("Length: " + questions.length);
-    console.log("current: " + ctrl.currentQuestion);
+    //console.log("Length: " + questions.length);
+    //console.log("current: " + ctrl.currentQuestion);
     /* if we reach the last question start over */
     if (ctrl.currentQuestion && questions.length) {
       if (ctrl.currentQuestion >= questions.length) {
         ctrl.currentQuestion = 0;
-        console.log("lowered to zero");
+        //  console.log("lowered to zero");
       }
 
     }
@@ -619,7 +627,6 @@ function cardService($http) {
     if (questions[ctrl.currentQuestion]) {
       if (ctrl.firstcard) {
         //write the contents of the card
-        console.log("first!");
         ctrl.question = questions[ctrl.currentQuestion].question;
         ctrl.answer = questions[ctrl.currentQuestion].answer;
         ctrl.questionCategory = questions[ctrl.currentQuestion].category;
@@ -630,13 +637,13 @@ function cardService($http) {
         }, 1000);
 
       } else {
-        console.log("other lower");
+
         if (ctrl.flip === true) {
           ctrl.flip = false;
         }
 
-        console.log("currentQ: " + ctrl.currentQuestion);
-        console.log("currentLength: " + questions.length);
+        // console.log("currentQ: " + ctrl.currentQuestion);
+        // console.log("currentLength: " + questions.length);
 
         //write the contents of the card
         ctrl.question = questions[ctrl.currentQuestion].question;
@@ -659,12 +666,12 @@ function cardService($http) {
         'Content-Type': 'application/json'
       }
     }).then(function successCallback(response) {
-      console.log("Card Created!");
+      //console.log("Card Created!");
       //console.log(response.data);
     }, function errorCallback(errorResponse) {
-      console.log("Could not save card");
-      console.log(errorResponse);
-      console.log(errorResponse.data);
+      // console.log("Could not save card");
+      // console.log(errorResponse);
+      // console.log(errorResponse.data);
     });
 
   };
@@ -714,7 +721,7 @@ function retrieveService($rootScope, $location, $http, card, updateCards) {
 
     //if we have a token let's grab the data if any
     if (token) {
-      console.log('grabbing units');
+      //  console.log('grabbing units');
       //hit the API
       $http({
         method: 'GET',
@@ -724,13 +731,13 @@ function retrieveService($rootScope, $location, $http, card, updateCards) {
           'Content-Type': 'application/json'
         }
       }).then(function successCallback(response) {
-        if (response.data.message == "success") {
+        if (response.data.message === "success") {
 
           ctrl.questions = response.data.cards;
           ctrl.deckTitle = response.data.title;
           ctrl.backgroundColor = response.data.backgroundColor;
           ctrl.canSkipQuestions = response.data.canSkipQuestions;
-          if (response.data.alexa != "") {
+          if (response.data.alexa !== "") {
             ctrl.alexaPhrase = response.data.alexa;
           }
           ctrl.route = token;
@@ -743,7 +750,7 @@ function retrieveService($rootScope, $location, $http, card, updateCards) {
           ctrl.mainWindow = true;
           ctrl.cardsLoaded = true; //
 
-          console.log(ctrl.questions);
+          //console.log(ctrl.questions);
 
           var data = response.data.cards;
 

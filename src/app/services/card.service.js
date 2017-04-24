@@ -69,15 +69,15 @@ function cardService($http) {
 
   /* Grabs the Next Question in the list */
   vm.nextQuestion = function ($scope, questions) {
-    console.log("next question hit");
+    //console.log("next question hit");
     var ctrl = $scope;
-    console.log("Length: " + questions.length);
-    console.log("current: " + ctrl.currentQuestion);
+    //console.log("Length: " + questions.length);
+    //console.log("current: " + ctrl.currentQuestion);
     /* if we reach the last question start over */
     if (ctrl.currentQuestion && questions.length) {
       if (ctrl.currentQuestion >= questions.length) {
         ctrl.currentQuestion = 0;
-        console.log("lowered to zero");
+        //  console.log("lowered to zero");
       }
 
     }
@@ -87,7 +87,6 @@ function cardService($http) {
     if (questions[ctrl.currentQuestion]) {
       if (ctrl.firstcard) {
         //write the contents of the card
-        console.log("first!");
         ctrl.question = questions[ctrl.currentQuestion].question;
         ctrl.answer = questions[ctrl.currentQuestion].answer;
         ctrl.questionCategory = questions[ctrl.currentQuestion].category;
@@ -98,13 +97,13 @@ function cardService($http) {
         }, 1000);
 
       } else {
-        console.log("other lower");
+
         if (ctrl.flip === true) {
           ctrl.flip = false;
         }
 
-        console.log("currentQ: " + ctrl.currentQuestion);
-        console.log("currentLength: " + questions.length);
+        // console.log("currentQ: " + ctrl.currentQuestion);
+        // console.log("currentLength: " + questions.length);
 
         //write the contents of the card
         ctrl.question = questions[ctrl.currentQuestion].question;
@@ -127,12 +126,12 @@ function cardService($http) {
         'Content-Type': 'application/json'
       }
     }).then(function successCallback(response) {
-      console.log("Card Created!");
+      //console.log("Card Created!");
       //console.log(response.data);
     }, function errorCallback(errorResponse) {
-      console.log("Could not save card");
-      console.log(errorResponse);
-      console.log(errorResponse.data);
+      // console.log("Could not save card");
+      // console.log(errorResponse);
+      // console.log(errorResponse.data);
     });
 
   };
