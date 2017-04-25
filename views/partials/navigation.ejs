@@ -16,7 +16,7 @@
     <div class="mobileNav-title">Menu</div>
   </div>
   <ul class="mobileNav-group">
-    <li ng-repeat="button in navButtonsLoaded" class="mobileNav-button" ng-show="cardsLoaded" ng-click="button.action();mobileMenuClose();" title="{{button.titleTag}}">{{ button.heading }}</li>
+    <li ng-repeat="button in navButtonsLoaded" class="mobileNav-button" ng-show="cardsLoaded" ng-click="button.action();mobileMenuClose();" title="{{button.titleTag}}"><a ng-href="{{ button.link }}" ng-if="button.link">{{ button.heading }}</a ng-if="button.link"></li>
     <li ng-repeat="button in navButtons" class="mobileNav-button" ng-hide="hideButtons" ng-click="button.action();mobileMenuClose();" title="{{button.titleTag}}">{{ button.heading }}</li>
     <li ng-repeat="button in navButtonsAlwaysPresent" class="mobileNav-button" ng-click="button.action();mobileMenuClose();" title="{{button.titleTag}}">{{ button.heading }}</li>
     <li class="mobileNav-button--close"  ng-click="mobileMenuClose()" title="Close the Menu">Close <i class="fa fa-times" aria-hidden="true" alt="close button"></i>
