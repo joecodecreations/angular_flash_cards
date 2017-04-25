@@ -20,8 +20,8 @@
     <li ng-repeat="button in navButtons" class="mobileNav-button" ng-hide="hideButtons" ng-click="button.action();mobileMenuClose();" title="{{button.titleTag}}">{{ button.heading }}</li>
     <li ng-repeat="button in navButtonsAlwaysPresent" class="mobileNav-button" ng-click="button.action();mobileMenuClose();" title="{{button.titleTag}}">{{ button.heading }}</li>
     <li class="mobileNav-button--close"  ng-click="mobileMenuClose()" title="Close the Menu">Close <i class="fa fa-times" aria-hidden="true" alt="close button"></i>
-    <li class="mobileNav-alexaPhrase" ng-show="alexaPhrase && cardsLoaded">Registered Alexa Phrase:</li>
-     <li class="mobileNav-alexaPhrase-sentence">{{ alexaPhrase }}</li>
+    <li class="mobileNav-alexaPhrase" ng-show="alexaPhrase && cardsLoaded">Load these cards with Amazon Alexa by enabling the Flashcard Quiz Skill and using this phrase:</li>
+     <li class="mobileNav-alexaPhrase-sentence" ng-show="alexaPhrase && cardsLoaded">{{ alexaPhrase }}</li>
     </li>
   </ul>
 </div>
