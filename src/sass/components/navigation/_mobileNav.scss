@@ -8,6 +8,23 @@
   padding-top: 16px;
   top: 0;
   left: 0;
+
+  &-alexaPhrase{
+    width:80%;
+    color:#333;
+    font-size:14px;
+    text-align:center;
+    margin:0 auto;
+    &-sentence{
+      color:limegreen;
+      font-size:14px;
+      width:80%;
+      margin:0 auto;
+      margin-top:5px;
+      text-align:center;
+
+    }
+  }
 &-group {
   width: 100%;
   margin: 0 auto;
@@ -52,6 +69,7 @@
           color:rgba(255,255,255,.4);
         }
     }
+
     @include breakpointWithOrientation(iphone5, landscape){
 
           width: 50%;

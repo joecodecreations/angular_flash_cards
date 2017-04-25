@@ -50,9 +50,6 @@
 
     /* hide buttons on small devices */
     @media (max-width: 892px) { display:none; }
-    // @include breakpoint(smallDevices, max){
-    //  display:none;
-    // }
 
     &:hover{
       color:rgba(255,255,255,.4);

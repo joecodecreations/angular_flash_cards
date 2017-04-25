@@ -20,7 +20,8 @@
 
   &-alexaPhrase{
     @include breakpoint(smallDevices, max){
-    font-size:.6em;
+      display:none;
+      overflow: hidden;
     }
     float:right;
     font-size:.8em;
