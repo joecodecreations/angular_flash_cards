@@ -20,8 +20,11 @@
   }
 
   &-member{
-    min-width:300px;
-    width:100%;
+    min-width: 100px;
+    width: 100%;
+    display: inline-block;
+    margin-top: 19px;
+
     @include breakpoint(smallDevices, min){
       width:32.9%;
 
