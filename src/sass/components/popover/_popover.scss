@@ -16,6 +16,9 @@
   opacity: 1;
   margin-top:5vh;
   margin-left:5vw;
+  @include breakpointWithOrientation(iphone5, portrait){
+    margin-left:0px
+  }
 
   &-leftAligned{
     text-align: left;
@@ -73,6 +76,40 @@
     letter-spacing: 0;
     line-height: 36px;
     margin-top:25px;
+
+    @include breakpointWithOrientation(iphone5, portrait){
+      margin-top: 7px;
+      line-height: 20px;
+      font-size: 15px;
+    }
+    @include breakpointWithOrientation(iphone5, landscape){
+      margin-top: 7px;
+      line-height: 20px;
+      font-size: 15px;
+    }
+    @include breakpointWithOrientation(iphone6, portrait){
+      margin-top: 7px;
+      line-height: 20px;
+      font-size: 15px;
+    }
+
+    @include breakpointWithOrientation(iphone6, landscape){
+      margin-top: 7px;
+      line-height: 20px;
+      font-size: 15px;
+    }
+    @include breakpointWithOrientation(iphone6Plus, portrait){
+      margin-top: 7px;
+      line-height: 20px;
+      font-size: 15px;
+    }
+
+    @include breakpointWithOrientation(iphone6Plus, landscape){
+      margin-top: 7px;
+      line-height: 20px;
+      font-size: 15px;
+    }
+
   }
  &-inside {
    width:100%;
@@ -144,6 +181,11 @@
   font-family: Lato,sans-serif;
   width:60%;
   height:150px;
+  resize:none;
+  @include breakpointWithOrientation(iphone5, portrait){
+    margin-left:0px;
+    height:100px;
+  }
 
 }
 
