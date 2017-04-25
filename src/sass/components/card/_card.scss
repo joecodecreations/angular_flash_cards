@@ -135,6 +135,10 @@ transform: rotate(9deg);
     padding: 11px;
     color: #000;
     text-align:center;
+    @include breakpoint(iphone5, null){
+      margin-top: -7px;
+  margin-bottom: 8px;
+  }
   }
 
 
