@@ -2,13 +2,23 @@
   max-width: 462px;
   max-height: 449px;
   height:auto;
-  width: 100vh;
+  width:100%;
   position: relative;
 
   align-items: center;
   justify-content: center;
   perspective: 1000px;
   margin: 0 auto;
+
+
+
+  @include breakpointWithOrientation(iphone5, portrait){
+    width: 320px;
+    height: 202px;
+  }
+@include breakpointWithOrientation(iphone5, landscape){
+  margin-left: 23%;
+}
 
 &-content {
   //iphone 5 fix
@@ -17,12 +27,12 @@
 }
   &-clickToFlip{
     width: auto;
-height: 54px;
-position: absolute;
-z-index: 100;
-right: 14px;
-top: -11px;
-transform: rotate(9deg);
+    height: 54px;
+    position: absolute;
+    z-index: 100;
+    right: 14px;
+    top: -11px;
+    transform: rotate(9deg);
   }
 
 &-top{
@@ -60,6 +70,13 @@ transform: rotate(9deg);
     text-align: center;
     margin: 0 auto;
     margin-top: 285px;
+    @include breakpointWithOrientation(iphone5, portrait){
+    margin-top: 33px;
+    }
+    @include breakpointWithOrientation(iphone5, landscape){
+      margin-top: 232px;
+      margin-left: 10px;
+    }
   }
 
 &-question, &-answer {
