@@ -43,6 +43,15 @@
     margin: 0 auto;
     max-width: 500px;
     margin-top: 18px;
+
+    & a,&:visited,&:active {
+        color: #fff;
+        text-decoration: none;
+        list-style-type: none;
+        &:hover{
+          color:rgba(255,255,255,.4);
+        }
+    }
     @include breakpointWithOrientation(iphone5, landscape){
 
           width: 50%;
