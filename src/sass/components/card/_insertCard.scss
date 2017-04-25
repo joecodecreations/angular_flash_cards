@@ -12,7 +12,7 @@
     border-radius: 28px;
     max-width: 600px;
     height: auto;
-    min-width: 320px;
+    min-width: 305px;
     opacity: 0;
     font-family: Lato,sans-serif;
 &-section {
@@ -85,6 +85,9 @@
     color: #999;
   margin-top: 3px;
   font-size: .8em;
+  @include breakpoint(iphone5, null){
+      font-size: .7em;
+  }
   margin-right: 3%;
   text-align: right;
   position: relative;

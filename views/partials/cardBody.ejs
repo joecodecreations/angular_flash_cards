@@ -11,7 +11,7 @@
         <div class="liveEdit-title" ng-show="liveEdit">Edit Mode</div>
         <textArea class="liveEdit-Question" title="click to edit question" id="liveEditQuestion" ng-model="updatedQuestion" ng-show="liveEdit">{{ question }}</textArea>
 
-        <span ng-hide="liveEdit">{{ question }}</span>
+        <span class="card-content" ng-hide="liveEdit">{{ question }}</span>
       </div>
 
     </div>
@@ -25,7 +25,7 @@
         <div class="liveEdit-title" ng-show="liveEdit">Edit Mode</div>
         <textArea class="liveEdit-Answer" title="click to edit answer" id="liveEditAnswer" ng-model="updatedAnswer" ng-show="liveEdit">{{ answer }}</textArea>
 
-        <span ng-hide="liveEdit">{{ answer }}</span>
+        <span class="card-content" ng-hide="liveEdit">{{ answer }}</span>
       </div>
     </div>
   </div>

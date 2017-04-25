@@ -20,6 +20,10 @@
   resize:none;
   height: 198px;
 
+  //iphone5 fix
+    @extend %iphoneCard;
+
+
 }
 &-title{
   position: absolute;
@@ -32,5 +36,10 @@
   color: black;
   padding: 10px;
   font-size: 25px;
+  @include breakpoint(iphone5, null){
+    left:77px;
+    font-size:21px;
+    padding:3px;
+  }
 }
 }

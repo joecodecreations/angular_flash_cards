@@ -11,7 +11,7 @@
   border-radius: 28px;
   max-width: 600px;
   height: auto;
-  min-width: 320px;
+  min-width: 305px;
 
 
 
@@ -200,7 +200,10 @@ margin: 0 auto;
         border-bottom:1.7px solid #d1d1d1;
         width:70%;
         padding-bottom:24px;
-
+        @include breakpoint(iphone5, null){
+          line-height: 21px;
+          width: 100%;
+        }
 
       }
 
@@ -231,6 +234,9 @@ margin: 0 auto;
       background:#FAFAFA;
       font-family: Lato,sans-serif;
       width:80%;
+      @include breakpoint(iphone5, null){
+        width:100%;
+      }
 
       &::-webkit-input-placeholder { /* Chrome/Opera/Safari */
         color: #BABABA;

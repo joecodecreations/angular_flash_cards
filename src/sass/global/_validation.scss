@@ -13,6 +13,11 @@
     color: red;
     float: right;
 
+    @include breakpoint(iphone5, null){
+    font-size: 13px;
+    margin-top: -14px;
+  }
+
 }
 
 .shareValidationError {

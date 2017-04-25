@@ -10,6 +10,11 @@
   perspective: 1000px;
   margin: 0 auto;
 
+&-content {
+  //iphone 5 fix
+  @extend %iphoneCard;
+
+}
   &-clickToFlip{
     width: auto;
 height: 54px;
@@ -60,6 +65,14 @@ transform: rotate(9deg);
 &-question, &-answer {
   color: #000;
   word-break:normal;
+  // @include breakpoint(iphone5, null){
+  //   color: #000;
+  // word-break: normal;
+  // margin-top: -17px;
+  // width: 100%;
+  // height: 146px;
+  // font-size: 0px;
+  // }
 }
 
 //body of the card

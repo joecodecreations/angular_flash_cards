@@ -10,7 +10,16 @@
     color: rgba(255,255,255,.4);
   }
 }
-
+%iphoneCard {
+    @include breakpoint(iphone5, null){
+      width: 312px !important;
+      height: 144px !important;
+      margin-top: -14px !important;
+      position: absolute !important;
+      font-size: 13px !important;
+      line-height: 1.26em !important;
+}
+}
 %card {
   width: 462px;
   height: 449px;
