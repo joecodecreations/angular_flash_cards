@@ -111,6 +111,9 @@ transform: rotate(9deg);
   position:absolute;
 	top: 0;
 	left: 0;
+  @include breakpoint(iphone5, null){
+      margin-top: 24px;
+}
 
 }
 //front card
