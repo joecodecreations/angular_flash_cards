@@ -75,6 +75,22 @@ transform: rotate(9deg);
   color: black;
   text-align:left;
 
+  @include breakpoint(iphone5, null){
+    width: 96%;
+    line-height: 28px;
+    width: 317px;
+    height: 175px;
+    background-image: url(/assets/images/index_card.png);
+    background-size: cover;
+    border: 1px solid #999;
+    padding: 2px;
+    margin-top: 20px;
+    line-height: 1.26em;
+    color: #000;
+    text-align: left;
+    margin-left: 1px;
+  }
+
 }
 
 &-front,&-back {

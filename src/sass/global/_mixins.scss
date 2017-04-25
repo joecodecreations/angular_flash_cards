@@ -18,6 +18,11 @@
      @media (#{$range}-width: 320px)  { @content ; }
 
   }
+  @else if $point == iphone5 {
+    @media only screen and (min-device-width : 320px) and (max-device-width : 568px)  { @content ; }
+
+  }
+
 }
 
 // @include breakpoint(desktop){

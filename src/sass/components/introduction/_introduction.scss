@@ -25,6 +25,11 @@
     color: #a6a6a6;
     font-weight: 300;
     max-width: 350px;
+    @include breakpoint(iphone5, null){
+      width: 96%;
+      line-height: 28px;
+
+    }
     }
 
 
@@ -72,9 +77,13 @@ margin: 0 auto;
       height: 115px;
       padding-top: 22px;
       text-align: left;
-      margin-left: 111px;
+      margin-left: 111px !important;
       @include breakpoint(mobileonly, max){
-          margin-left: 223px;
+          margin-left: 223px !important;
+      }
+
+      @include breakpoint(iphone5, null){
+          margin-left: 121px !important;
       }
       line-height: 28px;
 
