@@ -43,6 +43,13 @@
     margin: 0 auto;
     max-width: 500px;
     margin-top: 18px;
+    @include breakpointWithOrientation(iphone5, landscape){
+
+          width: 50%;
+          height: 35px;
+          padding: 6px;
+          margin-top: 7px;
+    }
     &:hover{
       color:rgba(255,255,255,.4);
     }
@@ -64,6 +71,13 @@
       margin: 0 auto;
       margin-top: 20px;
 
+      @include breakpointWithOrientation(iphone5, landscape){
+
+            width: 50%;
+            height: 35px;
+            padding: 6px;
+            margin-top: 7px;
+      }
       &:hover {
           color:rgba(255,255,255,.4);
       }
