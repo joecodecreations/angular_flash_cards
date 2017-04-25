@@ -28,11 +28,11 @@
 @mixin breakpointWithOrientation($phone, $orientation) {
 
  @if $phone == iphone5 {
-     @media only screen and (min-device-width : 0px) and (max-device-width : 568px) and (orientation : $orientation)  { @content ; }
+     @media only screen and (min-device-width : 320px) and (max-device-width : 568px) and (orientation : $orientation)  { @content ; }
 
  }
  @else if $phone == iphone6 {
-   @media only screen and (min-device-width : 667px) and (max-device-width : 375px) and (orientation : $orientation)   { @content ; }
+   @media only screen and (min-device-width : 375px) and (max-device-width : 667px) and (orientation : $orientation)   { @content ; }
 
  }
 

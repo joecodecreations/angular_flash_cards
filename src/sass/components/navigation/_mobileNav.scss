@@ -8,7 +8,12 @@
   padding-top: 16px;
   top: 0;
   left: 0;
-
+  @include breakpointWithOrientation(iphone5, landscape){
+    height: 100vw;
+  }
+  @include breakpointWithOrientation(iphone6, landscape){
+    height: 100vw;
+  }
   &-alexaPhrase{
     width: 80%;
       font-size: 16px;
