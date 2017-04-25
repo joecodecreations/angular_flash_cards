@@ -36,4 +36,8 @@
 
  }
 
+ @else if $phone == iphone6Plus {
+   @media only screen and (min-device-width : 414px) and (max-device-width : 736px) and (orientation : $orientation)   { @content ; }
+
+ }
 }

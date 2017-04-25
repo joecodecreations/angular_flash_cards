@@ -94,6 +94,14 @@
           padding: 6px;
           margin-top: 7px;
     }
+
+    @include breakpointWithOrientation(iphone6Plus, landscape){
+
+          width: 50%;
+          height: 35px;
+          padding: 6px;
+          margin-top: 7px;
+    }
     &:hover{
       color:rgba(255,255,255,.4);
     }
@@ -123,6 +131,14 @@
             margin-top: 7px;
       }
       @include breakpointWithOrientation(iphone6, landscape){
+
+            width: 50%;
+            height: 35px;
+            padding: 6px;
+            margin-top: 7px;
+      }
+
+      @include breakpointWithOrientation(iphone6Plus, landscape){
 
             width: 50%;
             height: 35px;
