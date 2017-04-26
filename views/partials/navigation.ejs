@@ -17,7 +17,7 @@
   </div>
   <ul class="mobileNav-group">
     <li ng-repeat="button in navButtonsLoaded" class="mobileNav-button" ng-show="cardsLoaded" ng-click="button.action();mobileMenuClose();" title="{{button.titleTag}}"><a ng-href="{{ button.link }}" ng-if="button.link"><i ng-show="button.heading =='Create a Deck'" class="fa fa-plus-circle" aria-hidden="true"></i> {{ button.heading }}</a ng-if="button.link"></li>
-    <li ng-repeat="button in navButtons" class="mobileNav-button" ng-hide="hideButtons" ng-click="button.action();mobileMenuClose();" title="{{button.titleTag}}"><i ng-show="button.heading =='Add Card'" class="fa fa-plus-circle" aria-hidden="true"></i><i ng-show="button.heading =='Share Deck'" class="fa fa-share-alt" aria-hidden="true"></i>{{ button.heading }}</li>
+    <li ng-repeat="button in navButtons" class="mobileNav-button" ng-hide="hideButtons" ng-click="button.action();mobileMenuClose();" title="{{button.titleTag}}"><i ng-show="button.heading =='Add Card'" class="fa fa-plus-circle" aria-hidden="true"></i><i ng-show="button.heading =='Share Deck'" class="fa fa-share-alt" aria-hidden="true"></i> {{ button.heading }}</li>
     <li ng-repeat="button in navButtonsAlwaysPresent" class="mobileNav-button" ng-click="button.action();mobileMenuClose();" title="{{button.titleTag}}">{{ button.heading }}</li>
     <li class="mobileNav-button--close"  ng-click="mobileMenuClose()" title="Close the Menu">Close <i class="fa fa-times" aria-hidden="true" alt="close button"></i>
     <li class="mobileNav-alexaPhrase" ng-show="alexaPhrase && cardsLoaded">Load these cards with Amazon Alexa by enabling the Flashcard Quiz Skill and using this phrase:</li>
