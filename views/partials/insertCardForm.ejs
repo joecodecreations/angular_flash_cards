@@ -1,43 +1,46 @@
 <div class="insertCard" ng-class="{ 'fadeIn':addCardShow} " ng-show="addCardShow">
 
-    <div ng-hide="cardAdded">
-        <div class="insertCard-close"><i class="fa fa-window-close " ng-click="closeWindow()" ng-hide="firstcard" aria-hidden="true "></i></div>
+  <div ng-hide="cardAdded">
+    <div class="insertCard-close"><i class="fa fa-window-close " ng-click="closeWindow()" ng-hide="firstcard" aria-hidden="true "></i></div>
 
-        <div class="insertCard-row-title"><span class="insertCard-title">Add Flashcard</span></div>
-        <div class="insertCard-section">
-            <div class="insertCard-row"><span class="insertCard-heading">Category</span></div>
-            <div class="insertCard-row"><input type="text" class="insertCard--input" placeholder="Astronomy" ng-model="newCategory" ng-class="{'required--form':(CategoryError==true)}" /></div>
-            <div class="insertCard-requirement">(Optional)</div>
-            <div class="insertCard-remainingCharacters " ng-class="{ 'warning': (newCategory.length > subjectLength)}"><span ng-hide="CategoryErrorMessage">{{newCategory.length > 0 ? newCategory.length : '0'}}/{{ 26-(newCategory.length)}} characters remaining</span><span class="insertCardValidationError">{{CategoryErrorMessage}}</span></div>
-        </div>
-
-        <div class="insertCard-section">
-            <div class="insertCard-row"><span class="insertCard-heading">Question</span></div>
-            <div class="insertCard-row"><input type="text" class="insertCard--input" ng-keypress="QuestionErrorMessage = ''" placeholder="What star is closest to earth..." ng-model="newQuestion" ng-class="{'required--form':(QuestionError==true)}" /></div>
-            <div class="insertCard-requirement">* Required</div>
-            <div class="insertCard-remainingCharacters" ng-class="{'warning': (newQuestion.length > questionLength)}"><span ng-hide="QuestionErrorMessage">{{newQuestion.length > 0 ? newQuestion.length : '0'}}/{{ 250-(newQuestion.length)}} characters remaining</span><span class="insertCardValidationError">{{QuestionErrorMessage}}</span></div>
-        </div>
-
-        <div class="insertCard-section">
-            <div class="insertCard-row"><span class="insertCard-heading">Answer</span></div>
-            <div class="insertCard-row"><input type="text" class="insertCard--input" ng-keypress="AnswerErrorMessage = ''" placeholder="The sun is the closest..." ng-model="newAnswer" ng-class="{'required--form':AnswerError}" /></div>
-            <div class="insertCard-requirement">* Required</div>
-            <div class="insertCard-remainingCharacters" ng-class="{'warning': (newAnswer.length > answerLength)}"><span ng-hide="AnswerErrorMessage">{{newAnswer.length > 0 ? newAnswer.length : '0'}}/{{ 250-(newAnswer.length)}} characters remaining</span><span class="insertCardValidationError">{{AnswerErrorMessage}}</span></div>
-        </div>
-        <div class="insertCard--button-holder">
-            <button class="insertCard--button" ng-click="addNewCard() ">Add New Card</button>
-        </div>
-
-        {{ test }}
-
+    <div class="insertCard-row-title"><span class="insertCard-title">Add Flashcard</span></div>
+    <div class="insertCard-section">
+      <div class="insertCard-row"><span class="insertCard-heading">Category</span></div>
+      <div class="insertCard-row"><input type="text" class="insertCard--input" placeholder="Astronomy" ng-model="newCategory" ng-class="{'required--form':(CategoryError==true)}" /></div>
+      <div class="insertCard-requirement">(Optional)</div>
+      <div class="insertCard-remainingCharacters " ng-class="{ 'warning': (newCategory.length > subjectLength)}"><span ng-hide="CategoryErrorMessage">{{newCategory.length > 0 ? newCategory.length : '0'}}/{{ 26-(newCategory.length)}} characters remaining</span><span class="insertCardValidationError">{{CategoryErrorMessage}}</span></div>
     </div>
-    <div ng-show="cardAdded" class="cardAdded">
-        <h2 class="cardAdded-title">Card Added!</h2>
-        <div class="cardFinished-row">
-            <button class="insertCard--button--fixedwidth" ng-click="addAnotherCard()">Add Another Card</button>
-        </div>
-        <div class="cardFinished-row">
-            <button class="insertCard--button--fixedwidth" ng-click="returnToDeck()">Return to Deck</button>
-        </div>
+
+    <div class="insertCard-section">
+      <div class="insertCard-row"><span class="insertCard-heading">Question</span></div>
+      <div class="insertCard-row"><input type="text" class="insertCard--input" ng-keypress="QuestionErrorMessage = ''" placeholder="What star is closest to earth..." ng-model="newQuestion" ng-class="{'required--form':(QuestionError==true)}" /></div>
+      <div class="insertCard-requirement">* Required</div>
+      <div class="insertCard-remainingCharacters" ng-class="{'warning': (newQuestion.length > questionLength)}"><span ng-hide="QuestionErrorMessage">{{newQuestion.length > 0 ? newQuestion.length : '0'}}/{{ 250-(newQuestion.length)}} characters remaining</span><span class="insertCardValidationError">{{QuestionErrorMessage}}</span></div>
     </div>
+
+    <div class="insertCard-section">
+      <div class="insertCard-row"><span class="insertCard-heading">Answer</span></div>
+      <div class="insertCard-row"><input type="text" class="insertCard--input" ng-keypress="AnswerErrorMessage = ''" placeholder="The sun is the closest..." ng-model="newAnswer" ng-class="{'required--form':AnswerError}" /></div>
+      <div class="insertCard-requirement">* Required</div>
+      <div class="insertCard-remainingCharacters" ng-class="{'warning': (newAnswer.length > answerLength)}"><span ng-hide="AnswerErrorMessage">{{newAnswer.length > 0 ? newAnswer.length : '0'}}/{{ 250-(newAnswer.length)}} characters remaining</span><span class="insertCardValidationError">{{AnswerErrorMessage}}</span></div>
+    </div>
+    <div class="insertCard--button-holder">
+      <button class="insertCard--button" ng-click="addNewCard() "><i class="fa fa-plus-circle" aria-hidden="true"></i>
+ Add New Card</button>
+    </div>
+
+    {{ test }}
+
+  </div>
+  <div ng-show="cardAdded" class="cardAdded">
+    <h2 class="cardAdded-title">Card Added!</h2>
+    <div class="cardFinished-row">
+      <button class="insertCard--button--fixedwidth" ng-click="addAnotherCard()"> <i class="fa fa-plus-circle" aria-hidden="true"></i>
+ Add Another Card</button>
+    </div>
+    <div class="cardFinished-row">
+      <button class="insertCard--button--fixedwidth" ng-click="returnToDeck()"><i class="fa fa-chevron-up" aria-hidden="true"></i>
+ Return to Deck</button>
+    </div>
+  </div>
 </div>
