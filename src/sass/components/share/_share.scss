@@ -216,12 +216,18 @@
     font-size: 24px;
     color: #FFFFFF;
 
-    margin-top:35px;
+    margin-top:57px;
     cursor:pointer;
     padding:7px;
-    width:100%;
+    width:auto;
+
     max-width: 500px;
 display: block;
+
+  & a, & a:visited, & a:active {
+    text-decoration: none;
+
+  }
     &-holder{
       margin:0 auto;
       width:95%;
